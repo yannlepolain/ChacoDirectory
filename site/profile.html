@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Researcher Profile — Chaco Researcher Map</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">Chaco<span>Map</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <a href="browse.html" data-i18n="nav.browse">Browse</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="submit.html" data-i18n="nav.submit">Suggest a Researcher</a>
+        <button class="lang-toggle">ES</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <a href="browse.html" class="profile-back" data-i18n="profile.back">&larr; Back to browse</a>
+
+    <div id="profile-content">
+      <!-- Filled by JS -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.text">ChacoMap — A research discovery tool for the Gran Chaco bioregion</p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    const GEO_TAGS = ['Argentina','Paraguay','Bolivia','Brazil','Salta','Formosa',
+      'Córdoba','Santiago del Estero','Tucumán','Pilcomayo','Chiquitania','Chaco province'];
+
+    async function renderPage() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      if (!id) {
+        window.location.href = 'browse.html';
+        return;
+      }
+
+      await ChacoData.load();
+      const r = ChacoData.getById(id);
+      if (!r) {
+        document.getElementById('profile-content').innerHTML =
+          '<p>Researcher not found. <a href="browse.html">Browse all researchers</a>.</p>';
+        return;
+      }
+
+      document.title = r.name + ' — Chaco Researcher Map';
+
+      const lang = I18n.getLang();
+      const description = lang === 'es'
+        ? (r.research_description_es || r.research_description_en || '')
+        : (r.research_description_en || '');
+
+      // Scale translations
+      const scaleLabels = {
+        en: { local: 'Local', 'sub-national': 'Sub-national', regional: 'Regional', national: 'National', continental: 'Continental' },
+        es: { local: 'Local', 'sub-national': 'Sub-nacional', regional: 'Regional', national: 'Nacional', continental: 'Continental' }
+      };
+
+      // Two-level taxonomy: broad themes and specific keywords
+      const themes = (r.themes && r.themes.length > 0) ? r.themes : [];
+      const keywords = (r.keywords && r.keywords.length > 0)
+        ? r.keywords.filter(k => !GEO_TAGS.includes(k) && k.toLowerCase() !== 'chaco' && k.toLowerCase() !== 'gran chaco')
+        : [];
+
+      // Geographic tags from keywords/tags
+      const geoTags = new Set();
+      r.geographical_focus.forEach(g => geoTags.add(g));
+      (r.keywords || r.tags_from_seed).forEach(t => {
+        if (GEO_TAGS.includes(t)) geoTags.add(t);
+      });
+
+      // Publications
+      const pubs = (r.selected_publications && r.selected_publications.length > 0 ? r.selected_publications : r.publications)
+        .slice(0, 15);
+
+      const pubsHtml = pubs.map(p => `
+        <li>
+          <span class="pub-year">${escapeHtml(p.year)}</span>
+          ${escapeHtml(p.title)}
+          ${p.journal ? `<span class="pub-journal"> — ${escapeHtml(p.journal)}</span>` : ''}
+          ${p.is_first_author ? `<span class="pub-first-author">${I18n.t('profile.first_author')}</span>` : ''}
+          ${p.doi ? ` <a href="https://doi.org/${encodeURIComponent(p.doi)}" target="_blank" rel="noopener">[DOI]</a>` : ''}
+        </li>
+      `).join('');
+
+      // Collaborators
+      const collabs = r.main_collaborators.length > 0
+        ? r.main_collaborators
+        : r.top_collaborators_from_seed;
+
+      const allResearchers = ChacoData.getAll();
+      const collabsHtml = collabs.map(c => {
+        const match = allResearchers.find(other => other.name === c || other.id === c);
+        if (match) {
+          return `<li><a href="profile.html?id=${encodeURIComponent(match.id)}">${escapeHtml(c)}</a></li>`;
+        }
+        return `<li>${escapeHtml(c)}</li>`;
+      }).join('');
+
+      // Update form link
+      const updateUrl = `update.html?name=${encodeURIComponent(r.name)}`;
+
+      document.getElementById('profile-content').innerHTML = `
+        <div class="profile-header">
+          <h1>${escapeHtml(r.name)}${r.deceased ? ' <span style="color:#999; font-size:0.7em;">(deceased)</span>' : ''}</h1>
+          <div class="affiliation">${escapeHtml(r.affiliation || 'Affiliation pending')}</div>
+          <div class="profile-meta">
+            ${r.webpage ? `<span><a href="${escapeHtml(r.webpage)}" target="_blank" rel="noopener">Webpage</a></span>` : ''}
+            ${r.email ? `<span><a href="mailto:${escapeHtml(r.email)}">${escapeHtml(r.email)}</a></span>` : ''}
+            ${r.year_range ? `<span>Active: ${escapeHtml(r.year_range)}</span>` : ''}
+          </div>
+        </div>
+
+        <div class="profile-body">
+          <div class="profile-main">
+            <div class="profile-section">
+              <h2>${I18n.t('profile.research')}</h2>
+              <p>${description ? escapeHtml(description) : `<em>${I18n.t('profile.no_description')}</em>`}</p>
+            </div>
+
+            <div class="profile-section">
+              <h2>${I18n.t('profile.publications')}</h2>
+              <ul class="pub-list">${pubsHtml || '<li><em>No publications listed yet.</em></li>'}</ul>
+            </div>
+          </div>
+
+          <div class="profile-sidebar">
+            ${themes.length > 0 ? `
+              <div class="profile-section">
+                <h2>${I18n.t('profile.themes')}</h2>
+                <div class="tags">
+                  ${themes.map(t => `<a href="browse.html?theme=${encodeURIComponent(t)}" class="tag">${escapeHtml(I18n.tTheme(t))}</a>`).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            ${keywords.length > 0 ? `
+              <div class="profile-section">
+                <h2>${I18n.t('profile.keywords')}</h2>
+                <div class="tags">
+                  ${keywords.slice(0, 15).map(k => `<a href="browse.html?search=${encodeURIComponent(k)}" class="tag tag-keyword">${escapeHtml(I18n.tKeyword(k))}</a>`).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            ${geoTags.size > 0 ? `
+              <div class="profile-section">
+                <h2>${I18n.t('profile.geography')}</h2>
+                <div class="tags">
+                  ${Array.from(geoTags).map(g => `<a href="browse.html?geo=${encodeURIComponent(g)}" class="tag">${escapeHtml(I18n.tGeo(g))}</a>`).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            ${r.scales.length > 0 ? `
+              <div class="profile-section">
+                <h2>${I18n.t('profile.scales')}</h2>
+                <div class="tags">
+                  ${r.scales.map(s => `<span class="tag">${escapeHtml((scaleLabels[lang] || scaleLabels.en)[s] || s)}</span>`).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            ${collabs.length > 0 ? `
+              <div class="profile-section">
+                <h2>${I18n.t('profile.collaborators')}</h2>
+                <ul class="collab-list">${collabsHtml}</ul>
+              </div>
+            ` : ''}
+
+            <div class="suggest-update-btn">
+              <a href="${updateUrl}" class="btn btn-outline">${I18n.t('profile.suggest_update')}</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      I18n.applyToDOM();
+    }
+
+    renderPage();
+  </script>
+</body>
+</html>
