@@ -107,6 +107,13 @@
         "is_first_author": false
       },
       {
+        "title": "Past and present effects of habitat amount and fragmentation per se on plant species richness, composition and traits in a deforestation hotspot",
+        "year": "2022",
+        "journal": "Biological Conservation",
+        "doi": "10.1016/j.biocon.2022.109815",
+        "is_first_author": false
+      },
+      {
         "title": "The law is spider's web: An assessment of illegal deforestation in the Argentine Dry Chaco ten years after the enactment of the “Forest Law”",
         "year": "2021",
         "journal": "Environmental Development",
@@ -191,6 +198,20 @@
         "is_first_author": true
       },
       {
+        "title": "Mapping extinction debt highlights conservation opportunities for birds and mammals in the South American Chaco",
+        "year": "2018",
+        "journal": "Journal of Applied Ecology",
+        "doi": "10.1111/1365-2664.13074",
+        "is_first_author": false
+      },
+      {
+        "title": "Forest conservation: Remember Gran Chaco",
+        "year": "2017",
+        "journal": "Science",
+        "doi": "10.1126/science.aal3020",
+        "is_first_author": false
+      },
+      {
         "title": "From biophysical to social-ecological trade-offs: integrating biodiversity conservation and agricultural production in the Argentine Dry Chaco",
         "year": "2015",
         "journal": "Ecology and Society",
@@ -202,6 +223,13 @@
         "year": "2015",
         "journal": "Ecosystem Services",
         "doi": "10.1016/j.ecoser.2015.10.001",
+        "is_first_author": true
+      },
+      {
+        "title": "Impacts of agricultural intensification on avian richness at multiple scales in Dry Chaco forests",
+        "year": "2014",
+        "journal": "Biological Conservation",
+        "doi": "10.1016/j.biocon.2014.08.020",
         "is_first_author": true
       },
       {
@@ -436,6 +464,20 @@
         "is_first_author": false
       },
       {
+        "title": "Comparing Forest Structural Attributes Derived from UAV-Based Point Clouds with Conventional Forest Inventories in the Dry Chaco",
+        "year": "2020",
+        "journal": "Remote Sensing",
+        "doi": "10.3390/rs12234005",
+        "is_first_author": false
+      },
+      {
+        "title": "A social-ecological approach to identify and quantify biodiversity tipping points in South America's seasonal dry ecosystems",
+        "year": "2019",
+        "journal": "Biogeosciences (preprint / discussion paper)",
+        "doi": "10.5194/bg-2019-221",
+        "is_first_author": false
+      },
+      {
         "title": "Rents, actors, and the expansion of commodity frontiers in the Gran Chaco",
         "year": "2018",
         "journal": "Annals of the American Association of Geographers",
@@ -447,6 +489,13 @@
         "year": "2018",
         "journal": "Remote Sensing of Environment",
         "doi": "10.1016/j.rse.2018.06.044",
+        "is_first_author": false
+      },
+      {
+        "title": "Characterization of forest carbon stocks at the landscape scale in the Argentine Dry Chaco",
+        "year": "2018",
+        "journal": "Forest Ecology and Management",
+        "doi": "10.1016/j.foreco.2018.04.033",
         "is_first_author": false
       },
       {
@@ -499,6 +548,13 @@
         "is_first_author": true
       },
       {
+        "title": "Charcoal production in the Argentine Dry Chaco: Where, how and who?",
+        "year": "2015",
+        "journal": "Energy for Sustainable Development",
+        "doi": "10.1016/j.esd.2015.04.006",
+        "is_first_author": false
+      },
+      {
         "title": "Land-use and land-cover effects on regional biodiversity distribution in a subtropical dry forest: a hierarchical integrative multi-taxa study",
         "year": "2014",
         "journal": "Regional Environmental Change",
@@ -532,6 +588,13 @@
         "journal": "Latin American Research Review",
         "doi": "10.1353/lar.2012.0040",
         "is_first_author": false
+      },
+      {
+        "title": "Assessing multi-temporal Landsat 7 ETM+ images for estimating above-ground biomass in subtropical dry forests of Argentina",
+        "year": "2010",
+        "journal": "Journal of Arid Environments",
+        "doi": "10.1016/j.jaridenv.2010.04.007",
+        "is_first_author": true
       },
       {
         "title": "Deforestation and fragmentation of Chaco dry forest in NW Argentina (1972–2007)",
@@ -727,6 +790,13 @@
         "is_first_author": false
       },
       {
+        "title": "Partitioning the effects of habitat loss, hunting and climate change on the endangered Chacoan peccary",
+        "year": "2023",
+        "journal": "Diversity and Distributions",
+        "doi": "10.1111/ddi.13701",
+        "is_first_author": false
+      },
+      {
         "title": "Uncovering major types of deforestation frontiers across the world’s tropical dry woodlands",
         "year": "2022",
         "journal": "Nature Sustainability",
@@ -839,6 +909,13 @@
         "is_first_author": true
       },
       {
+        "title": "Mapping extinction debt highlights conservation opportunities for birds and mammals in the South American Chaco",
+        "year": "2018",
+        "journal": "Journal of Applied Ecology",
+        "doi": "10.1111/1365-2664.13074",
+        "is_first_author": false
+      },
+      {
         "title": "Carbon emissions from agricultural expansion and intensification in the Chaco",
         "year": "2017",
         "journal": "Global Change Biology",
@@ -865,6 +942,13 @@
         "journal": "Environmental Research Letters",
         "doi": "10.1088/1748-9326/aa625c",
         "is_first_author": false
+      },
+      {
+        "title": "Land-Use Competition in the South American Chaco",
+        "year": "2016",
+        "journal": "Land Use Competition",
+        "doi": "10.1007/978-3-319-33628-2_13",
+        "is_first_author": true
       }
     ],
     "affiliation": "Conservation Biogeography Lab, Humboldt-Universität zu Berlin",
@@ -1018,6 +1102,13 @@
         "is_first_author": false
       },
       {
+        "title": "Partitioning the effects of habitat loss, hunting and climate change on the endangered Chacoan peccary",
+        "year": "2023",
+        "journal": "Diversity and Distributions",
+        "doi": "10.1111/ddi.13701",
+        "is_first_author": false
+      },
+      {
         "title": "Agents of Forest Disturbance in the Argentine Dry Chaco",
         "year": "2022",
         "journal": "Remote Sensing",
@@ -1165,6 +1256,13 @@
         "is_first_author": false
       },
       {
+        "title": "Mapping extinction debt highlights conservation opportunities for birds and mammals in the South American Chaco",
+        "year": "2018",
+        "journal": "Journal of Applied Ecology",
+        "doi": "10.1111/1365-2664.13074",
+        "is_first_author": false
+      },
+      {
         "title": "Carbon emissions from agricultural expansion and intensification in the Chaco",
         "year": "2017",
         "journal": "Global Change Biology",
@@ -1197,6 +1295,13 @@
         "year": "2017",
         "journal": "Science",
         "doi": "10.1126/science.aan3020",
+        "is_first_author": false
+      },
+      {
+        "title": "Land-Use Competition in the South American Chaco",
+        "year": "2016",
+        "journal": "Land Use Competition",
+        "doi": "10.1007/978-3-319-33628-2_13",
         "is_first_author": false
       },
       {
@@ -1354,13 +1459,6 @@
         "year": "2021",
         "journal": "Geoforum",
         "doi": "10.1016/j.geoforum.2019.12.013",
-        "is_first_author": true
-      },
-      {
-        "title": "Capital has no homeland: The formation of transnational producer cohorts in South America’s commodity frontiers",
-        "year": "2019",
-        "journal": "Geoforum",
-        "doi": "10.1016/j.geoforum.2019.05.016",
         "is_first_author": true
       },
       {
@@ -1696,6 +1794,20 @@
         "is_first_author": false
       },
       {
+        "title": "Forest conservation: Remember Gran Chaco",
+        "year": "2017",
+        "journal": "Science",
+        "doi": "10.1126/science.aal3020",
+        "is_first_author": false
+      },
+      {
+        "title": "Land-Use Competition in the South American Chaco",
+        "year": "2016",
+        "journal": "Land Use Competition",
+        "doi": "10.1007/978-3-319-33628-2_13",
+        "is_first_author": false
+      },
+      {
         "title": "Effects of past and future land conversions on forest connectivity in the Argentine Chaco",
         "year": "2015",
         "journal": "Landscape Ecology",
@@ -1813,6 +1925,20 @@
         "is_first_author": true
       },
       {
+        "title": "Partitioning the effects of habitat loss, hunting and climate change on the endangered Chacoan peccary",
+        "year": "2023",
+        "journal": "Diversity and Distributions",
+        "doi": "10.1111/ddi.13701",
+        "is_first_author": false
+      },
+      {
+        "title": "Less than six generations to save the chacoan peccary",
+        "year": "2022",
+        "journal": "Biodiversity and Conservation",
+        "doi": "10.1007/s10531-021-02337-x",
+        "is_first_author": true
+      },
+      {
         "title": "The disappearing Dry Chaco, one of the last dry forest systems on earth",
         "year": "2021",
         "journal": "Landscape Ecology",
@@ -1853,6 +1979,13 @@
         "journal": "Ethnobiology and Conservation",
         "doi": "10.15451/ec2018-08-7.11-1-21",
         "is_first_author": true
+      },
+      {
+        "title": "Forest conservation: Remember Gran Chaco",
+        "year": "2017",
+        "journal": "Science",
+        "doi": "10.1126/science.aal3020",
+        "is_first_author": false
       },
       {
         "title": "Ocupación y selección de hábitat de tres especies de pecaríes en el Chaco Semiárido Argentino Ocupación y selección de hábitat de tres especies de pecaríes en el Chaco Semiárido Argentino Resúmen",
@@ -1979,6 +2112,20 @@
         "is_first_author": false
       },
       {
+        "title": "Partitioning the effects of habitat loss, hunting and climate change on the endangered Chacoan peccary",
+        "year": "2023",
+        "journal": "Diversity and Distributions",
+        "doi": "10.1111/ddi.13701",
+        "is_first_author": false
+      },
+      {
+        "title": "Less than six generations to save the chacoan peccary",
+        "year": "2022",
+        "journal": "Biodiversity and Conservation",
+        "doi": "10.1007/s10531-021-02337-x",
+        "is_first_author": false
+      },
+      {
         "title": "Using local ecological knowledge to improve large terrestrial mammal surveys, build local capacity and increase conservation opportunities",
         "year": "2020",
         "journal": "Biological Conservation",
@@ -1997,6 +2144,13 @@
         "year": "2018",
         "journal": "Ethnobiology and Conservation",
         "doi": "10.15451/ec2018-08-7.11-1-21",
+        "is_first_author": false
+      },
+      {
+        "title": "Forest conservation: Remember Gran Chaco",
+        "year": "2017",
+        "journal": "Science",
+        "doi": "10.1126/science.aal3020",
         "is_first_author": false
       },
       {
@@ -2195,6 +2349,13 @@
         "is_first_author": false
       },
       {
+        "title": "Social Perspectives on Deforestation, Land Use Change, and Economic Development in an Expanding Agricultural Frontier in Northern Argentina",
+        "year": "2019",
+        "journal": "Ecological Economics",
+        "doi": "10.1016/j.ecolecon.2019.106424",
+        "is_first_author": false
+      },
+      {
         "title": "The potential impact of economic policies on future land-use conversions in Argentina",
         "year": "2018",
         "journal": "Land Use Policy",
@@ -2265,10 +2426,24 @@
         "is_first_author": false
       },
       {
+        "title": "Análisis de la fragmentación y la estructura paisaje en bosques nativos del norte argentino",
+        "year": "2012",
+        "journal": "Avances en Energías Renovables y Medio Ambiente",
+        "doi": "",
+        "is_first_author": false
+      },
+      {
         "title": "Native Forests and Agriculture in Salta (Argentina): Conflicting Visions of Development",
         "year": "2011",
         "journal": "The Journal of Environment & Development",
         "doi": "10.1177/1070496511416915",
+        "is_first_author": false
+      },
+      {
+        "title": "Elementos conceptuales y metodológicos para la Evaluación de Impactos Ambientales Acumulativos (EIAAc) en bosques subtropicales: El caso del este de Salta, Argentina",
+        "year": "2011",
+        "journal": "Ecología Austral",
+        "doi": "",
         "is_first_author": false
       }
     ],
@@ -3397,6 +3572,20 @@
         "is_first_author": false
       },
       {
+        "title": "Social Perspectives on Deforestation, Land Use Change, and Economic Development in an Expanding Agricultural Frontier in Northern Argentina",
+        "year": "2019",
+        "journal": "Ecological Economics",
+        "doi": "10.1016/j.ecolecon.2019.106424",
+        "is_first_author": false
+      },
+      {
+        "title": "A social-ecological approach to identify and quantify biodiversity tipping points in South America's seasonal dry ecosystems",
+        "year": "2019",
+        "journal": "Biogeosciences (preprint / discussion paper)",
+        "doi": "10.5194/bg-2019-221",
+        "is_first_author": false
+      },
+      {
         "title": "Can't See the Forest for the Trees: Can Declining Deforestation Trends in the Argentinian Chaco Region be Ascribed to Efficient Law Enforcement?",
         "year": "2018",
         "journal": "Ecological Economics",
@@ -3411,11 +3600,25 @@
         "is_first_author": true
       },
       {
+        "title": "Análisis de la fragmentación y la estructura paisaje en bosques nativos del norte argentino",
+        "year": "2012",
+        "journal": "Avances en Energías Renovables y Medio Ambiente",
+        "doi": "",
+        "is_first_author": false
+      },
+      {
         "title": "Native Forests and Agriculture in Salta (Argentina): Conflicting Visions of Development",
         "year": "2011",
         "journal": "The Journal of Environment & Development",
         "doi": "10.1177/1070496511416915",
         "is_first_author": true
+      },
+      {
+        "title": "Elementos conceptuales y metodológicos para la Evaluación de Impactos Ambientales Acumulativos (EIAAc) en bosques subtropicales: El caso del este de Salta, Argentina",
+        "year": "2011",
+        "journal": "Ecología Austral",
+        "doi": "",
+        "is_first_author": false
       }
     ],
     "affiliation": "INENCO (CONICET-UNSa) / Universidad Nacional de Salta",
@@ -6237,13 +6440,6 @@
     "year_range": "1990-2016",
     "publications": [
       {
-        "title": "Stress and Disturbance: Vegetation Dynamics in the Dry Chaco Region of Argentina",
-        "year": "1990",
-        "journal": "Journal of Biogeography",
-        "doi": "10.2307/2845381",
-        "is_first_author": true
-      },
-      {
         "title": "Escenarios productivos y ambientales del Chaco Argentino : 1977-2010",
         "year": "2011",
         "journal": "Producir Conservando GESEAA-UBA",
@@ -6256,6 +6452,13 @@
         "journal": "",
         "doi": "",
         "is_first_author": false
+      },
+      {
+        "title": "Stress and Disturbance: Vegetation Dynamics in the Dry Chaco Region of Argentina",
+        "year": "1990",
+        "journal": "Journal of Biogeography",
+        "doi": "10.2307/2845381",
+        "is_first_author": true
       }
     ],
     "affiliation": "GEPAMA, Facultad de Arquitectura, Diseño y Urbanismo, Universidad de Buenos Aires",
