@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Researchers — Chaco Researcher Directory</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">Chaco<span>Directory</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <a href="browse.html" class="active" data-i18n="nav.browse">Browse</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="submit.html" data-i18n="nav.submit">Feedback</a>
+        <button class="lang-toggle">ES</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="browse-header">
+      <h1 data-i18n="browse.title">Browse Researchers</h1>
+    </div>
+
+    <div class="filters" id="filters">
+      <div class="filter-group">
+        <label>Search</label>
+        <div class="search-wrapper">
+          <input type="text" id="filter-search" placeholder="Name, keyword..." autocomplete="off">
+          <div class="autocomplete-list" id="autocomplete-list" style="display:none;"></div>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label data-i18n="browse.filter_discipline">Discipline</label>
+        <select id="filter-discipline">
+          <option value="" data-i18n="browse.filter_all">All</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label data-i18n="browse.filter_theme">Research Themes</label>
+        <select id="filter-theme">
+          <option value="" data-i18n="browse.filter_all">All</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label data-i18n="browse.filter_geo">Research Region</label>
+        <select id="filter-geo">
+          <option value="" data-i18n="browse.filter_all">All</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label data-i18n="browse.filter_affiliation_country">Affiliation Country</label>
+        <select id="filter-affiliation-country">
+          <option value="" data-i18n="browse.filter_all">All</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label data-i18n="browse.sort">Sort by</label>
+        <select id="sort-by">
+          <option value="alpha" data-i18n="browse.sort_alpha">Name (A-Z)</option>
+          <option value="recent" data-i18n="browse.sort_recent">Most recent publication</option>
+          <option value="pubs" data-i18n="browse.sort_pubs">Number of publications</option>
+        </select>
+      </div>
+      <div class="filter-group filter-checkboxes">
+        <label class="checkbox-label">
+          <input type="checkbox" id="filter-first-author">
+          <span data-i18n="browse.filter_first_author">Has first-author publications on the Chaco</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="filter-recent">
+          <span data-i18n="browse.filter_recent">Published on the Chaco in the last 5 years</span>
+        </label>
+      </div>
+      <button class="clear-filters" id="clear-filters" data-i18n="browse.clear">Clear filters</button>
+    </div>
+
+    <div class="results-count" id="results-count"></div>
+
+    <div class="researcher-grid" id="researcher-grid"></div>
+
+    <div class="no-results" id="no-results" style="display:none;">
+      <h3 data-i18n="browse.no_results_title">No researchers found</h3>
+      <p data-i18n="browse.no_results_text">Try adjusting your search or filters.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.text">Chaco Researcher Directory — A research discovery tool for the Gran Chaco</p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    let currentFilters = { search: '', discipline: '', theme: '', geoFocus: '', affiliationCountry: '', firstAuthor: false, recent: false };
+
+    const geoGroupLabels = {
+      en: { countries: '── Countries ──', crossborder: '── Cross-border ──', argentina: '── Argentina ──', bolivia: '── Bolivia ──', paraguay: '── Paraguay ──' },
+      es: { countries: '── Países ──', crossborder: '── Transfronterizo ──', argentina: '── Argentina ──', bolivia: '── Bolivia ──', paraguay: '── Paraguay ──' }
+    };
+
+    async function initBrowse() {
+      await ChacoData.load();
+
+      // Populate discipline dropdown
+      const discSelect = document.getElementById('filter-discipline');
+      const disciplines = new Set();
+      ChacoData.getAll().forEach(r => {
+        if (r.disciplines) r.disciplines.forEach(d => disciplines.add(d));
+      });
+      Array.from(disciplines).sort().forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d;
+        opt.textContent = I18n.tDiscipline(d);
+        discSelect.appendChild(opt);
+      });
+
+      // Populate theme dropdown from broad themes
+      const themeSelect = document.getElementById('filter-theme');
+      ChacoData.getAllThemes().forEach(theme => {
+        const opt = document.createElement('option');
+        opt.value = theme;
+        opt.textContent = I18n.tTheme(theme);
+        themeSelect.appendChild(opt);
+      });
+
+      // Populate geographic focus dropdown
+      const geoSelect = document.getElementById('filter-geo');
+      const gl = geoGroupLabels[I18n.getLang()] || geoGroupLabels.en;
+      const geoGroups = [
+        { label: gl.countries, items: ['Argentina', 'Bolivia', 'Brazil', 'Paraguay'] },
+        { label: gl.crossborder, items: ['Gran Chaco', 'Dry Chaco', 'Humid Chaco', 'Central Chaco', 'Pilcomayo'] },
+        { label: gl.argentina, items: ['Argentine Chaco', 'Argentine Dry Chaco', 'Semi-arid Chaco', 'Chaco province', 'Chaco Salteño', 'Chaco Serrano', 'Córdoba', 'Formosa', 'Jujuy', 'Salta', 'San Luis', 'Santiago del Estero', 'Tucumán'] },
+        { label: gl.bolivia, items: ['Bolivian Chaco', 'Kaa-Iya del Gran Chaco'] },
+        { label: gl.paraguay, items: ['Paraguayan Dry Chaco', 'Alto Paraguay', 'Boquerón', 'Presidente Hayes'] },
+      ];
+      geoGroups.forEach(group => {
+        const sep = document.createElement('option');
+        sep.disabled = true;
+        sep.textContent = group.label;
+        geoSelect.appendChild(sep);
+        group.items.forEach(item => {
+          const opt = document.createElement('option');
+          opt.value = item;
+          opt.textContent = I18n.tGeo(item);
+          geoSelect.appendChild(opt);
+        });
+      });
+
+      // Populate affiliation country dropdown from actual dataset countries
+      const affSelect = document.getElementById('filter-affiliation-country');
+      const preferredAffCountries = [
+        'Argentina', 'Bolivia', 'Brazil', 'Paraguay',
+        'Belgium', 'Canada', 'France', 'Germany', 'Italy',
+        'Netherlands', 'Norway', 'Oman', 'Spain', 'Switzerland', 'United States'
+      ];
+      const dataCountries = new Set(
+        ChacoData.getAll()
+          .map(r => (r.country || '').trim())
+          .filter(Boolean)
+      );
+      const affCountries = [
+        ...preferredAffCountries.filter(c => dataCountries.has(c)),
+        ...Array.from(dataCountries)
+          .filter(c => !preferredAffCountries.includes(c))
+          .sort((a, b) => a.localeCompare(b))
+      ];
+      affCountries.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = I18n.tCountry(c);
+        affSelect.appendChild(opt);
+      });
+
+      // Check URL params
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('search')) {
+        currentFilters.search = params.get('search');
+        document.getElementById('filter-search').value = currentFilters.search;
+      }
+      if (params.get('theme')) {
+        currentFilters.theme = params.get('theme');
+        document.getElementById('filter-theme').value = currentFilters.theme;
+      }
+      if (params.get('geo')) {
+        currentFilters.geoFocus = params.get('geo');
+        document.getElementById('filter-geo').value = currentFilters.geoFocus;
+      }
+      if (params.get('affCountry')) {
+        currentFilters.affiliationCountry = params.get('affCountry');
+        document.getElementById('filter-affiliation-country').value = currentFilters.affiliationCountry;
+      }
+
+      renderResults();
+      I18n.applyToDOM();
+    }
+
+    function renderResults() {
+      let results = ChacoData.filter(currentFilters);
+
+      // Discipline filter
+      if (currentFilters.discipline) {
+        const disc = currentFilters.discipline;
+        results = results.filter(r => r.disciplines && r.disciplines.includes(disc));
+      }
+
+      // Checkbox filters (applied after main filters)
+      if (currentFilters.firstAuthor) {
+        results = results.filter(r =>
+          r.publications && r.publications.some(p => p.is_first_author)
+        );
+      }
+      if (currentFilters.recent) {
+        const cutoff = new Date().getFullYear() - 5;
+        results = results.filter(r =>
+          r.publications && r.publications.some(p => parseInt(p.year) >= cutoff)
+        );
+      }
+
+      const sortBy = document.getElementById('sort-by').value;
+
+      // Sort results
+      if (sortBy === 'alpha') {
+        results.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (sortBy === 'recent') {
+        results.sort((a, b) => {
+          const maxYear = r => Math.max(...r.publications.map(p => parseInt(p.year) || 0));
+          return maxYear(b) - maxYear(a);
+        });
+      } else if (sortBy === 'pubs') {
+        results.sort((a, b) => b.publications.length - a.publications.length);
+      }
+
+      const grid = document.getElementById('researcher-grid');
+      const noResults = document.getElementById('no-results');
+      const countEl = document.getElementById('results-count');
+
+      grid.innerHTML = '';
+
+      if (results.length === 0) {
+        noResults.style.display = 'block';
+        countEl.textContent = '';
+      } else {
+        noResults.style.display = 'none';
+        countEl.textContent = I18n.t('browse.results').replace('{n}', results.length);
+        results.forEach(r => {
+          grid.appendChild(createResearcherCard(r));
+        });
+      }
+    }
+
+    function renderPage() {
+      I18n.applyToDOM();
+      // Re-translate discipline dropdown
+      const discSelect = document.getElementById('filter-discipline');
+      Array.from(discSelect.options).forEach(opt => {
+        if (opt.value) opt.textContent = I18n.tDiscipline(opt.value);
+      });
+      // Re-translate theme dropdown
+      const themeSelect = document.getElementById('filter-theme');
+      Array.from(themeSelect.options).forEach(opt => {
+        if (opt.value) opt.textContent = I18n.tTheme(opt.value);
+      });
+      // Re-translate geo dropdown (items and group labels)
+      const geoSelect = document.getElementById('filter-geo');
+      const glr = (geoGroupLabels[I18n.getLang()] || geoGroupLabels.en);
+      const groupLabelMap = { '── Countries ──': glr.countries, '── Países ──': glr.countries, '── Cross-border ──': glr.crossborder, '── Transfronterizo ──': glr.crossborder, '── Argentina ──': glr.argentina, '── Bolivia ──': glr.bolivia, '── Paraguay ──': glr.paraguay };
+      Array.from(geoSelect.options).forEach(opt => {
+        if (opt.disabled && groupLabelMap[opt.textContent]) {
+          opt.textContent = groupLabelMap[opt.textContent];
+        } else if (opt.value) {
+          opt.textContent = I18n.tGeo(opt.value);
+        }
+      });
+      // Re-translate affiliation country dropdown
+      const affSelect = document.getElementById('filter-affiliation-country');
+      Array.from(affSelect.options).forEach(opt => {
+        if (opt.value) opt.textContent = I18n.tCountry(opt.value);
+      });
+      // Re-translate sort dropdown
+      const sortSelect = document.getElementById('sort-by');
+      Array.from(sortSelect.options).forEach(opt => {
+        const key = opt.getAttribute('data-i18n');
+        if (key) opt.textContent = I18n.t(key);
+      });
+      renderResults();
+    }
+
+    // Autocomplete
+    const searchInput = document.getElementById('filter-search');
+    const acList = document.getElementById('autocomplete-list');
+    let acIndex = -1;
+
+    function updateAutocomplete(query) {
+      acList.innerHTML = '';
+      acIndex = -1;
+      if (!query || query.length < 2) {
+        acList.style.display = 'none';
+        return;
+      }
+      const q = ChacoData.normalizeText(query);
+      const all = ChacoData.getAll();
+      const suggestions = [];
+      const seen = new Set();
+      const typeRank = { region: 0, keyword: 1, name: 2 };
+
+      function matchScore(value) {
+        const normalized = ChacoData.normalizeText(value);
+        if (normalized === q) return 0;
+        if (normalized.startsWith(q)) return 1;
+        if (normalized.includes(q)) return 2;
+        return 99;
+      }
+
+      function pushSuggestion({ text, display, type, dedupeKey }) {
+        const key = dedupeKey || ChacoData.normalizeText(display || text);
+        if (seen.has(key)) return;
+        const score = Math.min(matchScore(text), matchScore(display || text));
+        if (score === 99) return;
+        seen.add(key);
+        suggestions.push({ text, display, type, score });
+      }
+
+      // Match researcher names
+      all.forEach(r => {
+        if (ChacoData.normalizeText(r.name).includes(q)) {
+          pushSuggestion({ text: r.name, type: 'name', dedupeKey: r.name });
+        }
+      });
+
+      // Match keywords (search both EN and translated values)
+      all.forEach(r => {
+        const kws = [].concat(r.keywords || [], r.tags_from_seed || []);
+        kws.forEach(k => {
+          const translated = I18n.tKeyword(k);
+          pushSuggestion({ text: k, display: translated, type: 'keyword' });
+        });
+      });
+
+      // Match geographic focus (search both EN and translated values)
+      all.forEach(r => {
+        (r.geographical_focus || []).forEach(g => {
+          const translated = I18n.tGeo(g);
+          pushSuggestion({ text: g, display: translated, type: 'region' });
+        });
+      });
+
+      suggestions.sort((a, b) =>
+        a.score - b.score
+        || typeRank[a.type] - typeRank[b.type]
+        || (a.display || a.text).localeCompare(b.display || b.text)
+      );
+
+      const limited = suggestions.slice(0, 10);
+      if (limited.length === 0) {
+        acList.style.display = 'none';
+        return;
+      }
+      limited.forEach(s => {
+        const div = document.createElement('div');
+        div.className = 'autocomplete-item';
+        const displayText = s.display || s.text;
+        const label = s.type === 'keyword' ? ` (${I18n.getLang() === 'es' ? 'palabra clave' : 'keyword'})` : s.type === 'region' ? ` (${I18n.getLang() === 'es' ? 'región' : 'region'})` : '';
+        div.innerHTML = escapeHtml(displayText) + (label ? `<span style="color:var(--color-text-light);font-size:0.8em">${label}</span>` : '');
+        div.dataset.value = displayText;
+        div.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+          searchInput.value = displayText;
+          currentFilters.search = displayText;
+          acList.style.display = 'none';
+          renderResults();
+        });
+        acList.appendChild(div);
+      });
+      acList.style.display = 'block';
+    }
+
+    searchInput.addEventListener('keydown', (e) => {
+      const items = acList.querySelectorAll('.autocomplete-item');
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        acIndex = Math.min(acIndex + 1, items.length - 1);
+        items.forEach((el, i) => el.classList.toggle('active', i === acIndex));
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        acIndex = Math.max(acIndex - 1, 0);
+        items.forEach((el, i) => el.classList.toggle('active', i === acIndex));
+      } else if (e.key === 'Enter' && acIndex >= 0 && items[acIndex]) {
+        e.preventDefault();
+        const displayVal = items[acIndex].dataset.value || items[acIndex].textContent;
+        searchInput.value = displayVal;
+        currentFilters.search = displayVal;
+        acList.style.display = 'none';
+        renderResults();
+      }
+    });
+
+    searchInput.addEventListener('blur', () => {
+      setTimeout(() => { acList.style.display = 'none'; }, 150);
+    });
+
+    // Filter event listeners
+    searchInput.addEventListener('input', (e) => {
+      currentFilters.search = e.target.value;
+      updateAutocomplete(e.target.value);
+      renderResults();
+    });
+    document.getElementById('filter-discipline').addEventListener('change', (e) => {
+      currentFilters.discipline = e.target.value;
+      renderResults();
+    });
+    document.getElementById('filter-theme').addEventListener('change', (e) => {
+      currentFilters.theme = e.target.value;
+      renderResults();
+    });
+    document.getElementById('filter-geo').addEventListener('change', (e) => {
+      currentFilters.geoFocus = e.target.value;
+      renderResults();
+    });
+    document.getElementById('filter-affiliation-country').addEventListener('change', (e) => {
+      currentFilters.affiliationCountry = e.target.value;
+      renderResults();
+    });
+    document.getElementById('sort-by').addEventListener('change', () => {
+      renderResults();
+    });
+    document.getElementById('filter-first-author').addEventListener('change', (e) => {
+      currentFilters.firstAuthor = e.target.checked;
+      renderResults();
+    });
+    document.getElementById('filter-recent').addEventListener('change', (e) => {
+      currentFilters.recent = e.target.checked;
+      renderResults();
+    });
+    document.getElementById('clear-filters').addEventListener('click', () => {
+      currentFilters = { search: '', discipline: '', theme: '', geoFocus: '', affiliationCountry: '', firstAuthor: false, recent: false };
+      document.getElementById('filter-search').value = '';
+      document.getElementById('filter-discipline').value = '';
+      document.getElementById('filter-theme').value = '';
+      document.getElementById('filter-geo').value = '';
+      document.getElementById('filter-affiliation-country').value = '';
+      document.getElementById('filter-first-author').checked = false;
+      document.getElementById('filter-recent').checked = false;
+      renderResults();
+    });
+
+    initBrowse();
+  </script>
+</body>
+</html>

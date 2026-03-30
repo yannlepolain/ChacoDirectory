@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaco Researcher Directory Tests</title>
+  <style>
+    body { font-family: monospace; padding: 2rem; background: #1a1a2e; color: #e0e0e0; }
+    h1 { color: #4a7c59; margin-bottom: 1rem; }
+    .test { padding: 0.4rem 0; }
+    .pass { color: #4caf50; }
+    .fail { color: #f44336; }
+    .section { margin-top: 1.5rem; font-weight: bold; color: #a0a0d0; font-size: 1.1rem; }
+    .summary { margin-top: 2rem; padding: 1rem; border-radius: 6px; font-size: 1.1rem; }
+    .summary.all-pass { background: #1b3a1b; color: #4caf50; }
+    .summary.has-fail { background: #3a1b1b; color: #f44336; }
+  </style>
+</head>
+<body>
+  <h1>Chaco Researcher Directory Test Suite</h1>
+  <div id="results"></div>
+  <div id="summary"></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script>
+    const results = [];
+    const container = document.getElementById('results');
+
+    function assert(name, condition, detail) {
+      const passed = !!condition;
+      results.push({ name, passed, detail });
+      const el = document.createElement('div');
+      el.className = 'test ' + (passed ? 'pass' : 'fail');
+      el.textContent = (passed ? 'PASS' : 'FAIL') + ' — ' + name + (detail && !passed ? ' (' + detail + ')' : '');
+      container.appendChild(el);
+    }
+
+    function section(name) {
+      const el = document.createElement('div');
+      el.className = 'section';
+      el.textContent = '--- ' + name + ' ---';
+      container.appendChild(el);
+    }
+
+    async function runTests() {
+      // ===== Data Loading =====
+      section('Data Loading');
+
+      let researchers;
+      try {
+        researchers = await ChacoData.load();
+        assert('Data loads successfully', researchers && researchers.length > 0);
+      } catch(e) {
+        assert('Data loads successfully', false, e.message);
+        return;
+      }
+
+      assert('Has 278 researchers', researchers.length === 278, `Got ${researchers.length}`);
+
+      // ===== Data Integrity =====
+      section('Data Integrity');
+
+      const allHaveId = researchers.every(r => r.id && r.id.length > 0);
+      assert('All researchers have an ID', allHaveId);
+
+      const allHaveName = researchers.every(r => r.name && r.name.length > 0);
+      assert('All researchers have a name', allHaveName);
+
+      const uniqueIds = new Set(researchers.map(r => r.id));
+      assert('All IDs are unique', uniqueIds.size === researchers.length, `${uniqueIds.size} unique vs ${researchers.length} total`);
+
+      const allHavePubs = researchers.every(r => r.publications && r.publications.length > 0);
+      assert('All researchers have at least one publication', allHavePubs);
+
+      const pubsHaveYear = researchers.every(r =>
+        r.publications.every(p => p.year && p.year.length === 4)
+      );
+      assert('All publications have a 4-digit year', pubsHaveYear);
+
+      const pubsHaveTitle = researchers.every(r =>
+        r.publications.every(p => p.title && p.title.length > 0)
+      );
+      assert('All publications have a title', pubsHaveTitle);
+
+      const doiStoresStringOnly = researchers.every(r =>
+        r.publications.every(p => !p.doi || !p.doi.startsWith('https://doi.org/'))
+      );
+      assert('DOI fields store DOI strings only', doiStoresStringOnly);
+
+      // Check for expected researchers
+      const expectedNames = ['Kuemmerle', 'Gasparri', 'Gordillo', 'Camino', 'le Polain'];
+      expectedNames.forEach(name => {
+        const found = researchers.some(r => r.name.includes(name));
+        assert(`Dataset includes "${name}"`, found);
+      });
+
+      // ===== Researcher Schema =====
+      section('Researcher Schema');
+
+      const requiredFields = ['id', 'name', 'affiliation', 'country', 'webpage',
+        'email', 'deceased', 'disciplines', 'themes', 'keywords',
+        'geographical_focus', 'scales', 'research_description_en',
+        'research_description_es', 'publications', 'tags_from_seed',
+        'top_collaborators_from_seed', 'main_collaborators',
+        'fieldwork_locations'];
+
+      requiredFields.forEach(field => {
+        const allHave = researchers.every(r => field in r);
+        assert(`All researchers have "${field}" field`, allHave);
+      });
+
+      const optionalFields = ['orcid', 'year_range', 'selected_publications',
+        'thematic_focus', 'total_publications_in_seed', 'first_author_publications'];
+
+      optionalFields.forEach(field => {
+        const allValid = researchers.every(r => !(field in r) || r[field] !== undefined);
+        assert(`Optional field "${field}" is valid when present`, allValid);
+      });
+
+      // ===== Two-level Taxonomy =====
+      section('Themes & Keywords');
+
+      const allHaveThemes = researchers.every(r => r.themes && Array.isArray(r.themes));
+      assert('All researchers have "themes" array', allHaveThemes);
+
+      const allHaveKeywords = researchers.every(r => r.keywords && Array.isArray(r.keywords));
+      assert('All researchers have "keywords" array', allHaveKeywords);
+
+      const allowedThemes = new Set([
+        'Ecology & Biodiversity',
+        'Land Use & Deforestation',
+        'Wildlife & Conservation Biology',
+        'Social Sciences & Political Ecology',
+        'History, Culture & Identity',
+        'Regional Geography',
+        'Climate, Carbon & Energy',
+        'Land Tenure & Governance',
+        'Hydrology & Soils',
+        'Remote Sensing & Monitoring',
+        'Agroecology & Rural Development',
+        'Public Health & Disease Ecology'
+      ]);
+      const onlyApprovedThemes = researchers.every(r =>
+        r.themes.every(t => allowedThemes.has(t))
+      );
+      assert('All themes use the approved controlled vocabulary', onlyApprovedThemes);
+
+      const allThemes = ChacoData.getAllThemes();
+      assert('getAllThemes returns themes', allThemes.length > 0, `Got ${allThemes.length}`);
+      assert('At least 8 broad themes exist', allThemes.length >= 8, `Got ${allThemes.length}`);
+      assert('At most 15 broad themes exist', allThemes.length <= 15, `Got ${allThemes.length}`);
+
+      const allKeywords = ChacoData.getAllKeywords();
+      assert('getAllKeywords returns keywords', allKeywords.length > 0, `Got ${allKeywords.length}`);
+      assert('Keywords outnumber themes', allKeywords.length > allThemes.length);
+
+      // Themes are assigned based on keywords
+      const researcherWithThemes = researchers.find(r => r.themes.length > 0);
+      assert('At least one researcher has themes assigned', !!researcherWithThemes);
+
+      // ===== Filtering =====
+      section('Filtering');
+
+      // Search by name
+      const searchResults = ChacoData.filter({ search: 'Kuemmerle' });
+      assert('Search by name "Kuemmerle" finds results', searchResults.length > 0);
+      assert('Search by name "Kuemmerle" is specific', searchResults.length <= 3);
+
+      const accentInsensitiveResults = ChacoData.filter({ search: 'Musalem' });
+      assert(
+        'Search ignores accents ("Musalem" matches "Musálem")',
+        accentInsensitiveResults.some(r => r.name.includes('Musálem'))
+      );
+
+      // Search by keyword
+      const kwResults = ChacoData.filter({ search: 'deforestation' });
+      assert('Search by keyword "deforestation" finds results', kwResults.length > 0);
+
+      // Empty search returns all
+      const emptySearch = ChacoData.filter({});
+      assert('Empty filter returns all researchers', emptySearch.length === researchers.length);
+
+      // Theme filter (broad theme name, exact match)
+      const themeResults = ChacoData.filter({ theme: 'Ecology & Biodiversity' });
+      assert('Theme filter "Ecology & Biodiversity" finds results', themeResults.length > 0);
+      assert('Theme filter is a subset', themeResults.length < researchers.length);
+
+      // Geographic focus filter
+      const geoResults = ChacoData.filter({ geoFocus: 'Argentina' });
+      assert('Geographic focus filter "Argentina" finds results', geoResults.length > 0);
+
+      // Affiliation country filter (most are empty for now, but the filter should not crash)
+      const affResults = ChacoData.filter({ affiliationCountry: 'Germany' });
+      assert('Affiliation country filter does not crash', Array.isArray(affResults));
+
+      // Combined filters
+      const combined = ChacoData.filter({ search: 'ecology', geoFocus: 'Argentina' });
+      assert('Combined filters work without error', Array.isArray(combined));
+
+      // Nonsense search
+      const noResults = ChacoData.filter({ search: 'xyznonexistent123' });
+      assert('Nonsense search returns 0 results', noResults.length === 0);
+
+      // ===== Featured Researcher =====
+      section('Featured Researcher');
+
+      const featured = ChacoData.getFeaturedOfDay();
+      assert('Featured researcher exists', featured !== null);
+      assert('Featured researcher has a name', featured && featured.name && featured.name.length > 0);
+
+      const featured2 = ChacoData.getFeaturedOfDay();
+      assert('Featured researcher is deterministic', featured && featured2 && featured.id === featured2.id);
+
+      // ===== getById =====
+      section('Lookup by ID');
+
+      const first = researchers[0];
+      const looked = ChacoData.getById(first.id);
+      assert('getById returns correct researcher', looked && looked.name === first.name);
+
+      const notFound = ChacoData.getById('nonexistent-id-xyz');
+      assert('getById returns null for unknown ID', notFound === null);
+
+      // ===== I18n =====
+      section('Internationalization');
+
+      assert('Default language is English', I18n.getLang() === 'en');
+
+      const enText = I18n.t('home.title');
+      assert('English translation exists for home.title', enText === 'Chaco Researcher Directory');
+
+      I18n.setLang('es');
+      const esText = I18n.t('home.title');
+      assert('Spanish translation exists for home.title', esText === 'Directorio de Investigadores del Chaco');
+
+      assert('New i18n key: browse.filter_geo', I18n.t('browse.filter_geo') === 'Región de Investigación');
+      assert('New i18n key: profile.keywords', I18n.t('profile.keywords') === 'Palabras Clave');
+
+      const missing = I18n.t('nonexistent.key');
+      assert('Missing key returns key itself', missing === 'nonexistent.key');
+
+      I18n.setLang('en'); // reset
+
+      // ===== Summary =====
+      const passed = results.filter(r => r.passed).length;
+      const failed = results.filter(r => !r.passed).length;
+      const total = results.length;
+      const summaryEl = document.getElementById('summary');
+      summaryEl.className = 'summary ' + (failed === 0 ? 'all-pass' : 'has-fail');
+      summaryEl.textContent = `${passed}/${total} tests passed` + (failed > 0 ? ` (${failed} failed)` : ' — All tests passing!');
+    }
+
+    runTests();
+  </script>
+</body>
+</html>

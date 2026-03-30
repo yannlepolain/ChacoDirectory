@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form — Chaco Researcher Directory</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">Chaco<span>Directory</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <a href="browse.html" data-i18n="nav.browse">Browse</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="submit.html" class="active" data-i18n="nav.submit">Feedback</a>
+        <button class="lang-toggle">ES</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content form-page">
+    <h1 data-i18n="submit.title">Feedback Form</h1>
+    <p class="form-intro" data-i18n="submit.intro">
+      Use this form to suggest a researcher, report a correction to an existing profile, or send general feedback about the website.
+    </p>
+
+    <form class="submit-form" id="submit-form">
+      <div class="form-group">
+        <label for="msg-type">
+          <span data-i18n="submit.type">What would you like to send?</span>
+          <span class="required">*</span>
+        </label>
+        <select id="msg-type" required>
+          <option value="researcher" data-i18n="submit.type_researcher">Suggest a researcher</option>
+          <option value="correction" data-i18n="submit.type_correction">Suggest a correction</option>
+          <option value="general" data-i18n="submit.type_general">General website feedback</option>
+        </select>
+        <div class="help-text" data-i18n="submit.type_help">Choose the type of message before filling the fields below.</div>
+      </div>
+
+      <div id="section-researcher">
+        <div class="form-group">
+          <label for="sub-name">
+            <span data-i18n="submit.name">Researcher Name</span>
+            <span class="required">*</span>
+          </label>
+          <input type="text" id="sub-name">
+          <div class="help-text" data-i18n="submit.name_help">Full name as commonly used in publications</div>
+        </div>
+
+        <div class="form-group">
+          <label for="sub-affiliation" data-i18n="submit.affiliation">Affiliation</label>
+          <input type="text" id="sub-affiliation">
+          <div class="help-text" data-i18n="submit.affiliation_help">University, institute, or organization</div>
+        </div>
+
+        <div class="form-group">
+          <label for="sub-webpage" data-i18n="submit.webpage">Webpage or Profile URL</label>
+          <input type="url" id="sub-webpage">
+        </div>
+
+        <div class="form-group">
+          <label for="sub-email" data-i18n="submit.email">Researcher email (if publicly available)</label>
+          <input type="email" id="sub-email">
+        </div>
+
+        <div class="form-group">
+          <label for="sub-themes" data-i18n="submit.themes">Research Themes / Keywords</label>
+          <input type="text" id="sub-themes">
+        </div>
+
+        <div class="form-group">
+          <label for="sub-geography" data-i18n="submit.geography">Geographic Focus</label>
+          <input type="text" id="sub-geography">
+          <div class="help-text" data-i18n="submit.geography_help">Countries and regions in the Chaco they work on</div>
+        </div>
+
+        <div class="form-group">
+          <label for="sub-notes" data-i18n="submit.notes">Additional Information</label>
+          <textarea id="sub-notes" rows="4"></textarea>
+          <div class="help-text" data-i18n="submit.notes_help">Anything else that would help us add this researcher</div>
+        </div>
+      </div>
+
+      <div id="section-correction" style="display:none;">
+        <div class="form-group">
+          <label for="corr-researcher">
+            <span data-i18n="submit.update_researcher">Researcher</span>
+            <span class="required">*</span>
+          </label>
+          <input type="text" id="corr-researcher">
+          <div class="help-text" data-i18n="submit.update_researcher_help">Name of the researcher profile that needs correction</div>
+        </div>
+
+        <div class="form-group">
+          <label for="corr-field">
+            <span data-i18n="submit.field">What needs updating?</span>
+            <span class="required">*</span>
+          </label>
+          <input type="text" id="corr-field">
+          <div class="help-text" data-i18n="submit.field_help">e.g., affiliation, description, publications, geographic focus...</div>
+        </div>
+
+        <div class="form-group">
+          <label for="corr-details">
+            <span data-i18n="submit.details">Suggested correction or update</span>
+            <span class="required">*</span>
+          </label>
+          <textarea id="corr-details" rows="6"></textarea>
+          <div class="help-text" data-i18n="submit.details_help">Please describe the change as specifically as possible</div>
+        </div>
+      </div>
+
+      <div id="section-general" style="display:none;">
+        <div class="form-group">
+          <label for="gen-topic">
+            <span data-i18n="submit.topic">Topic</span>
+            <span class="required">*</span>
+          </label>
+          <input type="text" id="gen-topic">
+          <div class="help-text" data-i18n="submit.topic_help">e.g., search, layout, translation, data display...</div>
+        </div>
+
+        <div class="form-group">
+          <label for="gen-message">
+            <span data-i18n="submit.message">Feedback</span>
+            <span class="required">*</span>
+          </label>
+          <textarea id="gen-message" rows="6"></textarea>
+          <div class="help-text" data-i18n="submit.message_help">Please describe the issue or suggestion as specifically as possible</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-email" data-i18n="submit.contact">Your email (optional)</label>
+        <input type="email" id="contact-email">
+        <div class="help-text" data-i18n="submit.contact_help">If you want a follow-up, leave a contact address.</div>
+      </div>
+
+      <button type="submit" class="btn" data-i18n="submit.send">Send Message</button>
+
+      <div id="submit-success" style="display:none; margin-top:1rem; padding:1rem; background:var(--color-accent-light); border-radius:var(--radius); color:var(--color-accent-dark); font-weight:600;">
+        <span data-i18n="submit.success">Thank you! Your message has been sent.</span>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.text">Chaco Researcher Directory — A research discovery tool for the Gran Chaco</p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    const TYPE_RESEARCHER = 'researcher';
+    const TYPE_CORRECTION = 'correction';
+    const TYPE_GENERAL = 'general';
+    const VALID_TYPES = new Set([TYPE_RESEARCHER, TYPE_CORRECTION, TYPE_GENERAL]);
+
+    function renderPage() {
+      I18n.applyToDOM();
+    }
+
+    const form = document.getElementById('submit-form');
+    const typeSelect = document.getElementById('msg-type');
+    const researcherSection = document.getElementById('section-researcher');
+    const correctionSection = document.getElementById('section-correction');
+    const generalSection = document.getElementById('section-general');
+
+    const researcherName = document.getElementById('sub-name');
+    const correctionResearcher = document.getElementById('corr-researcher');
+    const correctionField = document.getElementById('corr-field');
+    const correctionDetails = document.getElementById('corr-details');
+    const generalTopic = document.getElementById('gen-topic');
+    const generalMessage = document.getElementById('gen-message');
+
+    const params = new URLSearchParams(window.location.search);
+    const requestedType = params.get('type');
+    const presetType = VALID_TYPES.has(requestedType) ? requestedType : TYPE_RESEARCHER;
+    const presetResearcher = params.get('name') || '';
+
+    function setRequired(input, required) {
+      input.required = required;
+    }
+
+    function syncForm() {
+      const type = typeSelect.value;
+
+      researcherSection.style.display = type === TYPE_RESEARCHER ? 'block' : 'none';
+      correctionSection.style.display = type === TYPE_CORRECTION ? 'block' : 'none';
+      generalSection.style.display = type === TYPE_GENERAL ? 'block' : 'none';
+
+      setRequired(researcherName, type === TYPE_RESEARCHER);
+      setRequired(correctionResearcher, type === TYPE_CORRECTION);
+      setRequired(correctionField, type === TYPE_CORRECTION);
+      setRequired(correctionDetails, type === TYPE_CORRECTION);
+      setRequired(generalTopic, type === TYPE_GENERAL);
+      setRequired(generalMessage, type === TYPE_GENERAL);
+
+      if (type === TYPE_CORRECTION && presetResearcher) {
+        correctionResearcher.value = presetResearcher;
+      }
+    }
+
+    renderPage();
+    typeSelect.value = presetType;
+    if (presetResearcher) {
+      correctionResearcher.value = presetResearcher;
+    }
+    syncForm();
+    typeSelect.addEventListener('change', syncForm);
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const type = typeSelect.value;
+      const contact = document.getElementById('contact-email').value.trim();
+      let subject = '';
+      let lines = [];
+
+      if (type === TYPE_RESEARCHER) {
+        const name = researcherName.value.trim();
+        const affiliation = document.getElementById('sub-affiliation').value.trim();
+        const webpage = document.getElementById('sub-webpage').value.trim();
+        const email = document.getElementById('sub-email').value.trim();
+        const themes = document.getElementById('sub-themes').value.trim();
+        const geography = document.getElementById('sub-geography').value.trim();
+        const notes = document.getElementById('sub-notes').value.trim();
+        if (!name) return;
+
+        lines = [
+          'RESEARCHER SUGGESTION FOR CHACO RESEARCH DIRECTORY',
+          '',
+          `Name: ${name}`,
+        ];
+        if (affiliation) lines.push(`Affiliation: ${affiliation}`);
+        if (webpage) lines.push(`Webpage: ${webpage}`);
+        if (email) lines.push(`Researcher email: ${email}`);
+        if (themes) lines.push(`Research themes: ${themes}`);
+        if (geography) lines.push(`Geographic focus: ${geography}`);
+        if (notes) lines.push('', 'Additional notes:', notes);
+        subject = `Chaco Researcher Directory: Researcher suggestion - ${name}`;
+      } else if (type === TYPE_CORRECTION) {
+        const researcher = correctionResearcher.value.trim();
+        const field = correctionField.value.trim();
+        const details = correctionDetails.value.trim();
+        if (!researcher || !field || !details) return;
+
+        lines = [
+          'CORRECTION SUGGESTION FOR CHACO RESEARCH DIRECTORY',
+          '',
+          `Researcher: ${researcher}`,
+          `Field to update: ${field}`,
+          '',
+          'Details:',
+          details,
+        ];
+        subject = `Chaco Researcher Directory: Correction suggestion for ${researcher}`;
+      } else {
+        const topic = generalTopic.value.trim();
+        const message = generalMessage.value.trim();
+        if (!topic || !message) return;
+
+        lines = [
+          'WEBSITE FEEDBACK FOR CHACO RESEARCH DIRECTORY',
+          '',
+          `Topic: ${topic}`,
+          '',
+          'Feedback:',
+          message,
+        ];
+        subject = `Chaco Researcher Directory: Website feedback - ${topic}`;
+      }
+
+      if (contact) {
+        lines.push('', `Contact: ${contact}`);
+      }
+
+      const encodedSubject = encodeURIComponent(subject);
+      const body = encodeURIComponent(lines.join('\n'));
+      window.location.href = `mailto:${ADMIN_EMAIL}?subject=${encodedSubject}&body=${body}`;
+
+      document.getElementById('submit-success').style.display = 'block';
+      form.reset();
+      typeSelect.value = presetType;
+      if (presetResearcher) {
+        correctionResearcher.value = presetResearcher;
+      }
+      syncForm();
+    });
+  </script>
+</body>
+</html>

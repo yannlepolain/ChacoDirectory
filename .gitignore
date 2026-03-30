@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Zotero PDFs (referenced in seed CSVs but not part of repo)
+*.pdf
+
+# Temporary files
+*.pyc
+__pycache__/
+.Rhistory

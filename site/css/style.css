@@ -1,0 +1,775 @@
+/* ===== Chaco Researcher Directory Styles ===== */
+
+:root {
+  --color-bg: #faf9f6;
+  --color-text: #2c2c2c;
+  --color-text-light: #5a5a5a;
+  --color-accent: #4a7c59;
+  --color-accent-dark: #3a6147;
+  --color-accent-light: #e8f0eb;
+  --color-border: #d4d0c8;
+  --color-card-bg: #ffffff;
+  --color-tag-bg: #eee8dc;
+  --color-tag-text: #5a4e3a;
+  --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --max-width: 1100px;
+  --radius: 6px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--color-accent-dark);
+}
+
+/* ===== Header / Nav ===== */
+
+.site-header {
+  background: var(--color-card-bg);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-logo {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-logo:hover {
+  text-decoration: none;
+  color: var(--color-accent);
+}
+.site-logo span {
+  color: var(--color-accent);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+  text-decoration: none;
+}
+
+.lang-toggle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  background: transparent;
+  color: var(--color-text-light);
+  transition: background 0.2s;
+}
+.lang-toggle:hover {
+  background: var(--color-accent-light);
+}
+
+/* Mobile nav */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+@media (max-width: 700px) {
+  .nav-toggle {
+    display: block;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-card-bg);
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    gap: 0.8rem;
+  }
+  .main-nav.open {
+    display: flex;
+  }
+}
+
+/* ===== Main content ===== */
+
+.main-content {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  width: 100%;
+}
+
+/* ===== Hero (home page) ===== */
+
+.hero {
+  text-align: center;
+  padding: 2rem 0 2.5rem;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  margin-bottom: 0.6rem;
+  color: var(--color-text);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* ===== Search box ===== */
+
+.search-box {
+  max-width: 550px;
+  margin: 1.5rem auto;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  border-color: var(--color-accent);
+}
+
+.search-box .search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* ===== Featured researcher ===== */
+
+.featured-section {
+  margin: 1rem 0 2.5rem;
+}
+
+.featured-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.featured-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.featured-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.featured-card .affiliation {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.featured-card .description {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.featured-card .btn {
+  display: inline-block;
+}
+
+/* ===== Quick stats ===== */
+
+.quick-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .stat-number {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.stat-item .stat-label {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===== Browse / Filter page ===== */
+
+.browse-header {
+  margin-bottom: 1.5rem;
+}
+
+.browse-header h1 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.filter-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  min-width: 160px;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.filter-checkboxes {
+  flex-basis: 100%;
+  flex-direction: row;
+  gap: 1.2rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  min-width: auto;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-accent);
+}
+
+.filter-note {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+
+/* Search autocomplete */
+.search-wrapper {
+  position: relative;
+}
+
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.autocomplete-item {
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.active {
+  background: var(--color-accent-light);
+}
+
+.results-count {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.clear-filters {
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  padding: 0.5rem 0;
+  align-self: flex-end;
+}
+.clear-filters:hover {
+  text-decoration: underline;
+}
+
+/* ===== Researcher cards (grid) ===== */
+
+.researcher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.researcher-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.researcher-card:hover {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-color: var(--color-accent);
+  text-decoration: none;
+}
+
+.researcher-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+  color: var(--color-text);
+}
+
+.researcher-card .affiliation {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.6rem;
+}
+
+.researcher-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: auto;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.tag.pi-tag {
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  font-weight: 600;
+}
+
+.tag.tag-keyword {
+  background: #f0ece4;
+  color: #6b5e4a;
+  font-size: 0.72rem;
+}
+
+/* ===== Profile page ===== */
+
+.profile-back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.profile-header .affiliation {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.profile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+}
+
+.profile-meta a {
+  color: var(--color-accent);
+}
+
+.profile-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 750px) {
+  .profile-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profile-section {
+  margin-bottom: 1.8rem;
+}
+
+.profile-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.3rem;
+}
+
+.profile-section p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.pub-list {
+  list-style: none;
+}
+
+.pub-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.pub-list li:last-child {
+  border-bottom: none;
+}
+
+.pub-list .pub-year {
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-right: 0.3rem;
+}
+
+.pub-list .pub-journal {
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.pub-list .pub-first-author {
+  font-size: 0.7rem;
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  margin-left: 0.3rem;
+  font-weight: 600;
+}
+
+.collab-list {
+  list-style: none;
+}
+
+.collab-list li {
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.collab-list li a {
+  color: var(--color-accent);
+}
+
+.profile-sidebar .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.profile-sidebar .tag {
+  font-size: 0.8rem;
+}
+
+.suggest-update-btn {
+  margin-top: 1.5rem;
+}
+
+/* ===== Buttons ===== */
+
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: var(--color-accent-dark);
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-accent);
+}
+
+.btn-outline:hover {
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+}
+
+/* ===== Submit form ===== */
+
+.form-page h1 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-page .form-intro {
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+}
+
+.submit-form {
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-text);
+}
+
+.form-group label .required {
+  color: #c44;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-group .help-text {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-top: 0.2rem;
+}
+
+/* ===== Footer / Canopy ===== */
+
+.site-footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1rem 1.5rem 0.5rem;
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+}
+
+.canopy-container {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.canopy-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Utilities ===== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+
+/* ===== No results ===== */
+
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--color-text-light);
+}
+
+.no-results h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}

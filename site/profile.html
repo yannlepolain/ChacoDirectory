@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Researcher Profile — Chaco Researcher Map</title>
+  <title>Researcher Profile — Chaco Researcher Directory</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="site-logo">Chaco<span>Map</span></a>
+      <a href="index.html" class="site-logo">Chaco<span>Directory</span></a>
       <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
       <nav class="main-nav">
         <a href="browse.html" data-i18n="nav.browse">Browse</a>
         <a href="about.html" data-i18n="nav.about">About</a>
-        <a href="submit.html" data-i18n="nav.submit">Suggest a Researcher</a>
+        <a href="submit.html" data-i18n="nav.submit">Feedback</a>
         <button class="lang-toggle">ES</button>
       </nav>
     </div>
@@ -30,7 +30,7 @@
   </main>
 
   <footer class="site-footer">
-    <p data-i18n="footer.text">ChacoMap — A research discovery tool for the Gran Chaco bioregion</p>
+    <p data-i18n="footer.text">Chaco Researcher Directory — A research discovery tool for the Gran Chaco</p>
   </footer>
 
   <script src="js/i18n.js"></script>
@@ -56,7 +56,7 @@
         return;
       }
 
-      document.title = r.name + ' — Chaco Researcher Map';
+      document.title = r.name + ' — Chaco Researcher Directory';
 
       const lang = I18n.getLang();
       const description = lang === 'es'
@@ -84,15 +84,23 @@
 
       // Publications
       const pubs = (r.selected_publications && r.selected_publications.length > 0 ? r.selected_publications : r.publications)
+        .slice()
+        .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0))
         .slice(0, 15);
+
+      const publicationTitle = p => {
+        if (I18n.getLang() === 'es' && p.title_es) return p.title_es;
+        return p.title;
+      };
 
       const pubsHtml = pubs.map(p => `
         <li>
           <span class="pub-year">${escapeHtml(p.year)}</span>
-          ${escapeHtml(p.title)}
+          ${escapeHtml(publicationTitle(p))}
           ${p.journal ? `<span class="pub-journal"> — ${escapeHtml(p.journal)}</span>` : ''}
           ${p.is_first_author ? `<span class="pub-first-author">${I18n.t('profile.first_author')}</span>` : ''}
           ${p.doi ? ` <a href="https://doi.org/${encodeURIComponent(p.doi)}" target="_blank" rel="noopener">[DOI]</a>` : ''}
+          ${p.url ? ` <a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">[Link]</a>` : ''}
         </li>
       `).join('');
 
@@ -111,16 +119,15 @@
       }).join('');
 
       // Update form link
-      const updateUrl = `update.html?name=${encodeURIComponent(r.name)}`;
+      const updateUrl = `submit.html?type=correction&name=${encodeURIComponent(r.name)}`;
 
       document.getElementById('profile-content').innerHTML = `
         <div class="profile-header">
-          <h1>${escapeHtml(r.name)}${r.deceased ? ' <span style="color:#999; font-size:0.7em;">(deceased)</span>' : ''}</h1>
+          <h1>${escapeHtml(r.name)}${r.deceased ? ` <span style="color:#999; font-size:0.7em;">(${escapeHtml(I18n.t('profile.deceased'))})</span>` : ''}</h1>
           <div class="affiliation">${escapeHtml(r.affiliation || 'Affiliation pending')}</div>
           <div class="profile-meta">
             ${r.webpage ? `<span><a href="${escapeHtml(r.webpage)}" target="_blank" rel="noopener">Webpage</a></span>` : ''}
             ${r.email ? `<span><a href="mailto:${escapeHtml(r.email)}">${escapeHtml(r.email)}</a></span>` : ''}
-            ${r.year_range ? `<span>Active: ${escapeHtml(r.year_range)}</span>` : ''}
           </div>
         </div>
 

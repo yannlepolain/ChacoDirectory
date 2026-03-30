@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaco Researcher Directory</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">Chaco<span>Directory</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <a href="browse.html" data-i18n="nav.browse">Browse</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="submit.html" data-i18n="nav.submit">Feedback</a>
+        <button class="lang-toggle">ES</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero">
+      <h1 data-i18n="home.title">Chaco Researcher Directory</h1>
+      <p data-i18n="home.subtitle">Discover who works on what in the Gran Chaco</p>
+      <div class="search-box search-wrapper">
+        <span class="search-icon">&#128269;</span>
+        <input type="text" id="home-search" data-i18n="home.search_placeholder" placeholder="Search by name, topic, or keyword..." autocomplete="off">
+        <div class="autocomplete-list" id="home-ac-list" style="display:none;"></div>
+      </div>
+    </section>
+
+    <section class="featured-section" id="featured-section">
+      <h2 data-i18n="home.featured">Featured Researcher of the Day</h2>
+      <div class="featured-card" id="featured-card">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <div class="quick-stats" id="quick-stats">
+      <!-- Filled by JS -->
+    </div>
+
+    <div class="text-center" style="margin-top:0.5rem; font-size:0.85rem; color:#888;">
+      <span data-i18n="home.last_updated">Database last updated:</span> <span id="last-updated">March 2026</span>
+    </div>
+
+    <div class="text-center mt-2">
+      <a href="browse.html" class="btn" data-i18n="home.browse_all">Browse All Researchers</a>
+    </div>
+
+    <div class="disclaimer" style="max-width:600px; margin:2rem auto 0; padding:1rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius); font-size:0.85rem; line-height:1.6; color:#aaa;">
+      <span data-i18n="home.disclaimer">This directory was built with the help of AI and may contain inaccuracies. If you notice an error, please use the correction forms available on each profile or on the suggestion page.</span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.text">Chaco Researcher Directory — A research discovery tool for the Gran Chaco</p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    async function renderPage() {
+      const researchers = await ChacoData.load();
+
+      // Featured researcher
+      const featured = ChacoData.getFeaturedOfDay();
+      const featuredCard = document.getElementById('featured-card');
+      if (featured && featuredCard) {
+        const desc = I18n.getLang() === 'es'
+          ? (featured.research_description_es || featured.research_description_en || '')
+          : (featured.research_description_en || '');
+        const descText = desc
+          ? desc.substring(0, 200) + (desc.length > 200 ? '...' : '')
+          : I18n.t('profile.no_description');
+        featuredCard.innerHTML = `
+          <h3>${escapeHtml(featured.name)}</h3>
+          <div class="affiliation">${escapeHtml(featured.affiliation || 'Affiliation pending')}</div>
+          <p class="description">${escapeHtml(descText)}</p>
+          <a href="profile.html?id=${encodeURIComponent(featured.id)}" class="btn btn-outline" data-i18n="home.view_profile">${I18n.t('home.view_profile')}</a>
+        `;
+      }
+
+      // Stats
+      const statsEl = document.getElementById('quick-stats');
+      if (statsEl) {
+        const totalPubs = researchers.reduce((sum, r) => sum + r.publications.length, 0);
+        const countries = new Set();
+        researchers.forEach(r => {
+          if (r.country) countries.add(r.country);
+          r.tags_from_seed.forEach(t => {
+            if (['Argentina', 'Paraguay', 'Bolivia', 'Brazil'].includes(t)) countries.add(t);
+          });
+        });
+        statsEl.innerHTML = `
+          <div class="stat-item">
+            <div class="stat-number">${researchers.length}</div>
+            <div class="stat-label" data-i18n="home.stat_researchers">${I18n.t('home.stat_researchers')}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">${countries.size || '4+'}</div>
+            <div class="stat-label" data-i18n="home.stat_countries">${I18n.t('home.stat_countries')}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">${totalPubs}</div>
+            <div class="stat-label" data-i18n="home.stat_publications">${I18n.t('home.stat_publications')}</div>
+          </div>
+        `;
+      }
+
+      // Last updated date (localized)
+      const lastUpdatedEl = document.getElementById('last-updated');
+      if (lastUpdatedEl) {
+        const d = new Date(2026, 2); // March 2026
+        lastUpdatedEl.textContent = d.toLocaleDateString(I18n.getLang() === 'es' ? 'es' : 'en', { month: 'long', year: 'numeric' });
+      }
+
+      I18n.applyToDOM();
+    }
+
+    renderPage();
+
+    // Home search autocomplete + redirect
+    const homeSearch = document.getElementById('home-search');
+    const homeAcList = document.getElementById('home-ac-list');
+    let homeAcIndex = -1;
+
+    function goToBrowse(query) {
+      if (query) window.location.href = 'browse.html?search=' + encodeURIComponent(query);
+    }
+
+    function homeAutocomplete(query) {
+      homeAcList.innerHTML = '';
+      homeAcIndex = -1;
+      if (!query || query.length < 2) { homeAcList.style.display = 'none'; return; }
+      const q = ChacoData.normalizeText(query);
+      const all = ChacoData.getAll();
+      const suggestions = [];
+      const seen = new Set();
+      const typeRank = { region: 0, keyword: 1, name: 2 };
+
+      function matchScore(value) {
+        const normalized = ChacoData.normalizeText(value);
+        if (normalized === q) return 0;
+        if (normalized.startsWith(q)) return 1;
+        if (normalized.includes(q)) return 2;
+        return 99;
+      }
+
+      function pushSuggestion({ text, display, type, dedupeKey }) {
+        const key = dedupeKey || ChacoData.normalizeText(display || text);
+        if (seen.has(key)) return;
+        const score = Math.min(matchScore(text), matchScore(display || text));
+        if (score === 99) return;
+        seen.add(key);
+        suggestions.push({ text, display, type, score });
+      }
+
+      all.forEach(r => {
+        if (ChacoData.normalizeText(r.name).includes(q)) {
+          pushSuggestion({ text: r.name, type: 'name', dedupeKey: r.name });
+        }
+      });
+      all.forEach(r => {
+        (r.keywords || []).concat(r.tags_from_seed || []).forEach(k => {
+          const translated = I18n.tKeyword(k);
+          pushSuggestion({ text: k, display: translated, type: 'keyword' });
+        });
+      });
+      all.forEach(r => {
+        (r.geographical_focus || []).forEach(g => {
+          const translated = I18n.tGeo(g);
+          pushSuggestion({ text: g, display: translated, type: 'region' });
+        });
+      });
+
+      suggestions.sort((a, b) =>
+        a.score - b.score
+        || typeRank[a.type] - typeRank[b.type]
+        || (a.display || a.text).localeCompare(b.display || b.text)
+      );
+
+      const limited = suggestions.slice(0, 8);
+      if (limited.length === 0) { homeAcList.style.display = 'none'; return; }
+      limited.forEach(s => {
+        const div = document.createElement('div');
+        div.className = 'autocomplete-item';
+        const displayText = s.display || s.text;
+        const label = s.type === 'keyword' ? ` (${I18n.getLang() === 'es' ? 'palabra clave' : 'keyword'})` : s.type === 'region' ? ` (${I18n.getLang() === 'es' ? 'región' : 'region'})` : '';
+        div.innerHTML = escapeHtml(displayText) + (label ? `<span style="color:var(--color-text-light);font-size:0.8em">${label}</span>` : '');
+        div.dataset.value = displayText;
+        div.addEventListener('mousedown', (e) => { e.preventDefault(); goToBrowse(displayText); });
+        homeAcList.appendChild(div);
+      });
+      homeAcList.style.display = 'block';
+    }
+
+    homeSearch.addEventListener('input', (e) => homeAutocomplete(e.target.value));
+    homeSearch.addEventListener('blur', () => { setTimeout(() => { homeAcList.style.display = 'none'; }, 150); });
+    homeSearch.addEventListener('keydown', (e) => {
+      const items = homeAcList.querySelectorAll('.autocomplete-item');
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        homeAcIndex = Math.min(homeAcIndex + 1, items.length - 1);
+        items.forEach((el, i) => el.classList.toggle('active', i === homeAcIndex));
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        homeAcIndex = Math.max(homeAcIndex - 1, 0);
+        items.forEach((el, i) => el.classList.toggle('active', i === homeAcIndex));
+      } else if (e.key === 'Enter') {
+        if (homeAcIndex >= 0 && items[homeAcIndex]) {
+          e.preventDefault();
+          goToBrowse(items[homeAcIndex].dataset.value);
+        } else {
+          goToBrowse(e.target.value.trim());
+        }
+      }
+    });
+  </script>
+</body>
+</html>

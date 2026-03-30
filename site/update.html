@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting — Chaco Researcher Directory</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="main-content form-page">
+    <h1>Redirecting…</h1>
+    <p>If you are not redirected automatically, <a id="redirect-link" href="submit.html?type=correction">open the correction form</a>.</p>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const target = new URL('submit.html', window.location.href);
+    target.searchParams.set('type', 'correction');
+
+    const researcherName = params.get('name');
+    if (researcherName) {
+      target.searchParams.set('name', researcherName);
+    }
+
+    document.getElementById('redirect-link').href = target.toString();
+    window.location.replace(target.toString());
+  </script>
+</body>
+</html>
