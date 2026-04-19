@@ -79,6 +79,10 @@
       <button class="clear-filters" id="clear-filters" data-i18n="browse.clear">Clear filters</button>
     </div>
 
+    <section class="home-map-section browse-map-section">
+      <div id="browse-map"></div>
+    </section>
+
     <div class="results-count" id="results-count"></div>
 
     <div class="researcher-grid" id="researcher-grid"></div>
@@ -95,9 +99,14 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/data.js"></script>
+  <script src="js/collab-map-data.js"></script>
+  <script src="js/home-map.js"></script>
   <script src="js/app.js"></script>
   <script>
     let currentFilters = { search: '', discipline: '', theme: '', geoFocus: '', affiliationCountry: '', firstAuthor: false, recent: false };
+    let currentFilteredResults = [];
+    let currentSortedResults = [];
+    let currentMapSelectionIds = null;
 
     const geoGroupLabels = {
       en: { countries: '── Countries ──', crossborder: '── Cross-border ──', argentina: '── Argentina ──', bolivia: '── Bolivia ──', paraguay: '── Paraguay ──' },
@@ -200,7 +209,7 @@
       I18n.applyToDOM();
     }
 
-    function renderResults() {
+    function getFilteredResults() {
       let results = ChacoData.filter(currentFilters);
 
       // Discipline filter
@@ -222,36 +231,92 @@
         );
       }
 
+      return results;
+    }
+
+    function renderResults() {
+      const results = getFilteredResults();
+      const sortedResults = [...results];
+
       const sortBy = document.getElementById('sort-by').value;
 
       // Sort results
       if (sortBy === 'alpha') {
-        results.sort((a, b) => a.name.localeCompare(b.name));
+        sortedResults.sort((a, b) => a.name.localeCompare(b.name));
       } else if (sortBy === 'recent') {
-        results.sort((a, b) => {
+        sortedResults.sort((a, b) => {
           const maxYear = r => Math.max(...r.publications.map(p => parseInt(p.year) || 0));
           return maxYear(b) - maxYear(a);
         });
       } else if (sortBy === 'pubs') {
-        results.sort((a, b) => b.publications.length - a.publications.length);
+        sortedResults.sort((a, b) => b.publications.length - a.publications.length);
       }
 
       const grid = document.getElementById('researcher-grid');
       const noResults = document.getElementById('no-results');
       const countEl = document.getElementById('results-count');
+      const browseMapEl = document.getElementById('browse-map');
 
       grid.innerHTML = '';
 
-      if (results.length === 0) {
+      currentFilteredResults = results;
+      currentSortedResults = sortedResults;
+
+      if (browseMapEl && typeof ChacoHomeMap !== 'undefined') {
+        const mapState = ChacoHomeMap.render(browseMapEl, results, {
+          onSelectionChange: (ids) => {
+            currentMapSelectionIds = ids;
+            renderResearcherGrid();
+          }
+        });
+        currentMapSelectionIds = mapState.selectedIds;
+      }
+
+      renderResearcherGrid();
+    }
+
+    function renderResearcherGrid() {
+      const grid = document.getElementById('researcher-grid');
+      const noResults = document.getElementById('no-results');
+      const countEl = document.getElementById('results-count');
+      const selectedSet = currentMapSelectionIds ? new Set(currentMapSelectionIds) : null;
+      const visibleResults = selectedSet
+        ? currentSortedResults.filter(r => selectedSet.has(r.id))
+        : currentSortedResults;
+
+      grid.innerHTML = '';
+
+      if (visibleResults.length === 0) {
         noResults.style.display = 'block';
         countEl.textContent = '';
-      } else {
-        noResults.style.display = 'none';
-        countEl.textContent = I18n.t('browse.results').replace('{n}', results.length);
-        results.forEach(r => {
-          grid.appendChild(createResearcherCard(r));
-        });
+        return;
       }
+
+      noResults.style.display = 'none';
+
+      if (selectedSet) {
+        countEl.innerHTML = `
+          ${escapeHtml(I18n.t('browse.map_selection_results').replace('{n}', visibleResults.length).replace('{m}', currentSortedResults.length))}
+          <button type="button" class="inline-link-btn" id="clear-map-selection">${escapeHtml(I18n.t('browse.map_selection_clear'))}</button>
+        `;
+        const clearMapBtn = document.getElementById('clear-map-selection');
+        if (clearMapBtn) {
+          clearMapBtn.addEventListener('click', () => {
+            const browseMapEl = document.getElementById('browse-map');
+            if (browseMapEl && typeof ChacoHomeMap !== 'undefined' && typeof ChacoHomeMap.reset === 'function') {
+              ChacoHomeMap.reset(browseMapEl);
+            }
+            currentMapSelectionIds = null;
+            renderResults();
+          });
+        }
+      } else {
+        countEl.textContent = I18n.t('browse.results').replace('{n}', visibleResults.length);
+      }
+
+      visibleResults.forEach(r => {
+        grid.appendChild(createResearcherCard(r));
+      });
     }
 
     function renderPage() {

@@ -4,6 +4,9 @@
 
 const ChacoData = (() => {
   let _researchers = null;
+  let _normalizedNameIndex = null;
+  let _surnameFirstIndex = null;
+  let _surnameIndex = null;
 
   function normalizeText(value) {
     return (value || '')
@@ -13,11 +16,91 @@ const ChacoData = (() => {
       .toLowerCase();
   }
 
+  function normalizePersonReference(value) {
+    return normalizeText(value)
+      .replace(/-/g, ' ')
+      .replace(/[^a-z0-9, ]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function buildReferenceIndexes() {
+    if (_normalizedNameIndex && _surnameFirstIndex && _surnameIndex) return;
+    _normalizedNameIndex = new Map();
+    _surnameFirstIndex = new Map();
+    _surnameIndex = new Map();
+
+    (_researchers || []).forEach(researcher => {
+      const normalized = normalizePersonReference(researcher.name);
+      if (normalized) {
+        _normalizedNameIndex.set(normalized, researcher);
+      }
+
+      const key = getSurnameFirstKey(researcher.name);
+      if (!key) return;
+      const existing = _surnameFirstIndex.get(key) || [];
+      existing.push(researcher);
+      _surnameFirstIndex.set(key, existing);
+
+      const parsed = parsePersonReference(researcher.name);
+      if (parsed && parsed.surname) {
+        const surnameMatches = _surnameIndex.get(parsed.surname) || [];
+        surnameMatches.push(researcher);
+        _surnameIndex.set(parsed.surname, surnameMatches);
+      }
+    });
+  }
+
+  function getSurnameFirstKey(value) {
+    const parsed = parsePersonReference(value);
+    if (!parsed || parsed.givenTokens.length === 0) return null;
+    return `${parsed.surname}::${parsed.givenTokens[0]}`;
+  }
+
+  function parsePersonReference(value) {
+    const normalized = normalizePersonReference(value);
+    if (!normalized.includes(',')) return null;
+    const parts = normalized.split(',');
+    const surname = (parts[0] || '').trim();
+    const givenTokens = ((parts[1] || '').trim()).split(' ').filter(Boolean);
+    if (!surname) return null;
+    return { surname, givenTokens };
+  }
+
+  function getCandidateGivenMetadata(name) {
+    const parsed = parsePersonReference(name);
+    if (!parsed) return null;
+    const initials = parsed.givenTokens.map(token => token[0]).join('');
+    return {
+      surname: parsed.surname,
+      givenTokens: parsed.givenTokens,
+      initials
+    };
+  }
+
+  function isInitialToken(token) {
+    return token.length <= 2;
+  }
+
+  function candidateMatchesReference(candidate, referenceTokens) {
+    const meta = getCandidateGivenMetadata(candidate.name);
+    if (!meta) return false;
+
+    return referenceTokens.every(token => {
+      if (isInitialToken(token)) {
+        return meta.initials.startsWith(token) || meta.givenTokens.some(given => given.startsWith(token));
+      }
+      return meta.givenTokens.includes(token);
+    });
+  }
+
   async function load() {
     if (_researchers) return _researchers;
     const basePath = getBasePath();
     const resp = await fetch(basePath + 'data/researchers.json');
     _researchers = await resp.json();
+    _normalizedNameIndex = null;
+    _surnameFirstIndex = null;
     return _researchers;
   }
 
@@ -36,6 +119,34 @@ const ChacoData = (() => {
   function getById(id) {
     if (!_researchers) return null;
     return _researchers.find(r => r.id === id) || null;
+  }
+
+  function resolveResearcherRef(reference) {
+    if (!_researchers || !reference) return null;
+
+    const exact = _researchers.find(r => r.id === reference || r.name === reference);
+    if (exact) return exact;
+
+    buildReferenceIndexes();
+
+    const normalized = normalizePersonReference(reference);
+    if (!normalized) return null;
+
+    const normalizedMatch = _normalizedNameIndex.get(normalized);
+    if (normalizedMatch) return normalizedMatch;
+
+    const key = getSurnameFirstKey(reference);
+    if (!key) return null;
+
+    const candidates = _surnameFirstIndex.get(key) || [];
+    if (candidates.length === 1) return candidates[0];
+
+    const parsed = parsePersonReference(reference);
+    if (!parsed || parsed.givenTokens.length === 0) return null;
+
+    const surnameCandidates = _surnameIndex.get(parsed.surname) || [];
+    const narrowed = surnameCandidates.filter(candidate => candidateMatchesReference(candidate, parsed.givenTokens));
+    return narrowed.length === 1 ? narrowed[0] : null;
   }
 
   /**
@@ -127,5 +238,15 @@ const ChacoData = (() => {
     return Array.from(kw).sort();
   }
 
-  return { load, getAll, getById, getFeaturedOfDay, filter, getAllThemes, getAllKeywords, normalizeText };
+  return {
+    load,
+    getAll,
+    getById,
+    resolveResearcherRef,
+    getFeaturedOfDay,
+    filter,
+    getAllThemes,
+    getAllKeywords,
+    normalizeText
+  };
 })();

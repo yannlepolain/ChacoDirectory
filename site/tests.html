@@ -23,6 +23,8 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/data.js"></script>
+  <script src="js/collab-map-data.js"></script>
+  <script src="js/collab-map.js"></script>
   <script>
     const results = [];
     const container = document.getElementById('results');
@@ -56,7 +58,7 @@
         return;
       }
 
-      assert('Has 278 researchers', researchers.length === 278, `Got ${researchers.length}`);
+      assert('Has 279 researchers', researchers.length === 279, `Got ${researchers.length}`);
 
       // ===== Data Integrity =====
       section('Data Integrity');
@@ -222,6 +224,36 @@
       const notFound = ChacoData.getById('nonexistent-id-xyz');
       assert('getById returns null for unknown ID', notFound === null);
 
+      const piquerMatch = ChacoData.resolveResearcherRef('Piquer-Rodriguez, Maria');
+      assert(
+        'resolveResearcherRef matches accent variants for collaborator names',
+        piquerMatch && piquerMatch.name === 'Piquer-Rodríguez, María'
+      );
+
+      const gasparriMatch = ChacoData.resolveResearcherRef('Gasparri, Nestor Ignacio');
+      assert(
+        'resolveResearcherRef matches accent variants with multi-part given names',
+        gasparriMatch && gasparriMatch.name === 'Gasparri, Néstor Ignacio'
+      );
+
+      const gasparriShortMatch = ChacoData.resolveResearcherRef('Gasparri, Ignacio');
+      assert(
+        'resolveResearcherRef matches second given-name variants when unique',
+        gasparriShortMatch && gasparriShortMatch.name === 'Gasparri, Néstor Ignacio'
+      );
+
+      const gasparriInitialsMatch = ChacoData.resolveResearcherRef('Gasparri, NI');
+      assert(
+        'resolveResearcherRef matches initial-only variants when unique',
+        gasparriInitialsMatch && gasparriInitialsMatch.name === 'Gasparri, Néstor Ignacio'
+      );
+
+      const abbreviatedMatch = ChacoData.resolveResearcherRef('Ceriani Cernadas, César');
+      assert(
+        'resolveResearcherRef matches abbreviated given-name variants when unambiguous',
+        abbreviatedMatch && abbreviatedMatch.name === 'Ceriani Cernadas, César Roberto'
+      );
+
       // ===== I18n =====
       section('Internationalization');
 
@@ -236,11 +268,33 @@
 
       assert('New i18n key: browse.filter_geo', I18n.t('browse.filter_geo') === 'Región de Investigación');
       assert('New i18n key: profile.keywords', I18n.t('profile.keywords') === 'Palabras Clave');
+      assert('New i18n key: profile.collab_map', I18n.t('profile.collab_map') === 'Mapa de colaboradores');
 
       const missing = I18n.t('nonexistent.key');
       assert('Missing key returns key itself', missing === 'nonexistent.key');
 
       I18n.setLang('en'); // reset
+
+      // ===== Collaborator Map =====
+      section('Collaborator Map');
+
+      const aguiar = researchers.find(r => r.name === 'Aguiar, Sebastián');
+      const aguiarModel = ChacoCollabMap.buildModelForResearcher(aguiar, researchers);
+      assert('Aguiar collaborator map resolves multiple points', aguiarModel && aguiarModel.points.length >= 3);
+      assert('Aguiar collaborator map detects stacked locations', aguiarModel && aguiarModel.stackCount >= 1);
+
+      const abril = researchers.find(r => r.name === 'Abril, Adriana');
+      const abrilModel = ChacoCollabMap.buildModelForResearcher(abril, researchers);
+      assert('Abril collaborator map resolves a single point', abrilModel && abrilModel.points.length === 1);
+
+      const blaser = researchers.find(r => r.name === 'Blaser, Mario');
+      const blaserModel = ChacoCollabMap.buildModelForResearcher(blaser, researchers);
+      assert('Blaser collaborator map suppresses when no internal match exists', blaserModel === null);
+
+      assert(
+        'Aguiar collaborator map keeps a valid viewBox',
+        aguiarModel && aguiarModel.viewBox.width > 0 && aguiarModel.viewBox.height > 0
+      );
 
       // ===== Summary =====
       const passed = results.filter(r => r.passed).length;

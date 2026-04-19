@@ -124,7 +124,7 @@
     "name": "Abt Giubergia, María Magdalena",
     "affiliation": "Universidad Nacional de Santiago del Estero (Facultad de Ciencias Forestales) / INDES (CONICET–UNSE)",
     "country": "Argentina",
-    "webpage": "https://www.conicet.gov.ar/new_scp/detalle.php?datos_academicos=yes&id=35875",
+    "webpage": "https://fcf.unse.edu.ar/index.php/defensa-de-tesis-doctoral-de-la-ing-forestal-magdalena-abt/",
     "email": "",
     "deceased": false,
     "themes": [
@@ -166,9 +166,9 @@
     "research_description_es": "María Magdalena Abt Giubergia es investigadora del INDES (CONICET–UNSE) y de la Facultad de Ciencias Forestales de la Universidad Nacional de Santiago del Estero. Su trabajo integra técnicas geomáticas, mapeos participativos y enfoques socioecológicos para caracterizar el manejo del territorio en el Gran Chaco argentino. Ha aplicado técnicas geomáticas y cartografía comunitaria para documentar el territorio bajo manejo campesino indígena en la provincia del Gran Chaco salteño, cuantificando y visualizando la extensión espacial y la gobernanza de estos sistemas territoriales. También es coautora de una revisión sistemática sobre compensaciones y sinergias de servicios ecosistémicos en el Gran Chaco, y sus intereses más amplios abarcan la gobernanza del uso del suelo y la ecología política de la conservación en el Chaco Seco argentino.",
     "tags_from_seed": [],
     "top_collaborators_from_seed": [],
-    "total_publications_in_seed": 2,
-    "first_author_publications": 0,
-    "year_range": "2022-2026",
+    "total_publications_in_seed": 4,
+    "first_author_publications": 1,
+    "year_range": "2015-2026",
     "publications": [
       {
         "title": "Trade-offs and Synergies among Ecosystem Services in Dynamic Landscapes of the American Gran Chaco: A Systematic Review of the Last 24 Years (2001–2025)",
@@ -179,11 +179,27 @@
         "url": ""
       },
       {
-        "title": "Uso de técnicas geomáticas y mapeos participativos para determinar el territorio bajo manejo campesino indígena (provincia del Gran Chaco, Argentina)",
-        "year": "2019",
-        "journal": "AGER: Revista de Estudios sobre Despoblación y Desarrollo Rural 36:35–68",
+        "title": "Landscape agroecology: woody vegetation heterogeneity and its association with natural and human factors at a multifunctional peasant socio-ecosystem from a semi-arid mountain range area (Dry Chaco, Argentina)",
+        "year": "2023",
+        "journal": "Agroecology and Sustainable Food Systems",
         "is_first_author": false,
-        "url": "https://dialnet.unirioja.es/ejemplar/638898",
+        "doi": "10.1080/21683565.2023.2254719",
+        "url": ""
+      },
+      {
+        "title": "Uso de técnicas geomáticas y mapeos participativos para determinar el territorio bajo manejo campesino indígena (provincia del Gran Chaco, Argentina)",
+        "year": "2022",
+        "journal": "AGER: Revista de Estudios sobre Despoblación y Desarrollo Rural",
+        "is_first_author": false,
+        "url": "",
+        "doi": "10.4422/ager.2022.16"
+      },
+      {
+        "title": "El bosque como espacio multifuncional para las familias campesinas de Santiago del Estero, Argentina",
+        "year": "2015",
+        "journal": "Tesis doctoral, Universidad Nacional de Santiago del Estero",
+        "is_first_author": true,
+        "url": "https://fcf.unse.edu.ar/index.php/defensa-de-tesis-doctoral-de-la-ing-forestal-magdalena-abt/",
         "doi": ""
       }
     ]
@@ -10391,8 +10407,8 @@
   {
     "id": "gordillo-gaston",
     "name": "Gordillo, Gastón",
-    "total_publications_in_seed": 7,
-    "first_author_publications": 7,
+    "total_publications_in_seed": 10,
+    "first_author_publications": 9,
     "tags_from_seed": [
       "Chaco",
       "Criollos",
@@ -10407,8 +10423,32 @@
       "Hirsch, Silvia",
       "Leguizamón, Juan Martín"
     ],
-    "year_range": "1995-2009",
+    "year_range": "1995-2025",
     "publications": [
+      {
+        "title": "Places Undone by Terrain",
+        "year": "2025",
+        "journal": "In Undoing Things: How Objects, Bodies and Worlds Come Apart",
+        "doi": "",
+        "is_first_author": true,
+        "url": "https://books.google.com/books/about/Undoing_Things.html?id=7YNTEQAAQBAJ"
+      },
+      {
+        "title": "The Luminescence of Rubble",
+        "year": "2018",
+        "journal": "Cultural Dynamics",
+        "doi": "10.1177/0921374017752574",
+        "is_first_author": true,
+        "url": ""
+      },
+      {
+        "title": "Rubble: The Afterlife of Destruction",
+        "year": "2014",
+        "journal": "Duke University Press",
+        "doi": "10.1215/9780822376903",
+        "is_first_author": true,
+        "url": "https://www.dukeupress.edu/rubble"
+      },
       {
         "title": "Places That Frighten: Residues of Wealth and Violence on the Argentine Chaco Frontier",
         "year": "2009",
@@ -25516,6 +25556,98 @@
         "year": "2025",
         "journal": "Temporal Explorations in the Anthropology of Religion (de Gruyter)",
         "doi": "10.5040/9781350467668.ch-4",
+        "is_first_author": true,
+        "url": ""
+      }
+    ],
+    "selected_publications": []
+  },
+  {
+    "id": "wesz-junior-valdemar-joao",
+    "name": "Wesz Junior, Valdemar João",
+    "total_publications_in_seed": 5,
+    "first_author_publications": 3,
+    "tags_from_seed": [],
+    "top_collaborators_from_seed": [],
+    "year_range": "2021-2025",
+    "affiliation": "Universidade Federal da Integração Latino-Americana (UNILA)",
+    "country": "Brazil",
+    "webpage": "https://portal.unila.edu.br/programas-pos-graduacao/economia/english/program/professors",
+    "email": "valdemar.junior@unila.edu.br",
+    "orcid": "0000-0002-8154-7088",
+    "deceased": false,
+    "thematic_focus": [],
+    "themes": [
+      "Agroecology & Rural Development",
+      "Land Tenure & Governance",
+      "Social Sciences & Political Ecology",
+      "Land Use & Deforestation"
+    ],
+    "disciplines": [
+      "Economics",
+      "Political Ecology"
+    ],
+    "geographical_focus": [
+      "Paraguay",
+      "Paraguayan Chaco",
+      "Gran Chaco",
+      "Alto Paraná"
+    ],
+    "scales": [
+      "national",
+      "sub-national",
+      "regional"
+    ],
+    "keywords": [
+      "agrarian change",
+      "agribusiness",
+      "land grabbing",
+      "political economy",
+      "soybeans",
+      "land concentration"
+    ],
+    "research_description_en": "Valdemar João Wesz Junior is an agrarian economist at the Universidade Federal da Integração Latino-Americana whose research examines agrarian change, commodity frontiers, and land concentration in Paraguay. His recent work on the Paraguayan Chaco analyzes foreign capital, land grabbing, and the expansion of livestock and grain frontiers, with particular attention to the strategies of Uruguayan and Brazilian investors. In related studies on soybean production, agricultural markets, and rural restructuring in Paraguay, he traces how state policy, transnational firms, and changing producer profiles reshape land use and rural society. His Chaco publications sit within a broader political-economy analysis of agriculture and territorial transformation in Paraguay.",
+    "research_description_es": "Valdemar João Wesz Junior es economista agrario de la Universidade Federal da Integração Latino-Americana y su investigación examina el cambio agrario, las fronteras de commodities y la concentración de la tierra en Paraguay. Su trabajo reciente sobre el Chaco paraguayo analiza el capital extranjero, el acaparamiento de tierras y la expansión de las fronteras ganadera y agrícola, con atención particular a las estrategias de los capitales uruguayos y brasileños. En estudios relacionados sobre la producción de soja, los mercados agroalimentarios y la reestructuración rural en Paraguay, sigue cómo las políticas estatales, las firmas transnacionales y los cambios en el perfil de los productores reconfiguran el uso del suelo y la sociedad rural. Sus publicaciones sobre el Chaco forman parte de un análisis más amplio de economía política de la agricultura y de las transformaciones territoriales en Paraguay.",
+    "main_collaborators": [],
+    "fieldwork_locations": [],
+    "publications": [
+      {
+        "title": "Foreign Capital in the Paraguayan Chaco",
+        "year": "2025",
+        "journal": "Latin American Perspectives",
+        "doi": "10.1177/0094582X251334134",
+        "is_first_author": false,
+        "url": ""
+      },
+      {
+        "title": "La conquista del Chaco: estrategias y temporalidades de los capitales uruguayos en Paraguay",
+        "year": "2024",
+        "journal": "Revista Campo-Território",
+        "doi": "10.14393/RCT195774754",
+        "is_first_author": false,
+        "url": ""
+      },
+      {
+        "title": "Ciclos de acaparamiento de tierra en Paraguay: Análisis de la presencia brasileña",
+        "year": "2024",
+        "journal": "Revista de Ciencias Sociales",
+        "doi": "10.26489/rvs.v37i55.1",
+        "is_first_author": true,
+        "url": ""
+      },
+      {
+        "title": "Soybean production in Paraguay: Agribusiness, economic change and agrarian transformations",
+        "year": "2022",
+        "journal": "Journal of Agrarian Change",
+        "doi": "10.1111/joac.12436",
+        "is_first_author": true,
+        "url": ""
+      },
+      {
+        "title": "Transformaciones agrarias, agricultura campesina y mercados agroalimentarios en Alto Paraná (Paraguay)",
+        "year": "2021",
+        "journal": "Revista Interdisciplinaria de Estudios Agrarios",
+        "doi": "10.56503/RIEA/Nro.55(2021)/2858",
         "is_first_author": true,
         "url": ""
       }

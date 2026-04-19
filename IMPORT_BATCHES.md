@@ -470,3 +470,15 @@ For each new batch, record:
   - the batch adds Chaco-salteño land-governance and territorial-conflict work (`Ortega Insaurralde`, `Salas Barboza`, `Flores Klarik`), Chaco Serrano restoration ecology (`Renison`), and southern Gran Chaco Chagas epidemiology (`Mendicino`, `Colussi`)
   - read-only university discovery work was delegated; all dataset writes, summaries, and final inclusion decisions were completed in the main process
   - institutional webpages were kept only when person-level official sources were easy to verify; otherwise webpage/email fields were left blank
+
+### Batch 27
+
+- date: `2026-04-14`
+- researchers added:
+  - `Wesz Junior, Valdemar João`
+- queue source:
+  - direct user request plus focused follow-up verification
+- notes:
+  - added after a strict fit check confirmed a sustained Paraguay agrarian-change line with explicit recent Paraguayan Chaco publications
+  - the same pass also corrected `Abt Giubergia, María Magdalena` and `Gordillo, Gastón` for missing publications and replaced Abt's incorrect webpage with a cleaner official UNSE source
+  - read-only publication verification was delegated; final inclusion judgment, summary writing, and dataset edits were completed in the main process

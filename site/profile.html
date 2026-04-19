@@ -36,6 +36,8 @@
   <script src="js/i18n.js"></script>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/collab-map-data.js"></script>
+  <script src="js/collab-map.js"></script>
   <script>
     const GEO_TAGS = ['Argentina','Paraguay','Bolivia','Brazil','Salta','Formosa',
       'Córdoba','Santiago del Estero','Tucumán','Pilcomayo','Chiquitania','Chaco province'];
@@ -111,7 +113,7 @@
 
       const allResearchers = ChacoData.getAll();
       const collabsHtml = collabs.map(c => {
-        const match = allResearchers.find(other => other.name === c || other.id === c);
+        const match = ChacoData.resolveResearcherRef(c);
         if (match) {
           return `<li><a href="profile.html?id=${encodeURIComponent(match.id)}">${escapeHtml(c)}</a></li>`;
         }
@@ -185,6 +187,7 @@
               <div class="profile-section">
                 <h2>${I18n.t('profile.collaborators')}</h2>
                 <ul class="collab-list">${collabsHtml}</ul>
+                <div id="collaborator-map-slot"></div>
               </div>
             ` : ''}
 
@@ -194,6 +197,11 @@
           </div>
         </div>
       `;
+
+      const collaboratorMapSlot = document.getElementById('collaborator-map-slot');
+      if (collaboratorMapSlot) {
+        ChacoCollabMap.render(collaboratorMapSlot, r, allResearchers);
+      }
 
       I18n.applyToDOM();
     }

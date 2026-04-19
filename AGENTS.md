@@ -46,4 +46,4 @@ Do NOT instruct agents to search all 6 platforms exhaustively. That burns tokens
 
 ## Current Stats
 
-- **278 researchers, 1432 publications** (as of 2026-03-29)
+- **279 researchers, 1442 publications** (as of 2026-04-14)
