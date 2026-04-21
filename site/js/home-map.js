@@ -210,24 +210,59 @@ const ChacoHomeMap = (() => {
     return 10;
   }
 
-  function getWorldBubbleRadius(count) {
-    if (count <= 1) return 5.8;
-    if (count <= 4) return 7.2 + (count * 0.95);
-    if (count <= 12) return 10.5 + (count * 0.48);
-    return Math.min(16 + (Math.log(count) * 2.5), 21);
+  function pxToWorldUnits(px, renderWidth) {
+    const width = Math.max(renderWidth || 1000, 320);
+    return (px * MAP_WIDTH) / width;
   }
 
-  function getDetailBubbleRadius(count) {
-    if (count <= 1) return 6;
-    if (count <= 4) return 8 + (count * 1.1);
-    if (count <= 12) return 11 + (count * 0.65);
-    return Math.min(17 + (Math.log(count) * 2.2), 23);
+  function getSmallScreenMapScale(renderWidth) {
+    const width = Math.max(renderWidth || 1000, 320);
+    if (width >= 700) return 1;
+    return clamp(820 / width, 1, 2.35);
   }
 
-  function getDetailTextSize(count) {
-    if (count <= 9) return 14;
-    if (count <= 99) return 13;
-    return 12;
+  function applySmallScreenMinimum(baseSize, renderWidth, minScreenPx) {
+    const width = Math.max(renderWidth || 1000, 320);
+    if (width >= 700) return baseSize;
+    return Math.max(baseSize * getSmallScreenMapScale(width), pxToWorldUnits(minScreenPx, width));
+  }
+
+  function getWorldBubbleRadius(count, renderWidth) {
+    let baseRadius;
+    if (count <= 1) baseRadius = 5.8;
+    else if (count <= 4) baseRadius = 7.2 + (count * 0.95);
+    else if (count <= 12) baseRadius = 10.5 + (count * 0.48);
+    else baseRadius = Math.min(16 + (Math.log(count) * 2.5), 21);
+
+    return applySmallScreenMinimum(baseRadius, renderWidth, count <= 1 ? 8 : 10);
+  }
+
+  function getWorldTextSize(count, renderWidth) {
+    let baseSize;
+    if (count <= 9) baseSize = 14;
+    else if (count <= 99) baseSize = 13;
+    else baseSize = 12;
+
+    return applySmallScreenMinimum(baseSize, renderWidth, 12);
+  }
+
+  function getDetailBubbleRadius(count, renderWidth) {
+    let baseRadius;
+    if (count <= 1) baseRadius = 6;
+    else if (count <= 4) baseRadius = 8 + (count * 1.1);
+    else if (count <= 12) baseRadius = 11 + (count * 0.65);
+    else baseRadius = Math.min(17 + (Math.log(count) * 2.2), 23);
+
+    return applySmallScreenMinimum(baseRadius, renderWidth, count <= 1 ? 8 : 10);
+  }
+
+  function getDetailTextSize(count, renderWidth) {
+    let baseSize;
+    if (count <= 9) baseSize = 14;
+    else if (count <= 99) baseSize = 13;
+    else baseSize = 12;
+
+    return applySmallScreenMinimum(baseSize, renderWidth, 12);
   }
 
   const CITY_DISPLAY_OVERRIDES = {
@@ -481,8 +516,9 @@ const ChacoHomeMap = (() => {
       resolved.forEach(cluster => {
         cluster.displayX += (cluster.anchorX - cluster.displayX) * 0.04;
         cluster.displayY += (cluster.anchorY - cluster.displayY) * 0.04;
-        cluster.displayX = clamp(cluster.displayX, 16, MAP_WIDTH - 16);
-        cluster.displayY = clamp(cluster.displayY, 16, MAP_HEIGHT - 16);
+        const margin = Math.max(16, cluster.radius + 2);
+        cluster.displayX = clamp(cluster.displayX, margin, MAP_WIDTH - margin);
+        cluster.displayY = clamp(cluster.displayY, margin, MAP_HEIGHT - margin);
       });
 
       if (!moved) break;
@@ -546,14 +582,16 @@ const ChacoHomeMap = (() => {
         anchorY,
         displayX: anchorX,
         displayY: anchorY,
-        radius: getWorldBubbleRadius(allMembers.length)
+        radius: getWorldBubbleRadius(allMembers.length, renderWidth),
+        textSize: getWorldTextSize(allMembers.length, renderWidth),
+        hitPadding: Math.max(8, pxToWorldUnits(10, renderWidth))
       });
     });
 
     return resolveWorldClusterCollisions(clusters, renderWidth);
   }
 
-  function buildDetailBubbles(sourceCluster) {
+  function buildDetailBubbles(sourceCluster, renderWidth) {
     const detailMembers = sourceCluster.members.map(member => {
       const location = getResearcherLocation(member.researcher || member, sourceCluster.country, { allowApproximate: false });
       if (!location) return null;
@@ -598,8 +636,8 @@ const ChacoHomeMap = (() => {
         members,
         x: projected.x,
         y: projected.y,
-        radius: getDetailBubbleRadius(members.length),
-        textSize: getDetailTextSize(members.length),
+        radius: getDetailBubbleRadius(members.length, renderWidth),
+        textSize: getDetailTextSize(members.length, renderWidth),
         isApproximate: members.every(member => member.isApproximate),
         locationLabel: displayCity ? `${displayCity}, ${sourceCluster.country}` : sourceCluster.country
       });
@@ -652,7 +690,7 @@ const ChacoHomeMap = (() => {
     return clamp(viewBox.width / MAP_WIDTH, 0.035, 1);
   }
 
-  function resolveDetailBubbleCollisions(bubbles, viewBox) {
+  function resolveDetailBubbleCollisions(bubbles, viewBox, renderWidth) {
     const detailScale = getDetailScale(viewBox);
     const padding = 11 * detailScale;
     const resolved = bubbles.map(bubble => ({
@@ -661,7 +699,7 @@ const ChacoHomeMap = (() => {
       displayY: bubble.y,
       displayRadius: bubble.radius * detailScale,
       displayTextSize: bubble.textSize * detailScale,
-      displayHitPadding: 8 * detailScale
+      displayHitPadding: Math.max(8 * detailScale, (14 * viewBox.width) / Math.max(renderWidth || 1000, 320))
     }));
 
     for (let iteration = 0; iteration < 140; iteration += 1) {
@@ -722,6 +760,7 @@ const ChacoHomeMap = (() => {
     const clusters = buildWorldClusters(points, researchers, renderWidth);
     return {
       mode: 'world',
+      renderWidth,
       totalResearchers: researchers.length,
       mappedResearchers: points.length,
       points,
@@ -733,7 +772,7 @@ const ChacoHomeMap = (() => {
   function buildDetailModel(worldModel, clusterId) {
     const sourceCluster = worldModel.clusters.find(cluster => cluster.id === clusterId);
     if (!sourceCluster) return null;
-    const bubbles = buildDetailBubbles(sourceCluster);
+    const bubbles = buildDetailBubbles(sourceCluster, worldModel.renderWidth);
     const detailMembers = bubbles.flatMap(bubble => bubble.members);
     const detailCluster = {
       ...sourceCluster,
@@ -746,7 +785,7 @@ const ChacoHomeMap = (() => {
       totalResearchers: worldModel.totalResearchers,
       mappedResearchers: sourceCluster.members.length,
       sourceCluster,
-      bubbles: resolveDetailBubbleCollisions(bubbles, viewBox),
+      bubbles: resolveDetailBubbleCollisions(bubbles, viewBox, worldModel.renderWidth),
       viewBox
     };
   }
@@ -823,9 +862,9 @@ const ChacoHomeMap = (() => {
 
     return `
       <g class="home-map-cluster${cluster.isSelected ? ' is-selected' : ''}" data-home-map-action="world-cluster" data-cluster-id="${escapeHtml(cluster.id)}">
-        <circle class="home-map-cluster-hit" cx="${cluster.displayX.toFixed(2)}" cy="${cluster.displayY.toFixed(2)}" r="${(cluster.radius + 8).toFixed(2)}"></circle>
+        <circle class="home-map-cluster-hit" cx="${cluster.displayX.toFixed(2)}" cy="${cluster.displayY.toFixed(2)}" r="${(cluster.radius + (cluster.hitPadding || 8)).toFixed(2)}"></circle>
         <circle class="home-map-cluster-core" cx="${cluster.displayX.toFixed(2)}" cy="${cluster.displayY.toFixed(2)}" r="${cluster.radius.toFixed(2)}"></circle>
-        ${cluster.count > 1 ? `<text class="home-map-cluster-count" x="${cluster.displayX.toFixed(2)}" y="${(cluster.displayY + 0.5).toFixed(2)}">${cluster.count}</text>` : ''}
+        ${cluster.count > 1 ? `<text class="home-map-cluster-count" x="${cluster.displayX.toFixed(2)}" y="${(cluster.displayY + 0.5).toFixed(2)}" style="font-size:${(cluster.textSize || 14).toFixed(2)}px">${cluster.count}</text>` : ''}
         <title>${escapeHtml(title)}</title>
       </g>
     `;
