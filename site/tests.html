@@ -264,11 +264,13 @@
 
       I18n.setLang('es');
       const esText = I18n.t('home.title');
-      assert('Spanish translation exists for home.title', esText === 'Directorio de Investigadores del Chaco');
+      assert('Spanish translation exists for home.title', esText === 'Directorio de Investigadores/as del Chaco');
 
       assert('New i18n key: browse.filter_geo', I18n.t('browse.filter_geo') === 'Región de Investigación');
       assert('New i18n key: profile.keywords', I18n.t('profile.keywords') === 'Palabras Clave');
-      assert('New i18n key: profile.collab_map', I18n.t('profile.collab_map') === 'Mapa de colaboradores');
+      assert('New i18n key: profile.keywords_more', I18n.t('profile.keywords_more') === 'Más palabras clave');
+      assert('New i18n key: profile.keywords_fewer', I18n.t('profile.keywords_fewer') === 'Menos palabras clave');
+      assert('New i18n key: profile.collab_map', I18n.t('profile.collab_map') === 'Mapa de colaboraciones');
 
       const missing = I18n.t('nonexistent.key');
       assert('Missing key returns key itself', missing === 'nonexistent.key');

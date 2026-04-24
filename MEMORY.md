@@ -50,6 +50,11 @@
 - Spanish/English keyword and region coverage should stay parallel.
 - Search/autocomplete is accent-insensitive (e.g. `Musalem` matches `Musálem`).
 - Current keyword inventory has already been heavily consolidated; avoid reintroducing near-duplicates.
+- Discipline order now matters:
+  - first discipline is primary
+  - profiles should have one primary plus at most two secondary disciplines
+  - broad discipline names should not be used as keywords
+  - run [scripts/report_discipline_audit.py](/Users/yannlepolain/Library/CloudStorage/OneDrive-McGillUniversity/Univ/Coding/ChacoMap/scripts/report_discipline_audit.py) after discipline or keyword edits
 
 ## Recent Important Content Fixes
 

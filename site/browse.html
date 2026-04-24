@@ -77,9 +77,10 @@
         </label>
       </div>
       <button class="clear-filters" id="clear-filters" data-i18n="browse.clear">Clear filters</button>
+      <button type="button" class="browse-map-toggle" id="browse-map-toggle" aria-controls="browse-map" aria-expanded="true" data-i18n="browse.map_hide">Hide map</button>
     </div>
 
-    <section class="home-map-section browse-map-section">
+    <section class="home-map-section browse-map-section" id="browse-map-section">
       <div id="browse-map"></div>
     </section>
 
@@ -107,6 +108,7 @@
     let currentFilteredResults = [];
     let currentSortedResults = [];
     let currentMapSelectionIds = null;
+    let isBrowseMapVisible = true;
 
     const geoGroupLabels = {
       en: { countries: '── Countries ──', crossborder: '── Cross-border ──', argentina: '── Argentina ──', bolivia: '── Bolivia ──', paraguay: '── Paraguay ──' },
@@ -262,7 +264,13 @@
       currentFilteredResults = results;
       currentSortedResults = sortedResults;
 
-      if (browseMapEl && typeof ChacoHomeMap !== 'undefined') {
+      if (browseMapEl) {
+        browseMapEl.hidden = !isBrowseMapVisible;
+      }
+
+      updateBrowseMapToggle();
+
+      if (isBrowseMapVisible && browseMapEl && typeof ChacoHomeMap !== 'undefined') {
         const mapState = ChacoHomeMap.render(browseMapEl, results, {
           onSelectionChange: (ids) => {
             currentMapSelectionIds = ids;
@@ -270,9 +278,18 @@
           }
         });
         currentMapSelectionIds = mapState.selectedIds;
+      } else if (browseMapEl) {
+        browseMapEl.innerHTML = '';
       }
 
       renderResearcherGrid();
+    }
+
+    function updateBrowseMapToggle() {
+      const toggle = document.getElementById('browse-map-toggle');
+      if (!toggle) return;
+      toggle.setAttribute('aria-expanded', String(isBrowseMapVisible));
+      toggle.textContent = I18n.t(isBrowseMapVisible ? 'browse.map_hide' : 'browse.map_show');
     }
 
     function renderResearcherGrid() {
@@ -353,6 +370,7 @@
         const key = opt.getAttribute('data-i18n');
         if (key) opt.textContent = I18n.t(key);
       });
+      updateBrowseMapToggle();
       renderResults();
     }
 
@@ -511,6 +529,17 @@
       document.getElementById('filter-affiliation-country').value = '';
       document.getElementById('filter-first-author').checked = false;
       document.getElementById('filter-recent').checked = false;
+      renderResults();
+    });
+    document.getElementById('browse-map-toggle').addEventListener('click', () => {
+      isBrowseMapVisible = !isBrowseMapVisible;
+      const browseMapEl = document.getElementById('browse-map');
+      if (!isBrowseMapVisible) {
+        if (browseMapEl && typeof ChacoHomeMap !== 'undefined' && typeof ChacoHomeMap.reset === 'function') {
+          ChacoHomeMap.reset(browseMapEl);
+        }
+        currentMapSelectionIds = null;
+      }
       renderResults();
     });
 

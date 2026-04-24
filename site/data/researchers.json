@@ -535,8 +535,7 @@
       "indigenous politics",
       "indigenous peoples",
       "social movements",
-      "land rights",
-      "political ecology"
+      "land rights"
     ],
     "geographical_focus": [
       "Bolivian Chaco",
@@ -838,9 +837,9 @@
       "Wildlife & Conservation Biology"
     ],
     "disciplines": [
-      "Biology",
+      "Conservation Biology",
       "Anthropology",
-      "Conservation Biology"
+      "Biology"
     ],
     "keywords": [
       "Criollos",
@@ -1056,6 +1055,7 @@
     "webpage": "https://museonoelkempff.org/museo/revista-cientifica-kempffiana/",
     "email": "",
     "disciplines": [
+      "Botany",
       "Ecology",
       "Environmental Science"
     ],
@@ -1424,7 +1424,6 @@
       "carbon emissions",
       "land use change",
       "primary productivity",
-      "remote sensing",
       "landscape ecology"
     ],
     "geographical_focus": [
@@ -2187,13 +2186,13 @@
     ],
     "disciplines": [
       "Geography",
-      "Environmental Science"
+      "Environmental Science",
+      "Remote Sensing"
     ],
     "keywords": [
       "cattle ranching",
       "Drivers of land-use change",
       "dry forests",
-      "remote sensing",
       "biogeography",
       "carbon bookkeeping model",
       "deforestation frontiers",
@@ -2282,7 +2281,8 @@
     "email": "",
     "disciplines": [
       "Geography",
-      "Political Science"
+      "Political Science",
+      "Political Ecology"
     ],
     "themes": [
       "Social Sciences & Political Ecology",
@@ -2290,7 +2290,6 @@
       "Climate, Carbon & Energy"
     ],
     "keywords": [
-      "political ecology",
       "natural gas extraction",
       "territorial dynamics",
       "resource conflicts",
@@ -2351,7 +2350,8 @@
     "email": "",
     "deceased": false,
     "disciplines": [
-      "Anthropology"
+      "Anthropology",
+      "Political Ecology"
     ],
     "themes": [
       "Social Sciences & Political Ecology",
@@ -2361,7 +2361,6 @@
     "keywords": [
       "territorial conflicts",
       "indigenous peoples",
-      "political ecology",
       "frontier"
     ],
     "geographical_focus": [
@@ -2467,7 +2466,11 @@
       "Anthropology"
     ],
     "keywords": [
-      "indigenous peoples"
+      "indigenous peoples",
+      "Ayoreo",
+      "ethnography",
+      "cattle ranching",
+      "agricultural expansion"
     ]
   },
   {
@@ -2492,7 +2495,6 @@
     "keywords": [
       "ethnography",
       "indigenous communities",
-      "political ecology",
       "social change",
       "territoriality"
     ],
@@ -2552,7 +2554,8 @@
       "History, Culture & Identity"
     ],
     "disciplines": [
-      "Anthropology"
+      "Anthropology",
+      "Political Ecology"
     ]
   },
   {
@@ -2672,8 +2675,8 @@
     "webpage": "https://www.conicet.gov.ar/new_scp/detalle.php?datos_academicos=yes&id=21214",
     "email": "",
     "disciplines": [
-      "Biology",
       "Ecology",
+      "Biology",
       "Geography"
     ],
     "themes": [
@@ -3826,9 +3829,9 @@
     "webpage": "",
     "email": "",
     "disciplines": [
-      "Biology",
       "Ecology",
-      "Geography"
+      "Geography",
+      "Biology"
     ],
     "themes": [
       "Wildlife & Conservation Biology",
@@ -3842,7 +3845,6 @@
       "dry forests",
       "Espinal",
       "carbon pool",
-      "remote sensing",
       "protected areas"
     ],
     "geographical_focus": [
@@ -4435,7 +4437,6 @@
       "connectivity",
       "ecosystem functioning",
       "land use policy",
-      "remote sensing",
       "forest remnants",
       "deforestation hotspot"
     ],
@@ -4493,7 +4494,8 @@
     ],
     "disciplines": [
       "Environmental Science",
-      "Forestry"
+      "Forestry",
+      "Remote Sensing"
     ]
   },
   {
@@ -5276,7 +5278,6 @@
       "regional"
     ],
     "keywords": [
-      "conservation biology",
       "mammalogy",
       "jaguar",
       "road ecology",
@@ -6059,8 +6060,7 @@
     ],
     "keywords": [
       "Chagas disease",
-      "indigenous health",
-      "public health"
+      "indigenous health"
     ],
     "geographical_focus": [
       "Argentine Chaco",
@@ -6340,11 +6340,11 @@
       "Social Sciences & Political Ecology"
     ],
     "disciplines": [
-      "Geography"
+      "Geography",
+      "Political Ecology"
     ],
     "keywords": [
-      "dispossession",
-      "political ecology"
+      "dispossession"
     ]
   },
   {
@@ -6588,9 +6588,9 @@
     "email": "",
     "deceased": false,
     "disciplines": [
-      "Biology",
       "Conservation Biology",
-      "Ecology"
+      "Ecology",
+      "Biology"
     ],
     "themes": [
       "Wildlife & Conservation Biology",
@@ -6908,7 +6908,7 @@
       "Regional Geography"
     ],
     "disciplines": [
-      "Biology",
+      "Botany",
       "Ecology"
     ],
     "geographical_focus": [
@@ -6989,8 +6989,7 @@
       "ecosystem services",
       "land use change",
       "deforestation",
-      "dry forests",
-      "remote sensing"
+      "dry forests"
     ],
     "geographical_focus": [
       "Chaco Salteño",
@@ -7055,7 +7054,6 @@
       "Land Tenure & Governance"
     ],
     "keywords": [
-      "remote sensing",
       "deforestation monitoring",
       "forest cover",
       "land cover change",
@@ -7195,7 +7193,14 @@
     "disciplines": [
       "History"
     ],
-    "keywords": []
+    "keywords": [
+      "borderlands",
+      "Toba",
+      "Pilagá",
+      "land tenure",
+      "Chaco War",
+      "missionization"
+    ]
   },
   {
     "id": "damborsky-miryam-pieri",
@@ -7381,7 +7386,7 @@
       "Regional Geography"
     ],
     "disciplines": [
-      "Biology"
+      "Botany"
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
@@ -7459,7 +7464,6 @@
       "Remote Sensing & Monitoring"
     ],
     "keywords": [
-      "remote sensing",
       "salinity",
       "land use change",
       "deforestation",
@@ -7530,8 +7534,7 @@
       "Landsat time series",
       "disturbance agents",
       "above-ground biomass",
-      "forest structure",
-      "remote sensing"
+      "forest structure"
     ],
     "geographical_focus": [
       "Argentine Chaco",
@@ -7958,7 +7961,8 @@
     "orcid": "0000-0002-9642-4945",
     "deceased": false,
     "disciplines": [
-      "Anthropology"
+      "Anthropology",
+      "Political Ecology"
     ],
     "themes": [
       "Social Sciences & Political Ecology",
@@ -7969,8 +7973,7 @@
       "indigenous peoples",
       "territorial conflicts",
       "social movements",
-      "Qom",
-      "political ecology"
+      "Qom"
     ],
     "geographical_focus": [
       "Argentine Chaco",
@@ -8377,7 +8380,12 @@
       "Ecology"
     ],
     "keywords": [
-      "grasslands"
+      "grasslands",
+      "cattle ranching",
+      "silvopastoral systems",
+      "land use change",
+      "puma",
+      "carbon storage"
     ]
   },
   {
@@ -8895,7 +8903,6 @@
       "land cover mapping",
       "forest monitoring",
       "GIS",
-      "remote sensing",
       "forest fragmentation"
     ],
     "geographical_focus": [
@@ -9368,12 +9375,13 @@
       "Remote Sensing & Monitoring"
     ],
     "disciplines": [
-      "Ecology"
+      "Ecology",
+      "Demography",
+      "Remote Sensing"
     ],
     "keywords": [
       "biomass",
       "cattle ranching",
-      "demography",
       "Drivers of land-use change",
       "dry forests",
       "forest transition",
@@ -9402,7 +9410,6 @@
       "trees",
       "perceptions",
       "random forest",
-      "remote sensing",
       "soybeans",
       "species distribution modeling",
       "statistical model",
@@ -9647,13 +9654,13 @@
       "Wildlife & Conservation Biology"
     ],
     "disciplines": [
-      "Ecology"
+      "Ecology",
+      "Remote Sensing"
     ],
     "keywords": [
       "cattle ranching",
       "Drivers of land-use change",
       "dry forests",
-      "remote sensing",
       "carbon bookkeeping model",
       "conservation planning",
       "deforestation frontiers",
@@ -9997,7 +10004,6 @@
       "ethnographic archives",
       "indigenous representation",
       "material culture",
-      "anthropology history",
       "visual culture",
       "historical imagery"
     ],
@@ -10133,8 +10139,7 @@
       "indigenous peoples",
       "territorial conflicts",
       "land rights",
-      "deforestation",
-      "political ecology"
+      "deforestation"
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
@@ -10199,7 +10204,6 @@
     ],
     "keywords": [
       "forest degradation",
-      "remote sensing",
       "structure from motion",
       "forest inventory",
       "canopy structure",
@@ -10535,7 +10539,12 @@
     ],
     "keywords": [
       "Criollos",
-      "Toba"
+      "Toba",
+      "Qom",
+      "Guaraní",
+      "territorial conflicts",
+      "ethnography",
+      "frontier"
     ]
   },
   {
@@ -10995,8 +11004,7 @@
       "dry forests",
       "land use change",
       "silvopastoral systems",
-      "ecosystem services",
-      "remote sensing"
+      "ecosystem services"
     ],
     "geographical_focus": [
       "Chaco Salteño",
@@ -11311,7 +11319,6 @@
       "deforestation",
       "land use change",
       "agribusiness",
-      "political ecology",
       "native forest law"
     ],
     "geographical_focus": [
@@ -11883,7 +11890,8 @@
     "email": "",
     "disciplines": [
       "Geography",
-      "Sociology"
+      "Sociology",
+      "Political Ecology"
     ],
     "themes": [
       "Land Use & Deforestation",
@@ -11896,7 +11904,6 @@
       "environmental justice",
       "native forest law",
       "land use change",
-      "political ecology",
       "land system science",
       "sustainability assessment",
       "smallholders"
@@ -12844,10 +12851,10 @@
       "Land Use & Deforestation"
     ],
     "disciplines": [
+      "Demography",
       "Geography"
     ],
     "keywords": [
-      "demography",
       "Poverty",
       "boom-bust cycles",
       "campesinos",
@@ -13247,13 +13254,13 @@
     ],
     "disciplines": [
       "Geography",
-      "Conservation Biology"
+      "Conservation Biology",
+      "Remote Sensing"
     ],
     "keywords": [
       "cattle ranching",
       "Drivers of land-use change",
       "dry forests",
-      "remote sensing",
       "biogeography",
       "carbon bookkeeping model",
       "conservation planning",
@@ -13912,7 +13919,6 @@
     "keywords": [
       "Wichí",
       "indigenous health",
-      "public health",
       "child care",
       "nutrition"
     ],
@@ -14535,7 +14541,6 @@
       "Public Health & Disease Ecology"
     ],
     "keywords": [
-      "demography",
       "campesinos",
       "rural sociology",
       "land use change",
@@ -14596,7 +14601,6 @@
     ],
     "keywords": [
       "Wichí",
-      "public health",
       "health policy",
       "indigenous health",
       "interculturality"
@@ -14683,7 +14687,6 @@
       "palo santo",
       "dry forests",
       "carbon productivity",
-      "remote sensing",
       "forest inventory",
       "ecosystem services"
     ],
@@ -14748,8 +14751,9 @@
       "Remote Sensing & Monitoring"
     ],
     "disciplines": [
+      "Ecology",
       "Forestry",
-      "Ecology"
+      "Remote Sensing"
     ]
   },
   {
@@ -14983,8 +14987,8 @@
       "Wildlife & Conservation Biology"
     ],
     "disciplines": [
-      "Biology",
-      "Ecology"
+      "Ecology",
+      "Biology"
     ],
     "keywords": [
       "Bird guilds",
@@ -15023,7 +15027,6 @@
       "Remote Sensing & Monitoring"
     ],
     "keywords": [
-      "remote sensing",
       "salinity",
       "land use change",
       "deforestation",
@@ -15370,7 +15373,6 @@
       "Wichí",
       "indigenous education",
       "interculturality",
-      "public health",
       "territorial conflicts"
     ],
     "geographical_focus": [
@@ -15533,8 +15535,8 @@
       "Wildlife & Conservation Biology"
     ],
     "disciplines": [
-      "Biology",
-      "Ecology"
+      "Ecology",
+      "Biology"
     ],
     "keywords": [
       "GIS",
@@ -15917,7 +15919,8 @@
     ],
     "disciplines": [
       "Environmental Science",
-      "Ecology"
+      "Ecology",
+      "Political Ecology"
     ],
     "keywords": [
       "Bayesian network",
@@ -15936,7 +15939,6 @@
       "land tenure",
       "landscape ecology",
       "pampas",
-      "political ecology",
       "silvopastoral systems",
       "soybean expansion",
       "spatial justice"
@@ -16264,7 +16266,8 @@
     "email": "",
     "disciplines": [
       "Sociology",
-      "Geography"
+      "Geography",
+      "Political Ecology"
     ],
     "themes": [
       "Social Sciences & Political Ecology",
@@ -16273,7 +16276,6 @@
     ],
     "keywords": [
       "water governance",
-      "political ecology",
       "water infrastructure",
       "agrochemicals",
       "territorial conflicts",
@@ -16338,7 +16340,6 @@
     ],
     "keywords": [
       "Chagas disease",
-      "public health",
       "indigenous health"
     ],
     "geographical_focus": [
@@ -16570,7 +16571,7 @@
       "Land Use & Deforestation"
     ],
     "disciplines": [
-      "Biology",
+      "Botany",
       "Ecology"
     ]
   },
@@ -16995,7 +16996,14 @@
       "Ecology",
       "Biology"
     ],
-    "keywords": []
+    "keywords": [
+      "landscape ecology",
+      "biogeography",
+      "deforestation",
+      "land use change",
+      "ecological planning",
+      "dry forests"
+    ]
   },
   {
     "id": "mosciaro-maria-jesus",
@@ -17316,7 +17324,8 @@
     "email": "",
     "disciplines": [
       "Geography",
-      "Remote Sensing"
+      "Remote Sensing",
+      "Political Ecology"
     ],
     "themes": [
       "Land Use & Deforestation",
@@ -17331,7 +17340,6 @@
       "land use modeling",
       "Bayesian network",
       "illegal deforestation",
-      "political ecology",
       "land use intensity",
       "scenario analysis"
     ],
@@ -18121,8 +18129,8 @@
     "email": "",
     "orcid": "0000-0002-6610-9055",
     "disciplines": [
-      "Ecology",
-      "Conservation Biology"
+      "Conservation Biology",
+      "Ecology"
     ],
     "themes": [
       "Wildlife & Conservation Biology",
@@ -18703,14 +18711,14 @@
       "Land Use & Deforestation"
     ],
     "disciplines": [
-      "Geography"
+      "Geography",
+      "Demography"
     ],
     "keywords": [
       "Poverty",
       "boom-bust cycles",
       "cattle",
       "deforestation",
-      "demography",
       "soybeans"
     ]
   },
@@ -18896,7 +18904,8 @@
       "Remote Sensing & Monitoring"
     ],
     "disciplines": [
-      "Ecology"
+      "Ecology",
+      "Political Ecology"
     ],
     "keywords": [
       "forest transition",
@@ -18908,7 +18917,6 @@
       "carbon accounting",
       "deforestation",
       "environmental regulation",
-      "political ecology",
       "soil organic carbon"
     ]
   },
@@ -19080,7 +19088,7 @@
     "name": "Penelope F. Anthias",
     "affiliation": "Durham University",
     "country": "United Kingdom",
-    "webpage": "https://orcid.org/0000-0002-5776-0401",
+    "webpage": "https://penelopeanthias.com/",
     "email": "penelope.f.anthias@durham.ac.uk",
     "disciplines": [
       "Geography",
@@ -19781,13 +19789,13 @@
       "Remote Sensing & Monitoring"
     ],
     "disciplines": [
-      "Geography"
+      "Geography",
+      "Remote Sensing"
     ],
     "keywords": [
       "cattle ranching",
       "Drivers of land-use change",
       "dry forests",
-      "remote sensing",
       "carbon bookkeeping model",
       "conservation planning",
       "deforestation frontiers",
@@ -20068,7 +20076,6 @@
       "biomass mapping",
       "carbon stocks",
       "dry forests",
-      "remote sensing",
       "forest disturbance",
       "biodiversity responses"
     ],
@@ -20222,8 +20229,8 @@
       "Wildlife & Conservation Biology"
     ],
     "disciplines": [
-      "Biology",
-      "Conservation Biology"
+      "Conservation Biology",
+      "Biology"
     ],
     "keywords": [
       "camera trapping",
@@ -20650,8 +20657,8 @@
       "Wildlife & Conservation Biology"
     ],
     "disciplines": [
-      "Forestry",
-      "Ecology"
+      "Ecology",
+      "Forestry"
     ],
     "geographical_focus": [
       "Argentine Dry Chaco",
@@ -21243,10 +21250,10 @@
       "Social Sciences & Political Ecology"
     ],
     "disciplines": [
-      "Sociology"
+      "Sociology",
+      "Demography"
     ],
     "keywords": [
-      "demography",
       "common-pool resources",
       "ecosystem services",
       "energy ladder",
@@ -21574,6 +21581,7 @@
     "webpage": "",
     "email": "",
     "disciplines": [
+      "Botany",
       "Ecology",
       "Environmental Science"
     ],
@@ -21660,7 +21668,6 @@
       "land grabbing",
       "water governance",
       "territorial conflicts",
-      "political ecology",
       "indigenous territories"
     ],
     "geographical_focus": [
@@ -21997,8 +22004,9 @@
       "Social Sciences & Political Ecology"
     ],
     "disciplines": [
+      "Sociology",
       "Environmental Science",
-      "Sociology"
+      "Political Ecology"
     ],
     "keywords": [
       "Conflict assessment model",
@@ -22013,7 +22021,6 @@
       "land reform",
       "land system science",
       "large-scale land acquisitions",
-      "political ecology",
       "survival analysis"
     ]
   },
@@ -23244,8 +23251,8 @@
       "Wildlife & Conservation Biology"
     ],
     "disciplines": [
-      "Biology",
-      "Conservation Biology"
+      "Conservation Biology",
+      "Biology"
     ],
     "keywords": [
       "amphibians",
@@ -23607,7 +23614,6 @@
       "Regional Geography"
     ],
     "keywords": [
-      "remote sensing",
       "agricultural expansion",
       "land use change",
       "agricultural frontier"
@@ -23943,7 +23949,6 @@
       "indigenous peoples",
       "Qom",
       "social movements",
-      "political ecology",
       "land rights"
     ],
     "geographical_focus": [
@@ -23992,7 +23997,6 @@
       "Remote Sensing & Monitoring"
     ],
     "keywords": [
-      "remote sensing",
       "salinity",
       "land use change",
       "deforestation",
@@ -24252,7 +24256,8 @@
     ],
     "disciplines": [
       "Geography",
-      "Environmental Science"
+      "Environmental Science",
+      "Political Ecology"
     ],
     "keywords": [
       "Conflict assessment model",
@@ -24265,7 +24270,6 @@
       "land reform",
       "land system science",
       "large-scale land acquisitions",
-      "political ecology",
       "survival analysis"
     ]
   },
@@ -24300,7 +24304,6 @@
       "sub-national"
     ],
     "keywords": [
-      "remote sensing",
       "woodlands",
       "forest structure",
       "evapotranspiration",
@@ -24367,7 +24370,8 @@
     ],
     "disciplines": [
       "Ecology",
-      "Environmental Science"
+      "Environmental Science",
+      "Remote Sensing"
     ]
   },
   {
@@ -24454,7 +24458,8 @@
     ],
     "disciplines": [
       "Geography",
-      "Environmental Science"
+      "Environmental Science",
+      "Remote Sensing"
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
@@ -24473,7 +24478,6 @@
       "frequency",
       "burned area",
       "clustering",
-      "remote sensing",
       "land use change",
       "climate change"
     ],
@@ -24757,7 +24761,6 @@
       "Remote Sensing & Monitoring"
     ],
     "keywords": [
-      "remote sensing",
       "salinity",
       "land use change",
       "deforestation",
@@ -24825,7 +24828,6 @@
       "Public Health & Disease Ecology"
     ],
     "keywords": [
-      "political ecology",
       "agribusiness",
       "biofuels",
       "agrochemicals",
@@ -25221,7 +25223,8 @@
     ],
     "disciplines": [
       "Geography",
-      "Environmental Science"
+      "Environmental Science",
+      "Political Ecology"
     ],
     "keywords": [
       "Conflict assessment model",
@@ -25236,8 +25239,7 @@
       "native forest law",
       "land reform",
       "land rent",
-      "land system science",
-      "political ecology"
+      "land system science"
     ]
   },
   {
@@ -25893,10 +25895,10 @@
     ],
     "disciplines": [
       "Biology",
-      "Ecology"
+      "Ecology",
+      "Remote Sensing"
     ],
     "keywords": [
-      "remote sensing",
       "trees",
       "cover types",
       "land-cover map",
@@ -26491,9 +26493,23 @@
     ],
     "disciplines": [
       "Geography",
-      "Sociology"
+      "Sociology",
+      "Political Ecology"
     ],
-    "keywords": []
+    "keywords": [
+      "land system science",
+      "agrarian change",
+      "commodity frontiers",
+      "land control",
+      "smallholders",
+      "indigenous peoples",
+      "land tenure",
+      "participatory mapping",
+      "GIS",
+      "enclosure",
+      "deforestation",
+      "agricultural frontier"
+    ]
   },
   {
     "id": "le-polain-de-waroux-yann",
@@ -26671,7 +26687,17 @@
       "Geography"
     ],
     "keywords": [
-      "frontier"
+      "frontier",
+      "land use change",
+      "deforestation",
+      "agricultural frontier",
+      "land governance",
+      "smallholders",
+      "large-scale land acquisitions",
+      "commodity frontiers",
+      "Criollos",
+      "cattle ranching",
+      "soybeans"
     ]
   }
 ]

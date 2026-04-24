@@ -39,8 +39,15 @@
   <script src="js/collab-map-data.js"></script>
   <script src="js/collab-map.js"></script>
   <script>
+    const KEYWORD_DISPLAY_LIMIT = 8;
     const GEO_TAGS = ['Argentina','Paraguay','Bolivia','Brazil','Salta','Formosa',
       'Córdoba','Santiago del Estero','Tucumán','Pilcomayo','Chiquitania','Chaco province'];
+
+    function renderKeywordTags(keywords) {
+      return keywords.map((k, index) => `
+        <a href="browse.html?search=${encodeURIComponent(k)}" class="tag tag-keyword${index >= KEYWORD_DISPLAY_LIMIT ? ' keyword-extra' : ''}"${index >= KEYWORD_DISPLAY_LIMIT ? ' hidden' : ''}>${escapeHtml(I18n.tKeyword(k))}</a>
+      `).join('');
+    }
 
     async function renderPage() {
       const params = new URLSearchParams(window.location.search);
@@ -160,8 +167,9 @@
               <div class="profile-section">
                 <h2>${I18n.t('profile.keywords')}</h2>
                 <div class="tags">
-                  ${keywords.slice(0, 15).map(k => `<a href="browse.html?search=${encodeURIComponent(k)}" class="tag tag-keyword">${escapeHtml(I18n.tKeyword(k))}</a>`).join('')}
+                  ${renderKeywordTags(keywords)}
                 </div>
+                ${keywords.length > KEYWORD_DISPLAY_LIMIT ? `<button type="button" class="keyword-toggle" data-expanded="false" aria-expanded="false">${escapeHtml(I18n.t('profile.keywords_more'))}</button>` : ''}
               </div>
             ` : ''}
 
@@ -197,6 +205,19 @@
           </div>
         </div>
       `;
+
+      const keywordToggle = document.querySelector('.keyword-toggle');
+      if (keywordToggle) {
+        keywordToggle.addEventListener('click', () => {
+          const nextExpanded = keywordToggle.dataset.expanded !== 'true';
+          keywordToggle.closest('.profile-section').querySelectorAll('.keyword-extra').forEach(tag => {
+            tag.hidden = !nextExpanded;
+          });
+          keywordToggle.dataset.expanded = String(nextExpanded);
+          keywordToggle.setAttribute('aria-expanded', String(nextExpanded));
+          keywordToggle.textContent = I18n.t(nextExpanded ? 'profile.keywords_fewer' : 'profile.keywords_more');
+        });
+      }
 
       const collaboratorMapSlot = document.getElementById('collaborator-map-slot');
       if (collaboratorMapSlot) {

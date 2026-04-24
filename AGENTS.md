@@ -28,7 +28,7 @@ Do NOT instruct agents to search all 6 platforms exhaustively. That burns tokens
 - **DOI vs URL**: `doi` field = DOI string only (no prefix). `url` = fallback only when no DOI exists.
 - **Title formatting**: Publication titles should not be stored in all caps. Normalize them to standard capitalization during intake.
 - **Bilingual titles**: If a journal exposes both English and Spanish titles, keep the canonical `title` and add the Spanish UI form as `title_es` so the Spanish site can display it.
-- **Discipline tagging**: Do a quick gut check so `disciplines` capture the clearly stated fields in the description, not just the narrowest anchor discipline.
+- **Discipline tagging**: Use ordered broad disciplines only. The first entry is the primary discipline; add one or two secondary disciplines only when clearly justified by training, affiliation, description, or repeated publications. Keep at most 3 disciplines. Do not use broad discipline names as keywords; migrate them to `disciplines` when appropriate and keep `keywords` for subfields, methods, peoples, taxa, sectors, and concepts.
 - **Summary tone**: Research summaries must stay descriptive and neutral. Avoid prestige framing, citation counts, superlatives, or any language explaining why a profile belongs in the database.
 - **Quick contact check**: After adding or updating a profile, do one cheap pass for a person-specific institutional email. If it is not easy to verify from an official page, skip it.
 - **Webpage audit**: New or changed `webpage` values should be checked with `python3 scripts/report_webpage_audit.py`.
@@ -38,7 +38,7 @@ Do NOT instruct agents to search all 6 platforms exhaustively. That burns tokens
 - **12 valid themes**: `Ecology & Biodiversity`, `Land Use & Deforestation`, `Wildlife & Conservation Biology`, `Social Sciences & Political Ecology`, `History, Culture & Identity`, `Regional Geography`, `Climate, Carbon & Energy`, `Land Tenure & Governance`, `Hydrology & Soils`, `Remote Sensing & Monitoring`, `Agroecology & Rural Development`, `Public Health & Disease Ecology`
 - **After adding researchers**: update the count assertion in `tests.html` and counts in `AGENTS.md`/`MEMORY.md`.
 - **Batch size**: 5-10 researchers per agent to survive rate limits. Save after each batch.
-- **Keyword hygiene**: prefer existing keywords, run `python3 scripts/normalize_keywords.py`, then `python3 scripts/report_keyword_inventory.py`, then `python3 scripts/validate_researchers.py`.
+- **Keyword hygiene**: prefer existing keywords, run `python3 scripts/normalize_keywords.py`, then `python3 scripts/report_keyword_inventory.py`, then `python3 scripts/report_discipline_audit.py`, then `python3 scripts/validate_researchers.py`.
 
 ### Scope
 **Include**: social/environmental systems (ecology, geography, sociology, anthropology, history, public health, geomorphology). Active since 2000 or deceased within ~20 years. Include researchers studying Chaco peoples/places/ecosystems even without "Chaco" keyword.
