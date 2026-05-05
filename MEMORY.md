@@ -55,6 +55,20 @@
   - profiles should have one primary plus at most two secondary disciplines
   - broad discipline names should not be used as keywords
   - run [scripts/report_discipline_audit.py](/Users/yannlepolain/Library/CloudStorage/OneDrive-McGillUniversity/Univ/Coding/ChacoMap/scripts/report_discipline_audit.py) after discipline or keyword edits
+- Theme order now matters:
+  - first theme is primary
+  - profiles should have one primary plus at most two secondary themes
+  - themes should follow the controlled 12-theme vocabulary only
+  - do not assign a theme just because it appears once as a method or side topic
+- Research region tagging now follows a reduction rule:
+  - prefer the most informative regional scale rather than stacking parent + child labels
+  - do not store `Gran Chaco` as a region label; directory scope already implies Chaco relevance
+  - drop redundant `Argentina` / `Paraguay` / `Bolivia` labels when a more specific Chaco region or local site already captures the scope
+  - default to at most 3 regions
+- Browse-page region filtering now applies containment for country and national-Chaco labels:
+  - `Argentina` should match profiles tagged with `Formosa`, `Chaco province`, `Salta`, etc.
+  - `Paraguay` should match profiles tagged with `Boquerón`, `Presidente Hayes`, `Alto Paraguay`, etc.
+  - `Bolivia` should match profiles tagged with `Bolivian Chaco`, `Santa Cruz`, `Chuquisaca`, `Tarija`
 
 ## Recent Important Content Fixes
 

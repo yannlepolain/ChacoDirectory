@@ -16,6 +16,95 @@ const ChacoData = (() => {
       .toLowerCase();
   }
 
+  const GEO_DESCENDANTS = {
+    Argentina: [
+      'Argentine Chaco',
+      'Chaco province',
+      'Chaco Serrano',
+      'Córdoba',
+      'Corrientes',
+      'El Impenetrable',
+      'Formosa',
+      'Jujuy',
+      'Northeast Argentina',
+      'Northwest Argentina',
+      'Pampa del Indio',
+      'Pilagá territory',
+      'Resistencia',
+      'Rosario',
+      'Salta',
+      'San Luis',
+      'Santiago del Estero',
+      'Teuco-Bermejito Interfluvio',
+      'Tucumán'
+    ],
+    Paraguay: [
+      'Paraguayan Chaco',
+      'Alto Paraguay',
+      'Alto Paraná',
+      'Boquerón',
+      'Pantanal (Paraguay)',
+      'Presidente Hayes',
+      'Ñeembucú'
+    ],
+    Bolivia: [
+      'Bolivian Chaco',
+      'Chuquisaca',
+      'Santa Cruz',
+      'Tarija'
+    ],
+    Brazil: [
+      'Brazilian Chaco',
+      'Mato Grosso do Sul'
+    ],
+    'Argentine Chaco': [
+      'Chaco province',
+      'Chaco Serrano',
+      'El Impenetrable',
+      'Formosa',
+      'Jujuy',
+      'Pampa del Indio',
+      'Pilagá territory',
+      'Resistencia',
+      'Salta',
+      'San Luis',
+      'Santiago del Estero',
+      'Teuco-Bermejito Interfluvio',
+      'Tucumán'
+    ],
+    'Paraguayan Chaco': [
+      'Alto Paraguay',
+      'Boquerón',
+      'Presidente Hayes'
+    ],
+    'Bolivian Chaco': [
+      'Chuquisaca',
+      'Santa Cruz',
+      'Tarija'
+    ]
+  };
+
+  function buildGeoMatchSet(selectedGeo) {
+    const matchSet = new Set();
+
+    function visit(label) {
+      if (!label) return;
+      const normalized = normalizeText(label);
+      if (matchSet.has(normalized)) return;
+      matchSet.add(normalized);
+      (GEO_DESCENDANTS[label] || []).forEach(visit);
+    }
+
+    visit(selectedGeo);
+    return matchSet;
+  }
+
+  function geoMatchesSelection(values, selectedGeo) {
+    if (!selectedGeo) return true;
+    const matchSet = buildGeoMatchSet(selectedGeo);
+    return (values || []).some(value => matchSet.has(normalizeText(value)));
+  }
+
   function normalizePersonReference(value) {
     return normalizeText(value)
       .replace(/-/g, ' ')
@@ -194,11 +283,10 @@ const ChacoData = (() => {
 
     // Geographic focus filter: where the researcher's work is located
     if (filters.geoFocus) {
-      const geo = normalizeText(filters.geoFocus);
       results = results.filter(r =>
-        (r.geographical_focus && r.geographical_focus.some(g => normalizeText(g).includes(geo)))
-        || (r.tags_from_seed && r.tags_from_seed.some(t => normalizeText(t) === geo))
-        || (r.keywords && r.keywords.some(k => normalizeText(k) === geo))
+        geoMatchesSelection(r.geographical_focus, filters.geoFocus)
+        || geoMatchesSelection(r.tags_from_seed, filters.geoFocus)
+        || geoMatchesSelection(r.keywords, filters.geoFocus)
       );
     }
 

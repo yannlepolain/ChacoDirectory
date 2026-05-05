@@ -144,11 +144,11 @@
       const geoSelect = document.getElementById('filter-geo');
       const gl = geoGroupLabels[I18n.getLang()] || geoGroupLabels.en;
       const geoGroups = [
-        { label: gl.countries, items: ['Argentina', 'Bolivia', 'Brazil', 'Paraguay'] },
-        { label: gl.crossborder, items: ['Gran Chaco', 'Dry Chaco', 'Humid Chaco', 'Central Chaco', 'Pilcomayo'] },
-        { label: gl.argentina, items: ['Argentine Chaco', 'Argentine Dry Chaco', 'Semi-arid Chaco', 'Chaco province', 'Chaco Salteño', 'Chaco Serrano', 'Córdoba', 'Formosa', 'Jujuy', 'Salta', 'San Luis', 'Santiago del Estero', 'Tucumán'] },
-        { label: gl.bolivia, items: ['Bolivian Chaco', 'Kaa-Iya del Gran Chaco'] },
-        { label: gl.paraguay, items: ['Paraguayan Dry Chaco', 'Alto Paraguay', 'Boquerón', 'Presidente Hayes'] },
+        { label: gl.countries, items: ['Argentina', 'Bolivia', 'Paraguay'] },
+        { label: gl.crossborder, items: ['Dry Chaco', 'Humid Chaco', 'Pilcomayo'] },
+        { label: gl.argentina, items: ['Argentine Chaco', 'Chaco province', 'Chaco Serrano', 'Córdoba', 'Formosa', 'Jujuy', 'Salta', 'San Luis', 'Santiago del Estero', 'Tucumán'] },
+        { label: gl.bolivia, items: ['Bolivian Chaco', 'Chuquisaca', 'Santa Cruz', 'Tarija'] },
+        { label: gl.paraguay, items: ['Paraguayan Chaco', 'Alto Paraguay', 'Boquerón', 'Presidente Hayes'] },
       ];
       geoGroups.forEach(group => {
         const sep = document.createElement('option');

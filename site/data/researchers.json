@@ -26,7 +26,7 @@
       "ecosystem restoration"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "plot",
@@ -137,10 +137,9 @@
       "Forestry"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
-      "Chaco Salteño",
-      "Santiago del Estero",
-      "Gran Chaco"
+      "Dry Chaco",
+      "Salta",
+      "Santiago del Estero"
     ],
     "scales": [
       "regional",
@@ -264,8 +263,7 @@
     "country": "Argentina",
     "thematic_focus": [],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "local",
@@ -282,8 +280,7 @@
     "themes": [
       "Agroecology & Rural Development",
       "Ecology & Biodiversity",
-      "Land Use & Deforestation",
-      "Regional Geography"
+      "Land Use & Deforestation"
     ],
     "disciplines": [
       "Ecology"
@@ -413,8 +410,7 @@
     "country": "Argentina",
     "thematic_focus": [],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "sub-national",
@@ -429,7 +425,6 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Ecology & Biodiversity",
       "Land Tenure & Governance",
       "Land Use & Deforestation",
       "Social Sciences & Political Ecology"
@@ -470,7 +465,6 @@
     ],
     "geographical_focus": [
       "Chaco Serrano",
-      "Dry Chaco",
       "Central Argentina",
       "Córdoba"
     ],
@@ -564,8 +558,7 @@
     ],
     "geographical_focus": [
       "Bolivian Chaco",
-      "Bolivia",
-      "Gran Chaco"
+      "Bolivia"
     ],
     "scales": [
       "national",
@@ -632,8 +625,7 @@
     "geographical_focus": [
       "Chaco province",
       "Argentine Chaco",
-      "Salta",
-      "Argentina"
+      "Salta"
     ],
     "scales": [
       "local",
@@ -857,8 +849,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Paraguay",
-      "Gran Chaco"
+      "Paraguay"
     ],
     "scales": [
       "regional",
@@ -873,10 +864,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
+      "Wildlife & Conservation Biology",
       "Ecology & Biodiversity",
-      "Land Tenure & Governance",
-      "Social Sciences & Political Ecology",
-      "Wildlife & Conservation Biology"
+      "Land Tenure & Governance"
     ],
     "disciplines": [
       "Conservation Biology",
@@ -1028,7 +1018,7 @@
       "pollination services"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "landscape",
@@ -1174,8 +1164,7 @@
       "indigenous peoples"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Central Chaco",
+      "Dry Chaco",
       "Salta",
       "Formosa"
     ],
@@ -1241,8 +1230,7 @@
       "felid conservation"
     ],
     "geographical_focus": [
-      "Bolivian Chaco",
-      "Gran Chaco"
+      "Bolivian Chaco"
     ],
     "scales": [
       "Subnational"
@@ -1308,7 +1296,6 @@
     ],
     "geographical_focus": [
       "Chaco Serrano",
-      "Dry Chaco",
       "Central Argentina",
       "Córdoba"
     ],
@@ -1388,12 +1375,9 @@
       "frontier formation"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Argentina",
+      "Argentine Chaco",
       "Chaco province",
-      "Formosa",
-      "Salta",
-      "Santiago del Estero"
+      "Formosa"
     ],
     "scales": [
       "national",
@@ -1482,8 +1466,7 @@
       "landscape ecology"
     ],
     "geographical_focus": [
-      "Semi-arid Chaco",
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "landscape",
@@ -1708,7 +1691,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "regional",
@@ -1722,12 +1705,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
       "Climate, Carbon & Energy",
       "Ecology & Biodiversity",
-      "Land Use & Deforestation",
-      "Remote Sensing & Monitoring",
-      "Hydrology & Soils"
+      "Land Use & Deforestation"
     ],
     "disciplines": [
       "Ecology",
@@ -1775,10 +1755,8 @@
       "dry forests"
     ],
     "geographical_focus": [
-      "Semi-arid Chaco",
       "Dry Chaco",
-      "Tucumán",
-      "Argentina"
+      "Tucumán"
     ],
     "scales": [
       "local",
@@ -2227,8 +2205,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Paraguay",
-      "Gran Chaco"
+      "Paraguay"
     ],
     "scales": [
       "regional",
@@ -2242,11 +2219,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
-      "Climate, Carbon & Energy",
-      "Ecology & Biodiversity",
+      "Remote Sensing & Monitoring",
       "Land Use & Deforestation",
-      "Remote Sensing & Monitoring"
+      "Ecology & Biodiversity"
     ],
     "disciplines": [
       "Geography",
@@ -2441,8 +2416,7 @@
     "geographical_focus": [
       "Argentine Chaco",
       "Pilcomayo",
-      "Formosa",
-      "Salta"
+      "Formosa"
     ],
     "scales": [
       "local",
@@ -2517,8 +2491,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Paraguay",
-      "Bolivia",
-      "Gran Chaco"
+      "Bolivia"
     ],
     "scales": [
       "local",
@@ -2561,8 +2534,8 @@
       "Social Sciences & Political Ecology"
     ],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco"
+      "Argentine Chaco",
+      "Dry Chaco"
     ],
     "scales": [
       "regional"
@@ -2657,7 +2630,6 @@
     ],
     "geographical_focus": [
       "Paraguay",
-      "Gran Chaco",
       "Paraguayan Chaco"
     ],
     "scales": [
@@ -2770,10 +2742,9 @@
       "mutualistic networks"
     ],
     "geographical_focus": [
-      "Argentina",
+      "Dry Chaco",
       "Tucumán",
-      "Salta",
-      "Gran Chaco"
+      "Salta"
     ],
     "scales": [
       "local",
@@ -2865,10 +2836,9 @@
       "species distribution"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Santiago del Estero",
-      "Salta",
-      "Formosa"
+      "Salta"
     ],
     "scales": [
       "local",
@@ -2978,7 +2948,6 @@
       "social movements"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
       "Argentina"
     ],
@@ -3053,7 +3022,7 @@
     ],
     "geographical_focus": [
       "Santiago del Estero",
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Argentina"
     ],
     "scales": [
@@ -3220,7 +3189,7 @@
     ],
     "geographical_focus": [
       "Santiago del Estero",
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Humid Chaco"
     ],
     "scales": [
@@ -3304,7 +3273,6 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Formosa"
     ],
     "scales": [
@@ -3412,9 +3380,7 @@
       "disturbance ecology"
     ],
     "geographical_focus": [
-      "Argentina",
       "Santiago del Estero",
-      "Gran Chaco",
       "Dry Chaco"
     ],
     "scales": [
@@ -3555,8 +3521,6 @@
       "soil carbon"
     ],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco",
       "Córdoba",
       "Dry Chaco"
     ],
@@ -3658,7 +3622,7 @@
       "indigenous rights"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
+      "Salta",
       "Argentina"
     ],
     "scales": [
@@ -3820,7 +3784,6 @@
     ],
     "geographical_focus": [
       "Dry Chaco",
-      "Argentina",
       "Salta",
       "Santiago del Estero"
     ],
@@ -3890,9 +3853,7 @@
     ],
     "geographical_focus": [
       "Humid Chaco",
-      "Paraguayan Chaco",
-      "Presidente Hayes",
-      "Paraguay"
+      "Presidente Hayes"
     ],
     "scales": [
       "local",
@@ -3968,10 +3929,8 @@
       "protected areas"
     ],
     "geographical_focus": [
-      "Argentina",
       "Córdoba",
-      "Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "sub-national",
@@ -4045,7 +4004,7 @@
     "deceased": false,
     "thematic_focus": [],
     "geographical_focus": [
-      "Paraguayan Dry Chaco"
+      "Paraguayan Chaco"
     ],
     "scales": [
       "regional",
@@ -4124,7 +4083,6 @@
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
-      "Dry Chaco",
       "Boquerón",
       "Alto Paraguay"
     ],
@@ -4342,10 +4300,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
+      "Social Sciences & Political Ecology",
       "Land Tenure & Governance",
-      "Land Use & Deforestation",
-      "Social Sciences & Political Ecology"
+      "Land Use & Deforestation"
     ],
     "disciplines": [
       "Sociology",
@@ -4400,7 +4357,6 @@
     ],
     "geographical_focus": [
       "Chaco Serrano",
-      "Dry Chaco",
       "Central Argentina",
       "Córdoba"
     ],
@@ -4476,10 +4432,8 @@
       "deforestation"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
-      "San Martín",
-      "Argentina"
+      "San Martín"
     ],
     "scales": [
       "local",
@@ -4549,7 +4503,6 @@
       "Ecology & Biodiversity"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Dry Chaco",
       "Santiago del Estero",
       "Salta"
@@ -4626,8 +4579,7 @@
     "themes": [
       "Land Use & Deforestation",
       "Remote Sensing & Monitoring",
-      "Land Tenure & Governance",
-      "Ecology & Biodiversity"
+      "Land Tenure & Governance"
     ],
     "disciplines": [
       "Environmental Science",
@@ -4804,7 +4756,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "sub-national",
@@ -4818,10 +4770,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Ecology & Biodiversity",
+      "Wildlife & Conservation Biology",
       "Land Use & Deforestation",
-      "Social Sciences & Political Ecology",
-      "Wildlife & Conservation Biology"
+      "Social Sciences & Political Ecology"
     ],
     "disciplines": [
       "Biology",
@@ -4941,8 +4892,7 @@
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
-      "Paraguay",
-      "Gran Chaco"
+      "Paraguay"
     ],
     "scales": [
       "Local",
@@ -5093,10 +5043,8 @@
       "state formation"
     ],
     "geographical_focus": [
-      "Paraguayan Chaco",
       "Paraguay",
-      "Bolivia",
-      "Gran Chaco"
+      "Bolivia"
     ],
     "scales": [
       "regional",
@@ -5161,10 +5109,9 @@
       "Rosario"
     ],
     "geographical_focus": [
-      "Rosario",
+      "Argentine Chaco",
       "Chaco province",
-      "Formosa",
-      "Argentina"
+      "Formosa"
     ],
     "scales": [
       "local",
@@ -5239,7 +5186,6 @@
     "themes": [
       "Social Sciences & Political Ecology",
       "Land Tenure & Governance",
-      "Land Use & Deforestation",
       "Agroecology & Rural Development"
     ],
     "keywords": [
@@ -5346,10 +5292,8 @@
       "ethnolinguistics"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Formosa",
-      "Paraguayan Chaco",
-      "Argentina"
+      "Paraguayan Chaco"
     ],
     "scales": [
       "community",
@@ -5405,10 +5349,8 @@
     "deceased": false,
     "thematic_focus": [],
     "geographical_focus": [
-      "Paraguayan Dry Chaco",
-      "Humid Chaco",
       "Paraguayan Chaco",
-      "Paraguay"
+      "Humid Chaco"
     ],
     "scales": [
       "national",
@@ -5513,10 +5455,9 @@
       "Political Science"
     ],
     "themes": [
-      "Land Tenure & Governance",
-      "Social Sciences & Political Ecology",
       "History, Culture & Identity",
-      "Agroecology & Rural Development"
+      "Land Tenure & Governance",
+      "Social Sciences & Political Ecology"
     ],
     "keywords": [
       "indigenous rights",
@@ -5531,9 +5472,8 @@
       "indigenous women"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
-      "Argentine Chaco",
-      "Gran Chaco"
+      "Salta",
+      "Argentine Chaco"
     ],
     "scales": [
       "community",
@@ -5817,8 +5757,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Salta",
-      "Gran Chaco"
+      "Salta"
     ],
     "scales": [
       "regional",
@@ -5878,10 +5817,8 @@
       "bilingual education"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Argentine Chaco",
-      "Chaco province",
-      "Argentina"
+      "Chaco province"
     ],
     "scales": [
       "regional",
@@ -5943,8 +5880,7 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Argentine Chaco",
-      "Gran Chaco"
+      "Argentine Chaco"
     ],
     "scales": [
       "regional",
@@ -6044,8 +5980,7 @@
     "geographical_focus": [
       "Chaco Serrano",
       "Dry Chaco",
-      "Tucumán",
-      "Argentina"
+      "Tucumán"
     ],
     "scales": [
       "local",
@@ -6106,9 +6041,7 @@
       "Anthropology"
     ],
     "geographical_focus": [
-      "Argentina",
       "Argentine Chaco",
-      "Gran Chaco",
       "Formosa"
     ],
     "scales": [
@@ -6212,7 +6145,6 @@
     ],
     "geographical_focus": [
       "Argentine Chaco",
-      "Gran Chaco",
       "Argentina"
     ],
     "scales": [
@@ -6371,9 +6303,7 @@
     ],
     "geographical_focus": [
       "Dry Chaco",
-      "Semi-arid Chaco",
-      "Santiago del Estero",
-      "Argentina"
+      "Santiago del Estero"
     ],
     "scales": [
       "plot",
@@ -6599,7 +6529,6 @@
     ],
     "geographical_focus": [
       "Salta",
-      "Chaco Salteño",
       "Argentina"
     ],
     "scales": [
@@ -6678,9 +6607,8 @@
     ],
     "geographical_focus": [
       "Bolivian Chaco",
-      "Macharetí",
-      "Cordillera",
-      "Bolivia"
+      "Chuquisaca",
+      "Santa Cruz"
     ],
     "scales": [
       "farm",
@@ -6748,7 +6676,6 @@
     "geographical_focus": [
       "Dry Chaco",
       "Chaco Serrano",
-      "Argentina",
       "Central Argentina"
     ],
     "scales": [
@@ -6809,9 +6736,8 @@
       "Regional Geography"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Bolivian Chaco",
-      "Kaa-Iya del Gran Chaco"
+      "Santa Cruz"
     ],
     "scales": [
       "regional",
@@ -6942,8 +6868,7 @@
     ],
     "geographical_focus": [
       "Bolivian Chaco",
-      "Gran Chaco",
-      "Kaa-Iya del Gran Chaco"
+      "Santa Cruz"
     ],
     "scales": [
       "sub-national",
@@ -7082,7 +7007,7 @@
     "top_collaborators_from_seed": [],
     "total_publications_in_seed": 2,
     "first_author_publications": 0,
-    "year_range": "2018-2020",
+    "year_range": "2018-2024",
     "publications": [
       {
         "title": "Distribution and conservation analysis of four endemic plant species occurring in Paraguay",
@@ -7109,8 +7034,7 @@
         "doi": "10.3897/phytokeys.103.26307",
         "url": ""
       }
-    ],
-    "year_range": "2018-2024"
+    ]
   },
   {
     "id": "cordoba-gisela-soledad",
@@ -7136,10 +7060,8 @@
       "dry forests"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
-      "San Martín",
-      "Argentina"
+      "San Martín"
     ],
     "scales": [
       "local",
@@ -7207,8 +7129,7 @@
     ],
     "geographical_focus": [
       "Paraguay",
-      "Paraguayan Chaco",
-      "Gran Chaco"
+      "Paraguayan Chaco"
     ],
     "scales": [
       "sub-national",
@@ -7603,7 +7524,7 @@
     "top_collaborators_from_seed": [],
     "total_publications_in_seed": 2,
     "first_author_publications": 0,
-    "year_range": "2018-2020",
+    "year_range": "2018-2024",
     "publications": [
       {
         "title": "Distribution and conservation analysis of four endemic plant species occurring in Paraguay",
@@ -7630,8 +7551,7 @@
         "doi": "10.3897/phytokeys.103.26307",
         "url": ""
       }
-    ],
-    "year_range": "2018-2024"
+    ]
   },
   {
     "id": "de-lannoy-gabrielle-j-m",
@@ -7657,10 +7577,7 @@
       "dry forests"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
-      "Gran Chaco",
-      "Argentina",
-      "Central Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "landscape",
@@ -7725,8 +7642,7 @@
     ],
     "geographical_focus": [
       "Argentine Chaco",
-      "Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "Subnational",
@@ -7788,9 +7704,8 @@
       "Remote Sensing & GIS"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Argentine Chaco",
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "regional",
@@ -7885,7 +7800,6 @@
     ],
     "selected_publications": [],
     "themes": [
-      "Ecology & Biodiversity",
       "Wildlife & Conservation Biology",
       "Land Use & Deforestation",
       "Remote Sensing & Monitoring"
@@ -8008,8 +7922,7 @@
       "dry forests"
     ],
     "geographical_focus": [
-      "Paraguayan Chaco",
-      "Central Chaco",
+      "Dry Chaco",
       "Boquerón",
       "Presidente Hayes"
     ],
@@ -8090,7 +8003,6 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Córdoba"
     ],
     "scales": [
@@ -8184,8 +8096,7 @@
     "geographical_focus": [
       "Argentine Chaco",
       "Chaco province",
-      "Formosa",
-      "Argentina"
+      "Formosa"
     ],
     "scales": [
       "local",
@@ -8224,9 +8135,8 @@
     ],
     "themes": [
       "Land Use & Deforestation",
-      "Ecology & Biodiversity",
       "Climate, Carbon & Energy",
-      "Agroecology & Rural Development"
+      "Ecology & Biodiversity"
     ],
     "keywords": [
       "agricultural frontier",
@@ -8417,7 +8327,6 @@
     "themes": [
       "Land Use & Deforestation",
       "Land Tenure & Governance",
-      "Ecology & Biodiversity",
       "Social Sciences & Political Ecology"
     ],
     "keywords": [
@@ -8434,8 +8343,7 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "sub-national",
@@ -8563,8 +8471,8 @@
     "country": "Germany",
     "thematic_focus": [],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco"
+      "Argentine Chaco",
+      "Dry Chaco"
     ],
     "scales": [
       "local",
@@ -8581,7 +8489,6 @@
     "themes": [
       "Agroecology & Rural Development",
       "Ecology & Biodiversity",
-      "Land Use & Deforestation",
       "Wildlife & Conservation Biology"
     ],
     "disciplines": [
@@ -8741,7 +8648,6 @@
       "peasant movements"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
       "Argentina"
     ],
@@ -8815,7 +8721,6 @@
     "geographical_focus": [
       "Chaco Serrano",
       "Central Argentina",
-      "Dry Chaco",
       "Córdoba"
     ],
     "scales": [
@@ -8907,8 +8812,7 @@
       "dry forests"
     ],
     "geographical_focus": [
-      "Paraguayan Chaco",
-      "Central Chaco",
+      "Dry Chaco",
       "Boquerón",
       "Presidente Hayes"
     ],
@@ -9203,8 +9107,7 @@
     ],
     "geographical_focus": [
       "Pilcomayo",
-      "Bolivian Chaco",
-      "Gran Chaco"
+      "Bolivian Chaco"
     ],
     "scales": [
       "regional",
@@ -9620,7 +9523,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Tucumán"
     ],
     "scales": [
@@ -9636,10 +9539,8 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
-      "Climate, Carbon & Energy",
-      "Ecology & Biodiversity",
       "Land Use & Deforestation",
+      "Climate, Carbon & Energy",
       "Remote Sensing & Monitoring"
     ],
     "disciplines": [
@@ -9708,8 +9609,7 @@
       "urban-rural gradient"
     ],
     "geographical_focus": [
-      "Argentine Chaco",
-      "Gran Chaco"
+      "Argentine Chaco"
     ],
     "scales": [
       "Local",
@@ -9901,8 +9801,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Córdoba",
-      "Gran Chaco"
+      "Córdoba"
     ],
     "scales": [
       "regional",
@@ -9917,10 +9816,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
+      "Wildlife & Conservation Biology",
       "Ecology & Biodiversity",
-      "Land Use & Deforestation",
-      "Remote Sensing & Monitoring",
-      "Wildlife & Conservation Biology"
+      "Land Use & Deforestation"
     ],
     "disciplines": [
       "Ecology",
@@ -9970,10 +9868,8 @@
       "agricultural expansion"
     ],
     "geographical_focus": [
-      "Argentina",
       "Dry Chaco",
-      "San Luis",
-      "Gran Chaco"
+      "San Luis"
     ],
     "scales": [
       "local",
@@ -10037,10 +9933,8 @@
       "Geography"
     ],
     "themes": [
-      "Land Use & Deforestation",
       "Wildlife & Conservation Biology",
-      "Land Tenure & Governance",
-      "Ecology & Biodiversity",
+      "Land Use & Deforestation",
       "Remote Sensing & Monitoring"
     ],
     "keywords": [
@@ -10059,9 +9953,7 @@
       "native forest law"
     ],
     "geographical_focus": [
-      "Argentina",
       "Dry Chaco",
-      "Gran Chaco",
       "Argentine Chaco",
       "Paraguayan Chaco"
     ],
@@ -10167,7 +10059,6 @@
       "Ecology & Biodiversity"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Paraguayan Chaco",
       "Argentine Chaco",
       "Bolivian Chaco"
@@ -10261,8 +10152,7 @@
       "Regional Geography"
     ],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco"
+      "Argentina"
     ],
     "scales": [
       "regional",
@@ -10344,10 +10234,7 @@
       "land use change"
     ],
     "geographical_focus": [
-      "Paraguayan Chaco",
-      "Dry Chaco",
-      "Central Chaco",
-      "Paraguay"
+      "Dry Chaco"
     ],
     "scales": [
       "local",
@@ -10414,8 +10301,7 @@
     "geographical_focus": [
       "Paraguayan Chaco",
       "Presidente Hayes",
-      "Boquerón",
-      "Paraguay"
+      "Boquerón"
     ],
     "scales": [
       "local",
@@ -10484,8 +10370,7 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "sub-national",
@@ -10600,7 +10485,7 @@
     ],
     "tags_from_seed": [],
     "total_publications_in_seed": 2,
-    "first_author_publications": 2,
+    "first_author_publications": 3,
     "top_collaborators_from_seed": [
       "Zoomers, Annelies",
       "van der Haar, Gemma"
@@ -10609,8 +10494,7 @@
     "fieldwork_locations": [],
     "selected_publications": [],
     "deceased": false,
-    "year_range": "2013-2015",
-    "first_author_publications": 3
+    "year_range": "2013-2015"
   },
   {
     "id": "gonzalez-hebe-alicia",
@@ -10820,10 +10704,8 @@
     "country": "Canada",
     "thematic_focus": [],
     "geographical_focus": [
-      "Argentina",
-      "Salta",
       "Pilcomayo",
-      "Jujuy"
+      "Salta"
     ],
     "scales": [
       "sub-national",
@@ -11140,8 +11022,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Tucumán",
-      "Gran Chaco"
+      "Tucumán"
     ],
     "scales": [
       "regional",
@@ -11156,11 +11037,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
-      "Climate, Carbon & Energy",
-      "Ecology & Biodiversity",
       "Land Use & Deforestation",
-      "Remote Sensing & Monitoring"
+      "Climate, Carbon & Energy",
+      "Ecology & Biodiversity"
     ],
     "disciplines": [
       "Geography",
@@ -11315,10 +11194,8 @@
       "ecosystem services"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
-      "Orán",
-      "Argentina"
+      "Orán"
     ],
     "scales": [
       "local",
@@ -11376,10 +11253,9 @@
       "interculturality"
     ],
     "geographical_focus": [
+      "Argentine Chaco",
       "Formosa",
-      "Northeast Argentina",
-      "Argentina-Paraguay border",
-      "Argentine Chaco"
+      "Northeast Argentina"
     ],
     "scales": [
       "local",
@@ -11448,8 +11324,7 @@
     "geographical_focus": [
       "Chaco province",
       "Teuco-Bermejito Interfluvio",
-      "Pampa del Indio",
-      "Argentina"
+      "Pampa del Indio"
     ],
     "scales": [
       "community",
@@ -11511,9 +11386,7 @@
       "Anthropology"
     ],
     "geographical_focus": [
-      "Argentina",
       "Argentine Chaco",
-      "Gran Chaco",
       "Formosa"
     ],
     "scales": [
@@ -11622,10 +11495,8 @@
       "native forest law"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Chaco Salteño",
-      "Santiago del Estero",
-      "Argentina"
+      "Salta",
+      "Santiago del Estero"
     ],
     "scales": [
       "departmental",
@@ -11692,10 +11563,8 @@
       "land use change"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Argentine Chaco",
-      "Dry Chaco",
-      "Argentina"
+      "Dry Chaco"
     ],
     "scales": [
       "regional",
@@ -11768,8 +11637,7 @@
       "indigenous health"
     ],
     "geographical_focus": [
-      "Argentine Chaco",
-      "Gran Chaco"
+      "Argentine Chaco"
     ],
     "scales": [
       "Local",
@@ -11852,8 +11720,6 @@
     ],
     "geographical_focus": [
       "Paraguay",
-      "Paraguayan Chaco",
-      "Gran Chaco",
       "Bolivia"
     ],
     "scales": [
@@ -11920,8 +11786,7 @@
     "geographical_focus": [
       "Chaco province",
       "Argentine Chaco",
-      "Salta",
-      "Argentina"
+      "Salta"
     ],
     "scales": [
       "local",
@@ -12003,8 +11868,7 @@
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
-      "Paraguay",
-      "Gran Chaco"
+      "Paraguay"
     ],
     "scales": [
       "Subnational",
@@ -12044,8 +11908,7 @@
       "Social Sciences & Political Ecology"
     ],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco"
+      "Argentina"
     ],
     "scales": [
       "regional",
@@ -12167,8 +12030,7 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "sub-national",
@@ -12246,10 +12108,8 @@
       "smallholders"
     ],
     "geographical_focus": [
-      "Argentina",
       "Salta",
-      "Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "local",
@@ -12327,8 +12187,7 @@
     "geographical_focus": [
       "Humid Chaco",
       "Chaco province",
-      "Colonia Benítez",
-      "El Impenetrable"
+      "Colonia Benítez"
     ],
     "scales": [
       "plot",
@@ -12396,9 +12255,7 @@
       "property rights"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Dry Chaco",
-      "Argentina",
       "Salta"
     ],
     "scales": [
@@ -12671,7 +12528,7 @@
     ],
     "geographical_focus": [
       "Santiago del Estero",
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Argentina"
     ],
     "scales": [
@@ -12896,7 +12753,6 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "San Luis"
     ],
     "scales": [
@@ -12911,10 +12767,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
-      "Ecology & Biodiversity",
+      "Hydrology & Soils",
       "Land Use & Deforestation",
-      "Hydrology & Soils"
+      "Agroecology & Rural Development"
     ],
     "disciplines": [
       "Ecology"
@@ -12953,9 +12808,8 @@
     ],
     "themes": [
       "History, Culture & Identity",
-      "Land Tenure & Governance",
-      "Social Sciences & Political Ecology",
-      "Regional Geography"
+      "Regional Geography",
+      "Land Tenure & Governance"
     ],
     "keywords": [
       "colonial history",
@@ -13073,8 +12927,6 @@
       "ethnography"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Argentine Chaco",
       "Paraguay",
       "Bolivia"
     ],
@@ -13596,8 +13448,7 @@
     "geographical_focus": [
       "Argentina",
       "Paraguay",
-      "Bolivia",
-      "Gran Chaco"
+      "Bolivia"
     ],
     "scales": [
       "global",
@@ -13612,11 +13463,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
-      "Climate, Carbon & Energy",
-      "Ecology & Biodiversity",
+      "Remote Sensing & Monitoring",
       "Land Use & Deforestation",
-      "Remote Sensing & Monitoring"
+      "Ecology & Biodiversity"
     ],
     "disciplines": [
       "Geography",
@@ -13745,10 +13594,8 @@
       "wetlands"
     ],
     "geographical_focus": [
-      "Paraguayan Chaco",
       "Humid Chaco",
-      "Presidente Hayes",
-      "Paraguay"
+      "Presidente Hayes"
     ],
     "scales": [
       "local",
@@ -13814,10 +13661,8 @@
       "cattle ranching"
     ],
     "geographical_focus": [
-      "Paraguayan Chaco",
       "Humid Chaco",
-      "Presidente Hayes",
-      "Paraguay"
+      "Presidente Hayes"
     ],
     "scales": [
       "local",
@@ -13909,8 +13754,6 @@
       "anti-deforestation"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Dry Chaco",
       "Argentina",
       "Paraguay",
       "Bolivia"
@@ -13988,10 +13831,8 @@
       "ceramics"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Argentine Chaco",
-      "Paraguay-Paraná",
-      "Argentina"
+      "Paraguay-Paraná"
     ],
     "scales": [
       "regional",
@@ -14067,8 +13908,7 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Formosa",
-      "Gran Chaco"
+      "Formosa"
     ],
     "scales": [
       "local",
@@ -14140,9 +13980,8 @@
     ],
     "themes": [
       "Ecology & Biodiversity",
-      "Wildlife & Conservation Biology",
       "Land Use & Deforestation",
-      "Social Sciences & Political Ecology"
+      "Wildlife & Conservation Biology"
     ],
     "keywords": [
       "ecosystem services",
@@ -14156,8 +13995,7 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "sub-national",
@@ -14233,11 +14071,8 @@
       "Chaco plain"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Pilcomayo",
-      "Bermejo",
-      "Argentina",
-      "South America"
+      "Bermejo"
     ],
     "scales": [
       "Subnational",
@@ -14304,10 +14139,8 @@
       "nutrition"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
-      "Orán",
-      "Argentina"
+      "Orán"
     ],
     "scales": [
       "local",
@@ -14375,9 +14208,7 @@
     ],
     "geographical_focus": [
       "Dry Chaco",
-      "Semi-arid Chaco",
-      "Santiago del Estero",
-      "Argentina"
+      "Santiago del Estero"
     ],
     "scales": [
       "plot",
@@ -14740,8 +14571,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Paraguay",
-      "Gran Chaco"
+      "Paraguay"
     ],
     "scales": [
       "regional"
@@ -14791,7 +14621,7 @@
       "secondary succession"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Córdoba",
       "Argentina"
     ],
@@ -14867,7 +14697,6 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Argentine Chaco"
     ],
     "scales": [
@@ -14962,8 +14791,7 @@
     "geographical_focus": [
       "Argentine Chaco",
       "Santiago del Estero",
-      "Formosa",
-      "Argentina"
+      "Formosa"
     ],
     "scales": [
       "sub-national",
@@ -15028,7 +14856,6 @@
       "interculturality"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
       "Argentina"
     ],
@@ -15091,7 +14918,6 @@
       "Remote Sensing & GIS"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
       "Dry Chaco",
       "Santiago del Estero"
     ],
@@ -15168,7 +14994,6 @@
     "selected_publications": [],
     "themes": [
       "Climate, Carbon & Energy",
-      "Ecology & Biodiversity",
       "Land Use & Deforestation",
       "Remote Sensing & Monitoring"
     ],
@@ -15203,7 +15028,6 @@
     ],
     "geographical_focus": [
       "Argentine Chaco",
-      "Gran Chaco",
       "Humid Chaco"
     ],
     "scales": [
@@ -15391,7 +15215,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "regional",
@@ -15405,10 +15229,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
+      "Wildlife & Conservation Biology",
       "Ecology & Biodiversity",
-      "Land Use & Deforestation",
-      "Wildlife & Conservation Biology"
+      "Agroecology & Rural Development"
     ],
     "disciplines": [
       "Ecology",
@@ -15457,10 +15280,7 @@
       "dry forests"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
-      "Gran Chaco",
-      "Argentina",
-      "Central Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "landscape",
@@ -15526,7 +15346,6 @@
     ],
     "geographical_focus": [
       "Bolivian Chaco",
-      "Gran Chaco",
       "Dry Chaco"
     ],
     "scales": [
@@ -15686,9 +15505,8 @@
       "scenario analysis"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
-      "Argentina",
-      "Gran Chaco"
+      "Dry Chaco",
+      "Argentina"
     ],
     "scales": [
       "sub-national",
@@ -15796,7 +15614,6 @@
       "territorial conflicts"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
       "Argentina"
     ],
@@ -15935,7 +15752,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "regional",
@@ -15949,10 +15766,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
+      "Wildlife & Conservation Biology",
       "Ecology & Biodiversity",
-      "Land Use & Deforestation",
-      "Wildlife & Conservation Biology"
+      "Agroecology & Rural Development"
     ],
     "disciplines": [
       "Ecology",
@@ -16326,7 +16142,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "regional",
@@ -16341,11 +16157,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
-      "Ecology & Biodiversity",
-      "Land Tenure & Governance",
+      "Social Sciences & Political Ecology",
       "Land Use & Deforestation",
-      "Social Sciences & Political Ecology"
+      "Ecology & Biodiversity"
     ],
     "disciplines": [
       "Environmental Science",
@@ -16399,8 +16213,7 @@
     "geographical_focus": [
       "Formosa",
       "Argentine Chaco",
-      "Pilagá territory",
-      "Argentina"
+      "Pilagá territory"
     ],
     "scales": [
       "local",
@@ -16453,9 +16266,8 @@
     ],
     "themes": [
       "Land Use & Deforestation",
-      "Wildlife & Conservation Biology",
-      "Land Tenure & Governance",
-      "Regional Geography"
+      "Regional Geography",
+      "Wildlife & Conservation Biology"
     ],
     "keywords": [
       "landscape ecology",
@@ -16469,7 +16281,6 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Dry Chaco"
     ],
     "scales": [
@@ -16646,8 +16457,7 @@
     "geographical_focus": [
       "Chaco province",
       "Argentine Chaco",
-      "Resistencia",
-      "Argentina"
+      "Resistencia"
     ],
     "scales": [
       "local",
@@ -16730,7 +16540,7 @@
       "rural territories"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
+      "Salta",
       "Santiago del Estero"
     ],
     "scales": [
@@ -16793,7 +16603,6 @@
     ],
     "geographical_focus": [
       "Argentine Chaco",
-      "Gran Chaco",
       "Argentina"
     ],
     "scales": [
@@ -16911,8 +16720,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Bolivia",
-      "Argentina",
-      "Gran Chaco"
+      "Argentina"
     ],
     "scales": [
       "local"
@@ -16955,7 +16763,6 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Paraguayan Chaco",
-      "Paraguayan Dry Chaco",
       "Humid Chaco"
     ],
     "scales": [
@@ -17102,7 +16909,6 @@
       "bilingual education"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Argentine Chaco",
       "Formosa",
       "Chaco province"
@@ -17178,8 +16984,6 @@
       "land system science"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Dry Chaco",
       "Argentina",
       "Paraguay",
       "Bolivia"
@@ -17253,8 +17057,6 @@
       "Anthropology"
     ],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco",
       "Argentine Chaco",
       "Bolivian Chaco"
     ],
@@ -17454,8 +17256,8 @@
     "country": "Argentina",
     "thematic_focus": [],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco"
+      "Argentine Chaco",
+      "Dry Chaco"
     ],
     "scales": [
       "regional",
@@ -17470,7 +17272,6 @@
     "fieldwork_locations": [],
     "deceased": true,
     "themes": [
-      "Agroecology & Rural Development",
       "Ecology & Biodiversity",
       "Land Use & Deforestation",
       "Regional Geography"
@@ -17566,7 +17367,6 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Paraguay",
       "Bolivia"
     ],
@@ -17712,10 +17512,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
+      "Hydrology & Soils",
       "Agroecology & Rural Development",
-      "Ecology & Biodiversity",
-      "Land Use & Deforestation",
-      "Hydrology & Soils"
+      "Ecology & Biodiversity"
     ],
     "disciplines": [
       "Ecology"
@@ -17754,10 +17553,8 @@
       "cattle ranching"
     ],
     "geographical_focus": [
-      "Paraguayan Chaco",
       "Dry Chaco",
-      "Humid Chaco",
-      "Paraguay"
+      "Humid Chaco"
     ],
     "scales": [
       "local",
@@ -17830,8 +17627,7 @@
     "themes": [
       "Land Use & Deforestation",
       "Land Tenure & Governance",
-      "Ecology & Biodiversity",
-      "Wildlife & Conservation Biology"
+      "Ecology & Biodiversity"
     ],
     "keywords": [
       "land system science",
@@ -17844,9 +17640,7 @@
       "scenario analysis"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Dry Chaco",
-      "Argentina",
       "Salta",
       "Santiago del Estero"
     ],
@@ -17926,8 +17720,7 @@
     ],
     "geographical_focus": [
       "Argentine Chaco",
-      "Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "Subnational",
@@ -18028,9 +17821,7 @@
     ],
     "geographical_focus": [
       "Dry Chaco",
-      "Santiago del Estero",
-      "Gran Chaco",
-      "Argentina"
+      "Santiago del Estero"
     ],
     "scales": [
       "farm",
@@ -18098,8 +17889,7 @@
     ],
     "geographical_focus": [
       "Bolivian Chaco",
-      "Bolivia",
-      "Gran Chaco"
+      "Bolivia"
     ],
     "scales": [
       "Subnational",
@@ -18213,7 +18003,6 @@
     "country": "United States",
     "thematic_focus": [],
     "geographical_focus": [
-      "Gran Chaco",
       "Argentina",
       "Paraguay",
       "Bolivia"
@@ -18272,7 +18061,6 @@
       "conservation priorities"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Argentine Chaco",
       "Dry Chaco"
     ],
@@ -18337,8 +18125,7 @@
       "carbon fluxes"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
-      "Semi-arid Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "plot",
@@ -18525,11 +18312,9 @@
       "Ecology & Biodiversity"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Bolivian Chaco",
-      "Kaa-Iya del Gran Chaco",
-      "Argentine Chaco",
-      "Paraguayan Chaco"
+      "Santa Cruz",
+      "Argentine Chaco"
     ],
     "scales": [
       "regional",
@@ -18672,8 +18457,7 @@
     "themes": [
       "Wildlife & Conservation Biology",
       "Land Use & Deforestation",
-      "Ecology & Biodiversity",
-      "Land Tenure & Governance"
+      "Ecology & Biodiversity"
     ],
     "keywords": [
       "camera trapping",
@@ -18688,7 +18472,7 @@
       "land tenure"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "landscape",
@@ -18832,11 +18616,9 @@
       "biodiversity conservation"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Argentine Chaco",
+      "Argentina",
       "Paraguay",
-      "Bolivia",
-      "Argentina"
+      "Bolivia"
     ],
     "scales": [
       "sub-national",
@@ -18911,7 +18693,6 @@
     ],
     "geographical_focus": [
       "Formosa",
-      "Gran Chaco",
       "Argentina"
     ],
     "scales": [
@@ -18999,9 +18780,7 @@
       "erosion"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Bermejito basin",
-      "Bermejo River",
+      "Bermejo",
       "Pilcomayo"
     ],
     "scales": [
@@ -19074,7 +18853,6 @@
       "territorial conflicts"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
       "Argentina"
     ],
@@ -19145,10 +18923,8 @@
       "interculturality"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
-      "Chaco province",
-      "Argentina"
+      "Chaco province"
     ],
     "scales": [
       "local",
@@ -19276,7 +19052,6 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Northwest Argentina"
     ],
     "scales": [
@@ -19469,8 +19244,7 @@
     "country": "Argentina",
     "thematic_focus": [],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco"
+      "Argentina"
     ],
     "scales": [
       "regional",
@@ -19485,7 +19259,6 @@
     "deceased": false,
     "themes": [
       "Climate, Carbon & Energy",
-      "Ecology & Biodiversity",
       "Land Use & Deforestation",
       "Remote Sensing & Monitoring"
     ],
@@ -19607,7 +19380,7 @@
     ],
     "geographical_focus": [
       "Santiago del Estero",
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Argentina"
     ],
     "scales": [
@@ -19824,7 +19597,6 @@
       "indigenous insurgency"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Argentine Chaco"
     ],
     "scales": [
@@ -19934,9 +19706,8 @@
     ],
     "geographical_focus": [
       "Bolivian Chaco",
-      "Macharetí",
-      "Cordillera",
-      "Bolivia"
+      "Chuquisaca",
+      "Santa Cruz"
     ],
     "scales": [
       "farm",
@@ -20442,9 +20213,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Paraguay",
-      "Formosa",
-      "Gran Chaco"
+      "Paraguay"
     ],
     "scales": [
       "regional",
@@ -20459,10 +20228,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
-      "Climate, Carbon & Energy",
+      "Remote Sensing & Monitoring",
       "Land Use & Deforestation",
-      "Remote Sensing & Monitoring"
+      "Agroecology & Rural Development"
     ],
     "disciplines": [
       "Geography",
@@ -20509,10 +20277,9 @@
       "dry forests"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Formosa",
-      "Tucumán",
-      "Argentina"
+      "Tucumán"
     ],
     "scales": [
       "local",
@@ -20580,8 +20347,7 @@
     ],
     "geographical_focus": [
       "Argentine Chaco",
-      "Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "Subnational",
@@ -20719,9 +20485,6 @@
     "country": "France",
     "thematic_focus": [],
     "geographical_focus": [
-      "Argentina",
-      "Bolivia",
-      "Paraguay",
       "Pilcomayo"
     ],
     "scales": [
@@ -20781,7 +20544,6 @@
       "biodiversity responses"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Dry Chaco",
       "Argentine Chaco"
     ],
@@ -20927,7 +20689,6 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Paraguay"
     ],
     "scales": [
@@ -20982,8 +20743,7 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Argentine Chaco",
-      "Gran Chaco"
+      "Argentine Chaco"
     ],
     "scales": [
       "local",
@@ -21022,8 +20782,8 @@
     "tags_from_seed": [],
     "top_collaborators_from_seed": [],
     "total_publications_in_seed": 3,
-    "first_author_publications": 2,
-    "year_range": "1992-2022",
+    "first_author_publications": 3,
+    "year_range": "2003-2014",
     "publications": [
       {
         "title": "Multiculturalidad y economía: El caso del Interfluvio Teuco-Bermejito",
@@ -21050,9 +20810,7 @@
         "is_first_author": true
       }
     ],
-    "selected_publications": [],
-    "year_range": "2003-2014",
-    "first_author_publications": 3
+    "selected_publications": []
   },
   {
     "id": "renison-daniel",
@@ -21144,10 +20902,9 @@
       "indigenous peoples"
     ],
     "geographical_focus": [
-      "Chaco province",
-      "Resistencia",
       "Argentine Chaco",
-      "Formosa"
+      "Chaco province",
+      "Resistencia"
     ],
     "scales": [
       "local",
@@ -21241,12 +20998,8 @@
       "Bolivia"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Paraguayan Chaco",
-      "Bolivian Chaco",
       "Paraguay",
-      "Bolivia",
-      "Alto Paraguay"
+      "Bolivia"
     ],
     "scales": [
       "regional",
@@ -21423,9 +21176,8 @@
       "Forestry"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
-      "Santiago del Estero",
-      "Gran Chaco"
+      "Dry Chaco",
+      "Santiago del Estero"
     ],
     "scales": [
       "regional",
@@ -21494,7 +21246,6 @@
     "deceased": false,
     "themes": [
       "Wildlife & Conservation Biology",
-      "Ecology & Biodiversity",
       "Land Use & Deforestation",
       "Remote Sensing & Monitoring"
     ],
@@ -21504,10 +21255,8 @@
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
-      "Dry Chaco",
       "Medanos del Chaco National Park",
-      "Alto Paraguay",
-      "Boquerón"
+      "Alto Paraguay"
     ],
     "scales": [
       "regional",
@@ -21592,9 +21341,8 @@
       "Social Sciences & Political Ecology"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Bolivian Chaco",
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Paraguayan Chaco"
     ],
     "scales": [
@@ -21684,8 +21432,7 @@
     "themes": [
       "Wildlife & Conservation Biology",
       "Land Use & Deforestation",
-      "Ecology & Biodiversity",
-      "Social Sciences & Political Ecology"
+      "Ecology & Biodiversity"
     ],
     "disciplines": [
       "Conservation Biology",
@@ -21808,11 +21555,9 @@
       "territorial governance"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Pilcomayo",
       "Argentina",
-      "Bolivia",
-      "Paraguay"
+      "Paraguay",
+      "Bolivia"
     ],
     "scales": [
       "regional",
@@ -21880,8 +21625,7 @@
     ],
     "geographical_focus": [
       "Bolivian Chaco",
-      "Bolivia",
-      "Gran Chaco"
+      "Bolivia"
     ],
     "scales": [
       "Subnational",
@@ -21999,7 +21743,6 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Dry Chaco"
     ],
     "scales": [
@@ -22014,11 +21757,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Public Health & Disease Ecology",
-      "Ecology & Biodiversity",
-      "Land Tenure & Governance",
+      "Social Sciences & Political Ecology",
       "Land Use & Deforestation",
-      "Social Sciences & Political Ecology"
+      "Land Tenure & Governance"
     ],
     "disciplines": [
       "Sociology",
@@ -22155,7 +21896,6 @@
       "territorial conflicts"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
       "Argentina"
     ],
@@ -22233,10 +21973,8 @@
       "ceramics"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Argentine Chaco",
-      "Paraguay-Paraná",
-      "Argentina"
+      "Paraguay-Paraná"
     ],
     "scales": [
       "regional",
@@ -22326,8 +22064,7 @@
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
-      "Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "Subnational",
@@ -22395,10 +22132,9 @@
       "biogeography"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Argentina",
-      "Bolivia",
-      "Paraguay"
+      "Paraguay",
+      "Bolivia"
     ],
     "scales": [
       "Continental",
@@ -22791,8 +22527,7 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Salta",
-      "Chaco Salteño"
+      "Salta"
     ],
     "scales": [
       "sub-national",
@@ -22851,8 +22586,7 @@
       "Remote Sensing & GIS"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Argentine Chaco"
     ],
     "scales": [
@@ -22940,10 +22674,9 @@
     ],
     "selected_publications": [],
     "themes": [
-      "Ecology & Biodiversity",
-      "Land Use & Deforestation",
       "Wildlife & Conservation Biology",
-      "Remote Sensing & Monitoring"
+      "Land Use & Deforestation",
+      "Ecology & Biodiversity"
     ],
     "disciplines": [
       "Ecology",
@@ -23056,10 +22789,8 @@
       "climate change"
     ],
     "geographical_focus": [
-      "Gran Chaco",
-      "Semi-arid Chaco",
-      "Humid Chaco",
-      "Argentina"
+      "Dry Chaco",
+      "Humid Chaco"
     ],
     "scales": [
       "species",
@@ -23145,8 +22876,6 @@
       "agricultural frontier"
     ],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco",
       "Dry Chaco",
       "Salta"
     ],
@@ -23223,10 +22952,8 @@
       "ethnography"
     ],
     "geographical_focus": [
-      "Chaco Salteño",
       "Salta",
-      "Formosa",
-      "Argentine Chaco"
+      "Formosa"
     ],
     "scales": [
       "local",
@@ -23308,7 +23035,7 @@
     ],
     "geographical_focus": [
       "Santiago del Estero",
-      "Argentine Dry Chaco",
+      "Dry Chaco",
       "Argentina"
     ],
     "scales": [
@@ -23392,8 +23119,7 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Argentine Chaco",
-      "Gran Chaco"
+      "Argentine Chaco"
     ],
     "scales": [
       "local",
@@ -23500,8 +23226,7 @@
     ],
     "geographical_focus": [
       "Córdoba",
-      "Argentine Dry Chaco",
-      "Gran Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "local",
@@ -23600,7 +23325,6 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Argentine Chaco"
     ],
     "scales": [
@@ -23688,7 +23412,6 @@
     ],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Dry Chaco"
     ],
     "scales": [
@@ -23767,8 +23490,7 @@
       "Social Sciences & Political Ecology"
     ],
     "geographical_focus": [
-      "Paraguayan Chaco",
-      "Gran Chaco"
+      "Paraguayan Chaco"
     ],
     "scales": [
       "regional",
@@ -24080,7 +23802,6 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Paraguay",
       "Bolivia"
     ],
@@ -24097,10 +23818,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Ecology & Biodiversity",
+      "Wildlife & Conservation Biology",
       "Land Use & Deforestation",
-      "Remote Sensing & Monitoring",
-      "Wildlife & Conservation Biology"
+      "Ecology & Biodiversity"
     ],
     "disciplines": [
       "Conservation Biology",
@@ -24142,12 +23862,9 @@
       "Anthropology"
     ],
     "geographical_focus": [
-      "Argentina",
       "Argentine Chaco",
-      "Gran Chaco",
       "Chaco province",
-      "Salta",
-      "Formosa"
+      "Salta"
     ],
     "scales": [
       "local",
@@ -24328,10 +24045,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
-      "Ecology & Biodiversity",
       "Land Tenure & Governance",
-      "Social Sciences & Political Ecology"
+      "Social Sciences & Political Ecology",
+      "Agroecology & Rural Development"
     ],
     "disciplines": [
       "Political Science"
@@ -24364,9 +24080,8 @@
       "Geography"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
-      "Santiago del Estero",
-      "Gran Chaco"
+      "Dry Chaco",
+      "Santiago del Estero"
     ],
     "scales": [
       "regional",
@@ -24512,11 +24227,9 @@
       "agricultural frontier"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
-      "Gran Chaco",
       "Argentina",
-      "Bolivia",
-      "Paraguay"
+      "Paraguay",
+      "Bolivia"
     ],
     "scales": [
       "sub-national",
@@ -24651,10 +24364,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
+      "Regional Geography",
       "Agroecology & Rural Development",
-      "Social Sciences & Political Ecology",
-      "Land Tenure & Governance",
-      "Regional Geography"
+      "Land Tenure & Governance"
     ],
     "disciplines": [
       "Geography"
@@ -24703,8 +24415,7 @@
     "geographical_focus": [
       "Paraguayan Chaco",
       "Presidente Hayes",
-      "Boquerón",
-      "Pilcomayo"
+      "Boquerón"
     ],
     "scales": [
       "local",
@@ -24886,7 +24597,7 @@
     "geographical_focus": [
       "Argentina",
       "Santiago del Estero",
-      "Argentine Dry Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "regional",
@@ -24900,9 +24611,8 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Ecology & Biodiversity",
-      "Land Tenure & Governance",
       "Land Use & Deforestation",
+      "Land Tenure & Governance",
       "Remote Sensing & Monitoring"
     ],
     "disciplines": [
@@ -24940,10 +24650,7 @@
       "dry forests"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
-      "Gran Chaco",
-      "Argentina",
-      "Central Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "landscape",
@@ -25007,10 +24714,7 @@
     "deceased": false,
     "thematic_focus": [],
     "geographical_focus": [
-      "Paraguayan Dry Chaco",
-      "Gran Chaco",
-      "Paraguayan Chaco",
-      "Paraguay"
+      "Paraguayan Chaco"
     ],
     "scales": [
       "regional",
@@ -25180,7 +24884,6 @@
     "thematic_focus": [],
     "geographical_focus": [
       "Argentina",
-      "Gran Chaco",
       "Salta"
     ],
     "scales": [
@@ -25197,7 +24900,6 @@
     "themes": [
       "Land Tenure & Governance",
       "Land Use & Deforestation",
-      "Remote Sensing & Monitoring",
       "Social Sciences & Political Ecology"
     ],
     "disciplines": [
@@ -25239,9 +24941,7 @@
       "Climate, Carbon & Energy"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Dry Chaco",
-      "Argentine Dry Chaco",
       "Santiago del Estero",
       "Salta"
     ],
@@ -25318,7 +25018,6 @@
     "selected_publications": [],
     "themes": [
       "Remote Sensing & Monitoring",
-      "Ecology & Biodiversity",
       "Land Use & Deforestation",
       "Climate, Carbon & Energy"
     ],
@@ -25353,10 +25052,8 @@
       "forest fragmentation"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Humid Chaco",
-      "Semi-arid Chaco",
-      "Argentina"
+      "Dry Chaco"
     ],
     "scales": [
       "species",
@@ -25417,7 +25114,6 @@
       "Remote Sensing"
     ],
     "geographical_focus": [
-      "Paraguayan Chaco",
       "Dry Chaco",
       "Humid Chaco",
       "Pantanal (Paraguay)"
@@ -25503,9 +25199,7 @@
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
-      "Gran Chaco",
-      "Pilcomayo",
-      "Bolivia"
+      "Pilcomayo"
     ],
     "scales": [
       "Subnational",
@@ -25560,8 +25254,7 @@
       "Regional Geography"
     ],
     "geographical_focus": [
-      "Argentina",
-      "Gran Chaco"
+      "Argentina"
     ],
     "scales": [
       "regional"
@@ -25740,10 +25433,7 @@
       "dry forests"
     ],
     "geographical_focus": [
-      "Argentine Dry Chaco",
-      "Gran Chaco",
-      "Argentina",
-      "Central Chaco"
+      "Dry Chaco"
     ],
     "scales": [
       "landscape",
@@ -25798,7 +25488,6 @@
     "themes": [
       "Social Sciences & Political Ecology",
       "Land Use & Deforestation",
-      "Agroecology & Rural Development",
       "Public Health & Disease Ecology"
     ],
     "keywords": [
@@ -25812,7 +25501,7 @@
     ],
     "geographical_focus": [
       "Santiago del Estero",
-      "Chaco Salteño",
+      "Salta",
       "Argentine Chaco"
     ],
     "scales": [
@@ -25937,10 +25626,8 @@
       "dry forests"
     ],
     "geographical_focus": [
-      "Semi-arid Chaco",
       "Dry Chaco",
-      "Tucumán",
-      "Argentina"
+      "Tucumán"
     ],
     "scales": [
       "local",
@@ -26216,10 +25903,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
-      "Land Tenure & Governance",
       "Land Use & Deforestation",
-      "Remote Sensing & Monitoring"
+      "Remote Sensing & Monitoring",
+      "Land Tenure & Governance"
     ],
     "disciplines": [
       "Geography",
@@ -26268,8 +25954,7 @@
     ],
     "geographical_focus": [
       "Paraguay",
-      "Paraguayan Chaco",
-      "Gran Chaco"
+      "Paraguayan Chaco"
     ],
     "scales": [
       "sub-national",
@@ -26402,7 +26087,6 @@
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
-      "Gran Chaco",
       "Paraguay"
     ],
     "scales": [
@@ -26514,9 +26198,7 @@
       "Anthropology"
     ],
     "geographical_focus": [
-      "Argentina",
       "Argentine Chaco",
-      "Gran Chaco",
       "Formosa"
     ],
     "scales": [
@@ -26614,7 +26296,6 @@
     "deceased": false,
     "thematic_focus": [],
     "themes": [
-      "Agroecology & Rural Development",
       "Land Tenure & Governance",
       "Social Sciences & Political Ecology",
       "Land Use & Deforestation"
@@ -26624,9 +26305,7 @@
       "Political Ecology"
     ],
     "geographical_focus": [
-      "Paraguay",
       "Paraguayan Chaco",
-      "Gran Chaco",
       "Alto Paraná"
     ],
     "scales": [
@@ -26711,7 +26390,6 @@
     ],
     "geographical_focus": [
       "Paraguayan Chaco",
-      "Gran Chaco",
       "Paraguay"
     ],
     "scales": [
@@ -26802,9 +26480,8 @@
     "selected_publications": [],
     "themes": [
       "Wildlife & Conservation Biology",
-      "Land Use & Deforestation",
-      "Ecology & Biodiversity",
-      "Land Tenure & Governance"
+      "Land Tenure & Governance",
+      "Land Use & Deforestation"
     ],
     "disciplines": [
       "Conservation Biology",
@@ -26923,7 +26600,6 @@
     "deceased": false,
     "themes": [
       "Climate, Carbon & Energy",
-      "Ecology & Biodiversity",
       "Land Use & Deforestation",
       "Remote Sensing & Monitoring"
     ],
@@ -27119,10 +26795,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Ecology & Biodiversity",
+      "Social Sciences & Political Ecology",
       "Land Tenure & Governance",
-      "Land Use & Deforestation",
-      "Social Sciences & Political Ecology"
+      "Land Use & Deforestation"
     ],
     "disciplines": [
       "Sociology"
@@ -27218,10 +26893,9 @@
     "country": "Argentina",
     "thematic_focus": [],
     "geographical_focus": [
-      "Argentina",
+      "Dry Chaco",
       "Tucumán",
-      "Santiago del Estero",
-      "Gran Chaco"
+      "Santiago del Estero"
     ],
     "scales": [
       "sub-national",
@@ -27235,10 +26909,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
+      "Social Sciences & Political Ecology",
       "Land Tenure & Governance",
-      "Land Use & Deforestation",
-      "Social Sciences & Political Ecology"
+      "Land Use & Deforestation"
     ],
     "disciplines": [
       "Anthropology"
@@ -27278,8 +26951,7 @@
     "geographical_focus": [
       "Chaco province",
       "Argentine Chaco",
-      "Resistencia",
-      "Argentina"
+      "Resistencia"
     ],
     "scales": [
       "local",
@@ -27352,10 +27024,8 @@
       "environmental governance"
     ],
     "geographical_focus": [
-      "Gran Chaco",
       "Formosa",
-      "Pilcomayo",
-      "Argentina"
+      "Pilcomayo"
     ],
     "scales": [
       "community",
@@ -27483,8 +27153,7 @@
     "themes": [
       "Wildlife & Conservation Biology",
       "Ecology & Biodiversity",
-      "Land Use & Deforestation",
-      "Remote Sensing & Monitoring"
+      "Land Use & Deforestation"
     ],
     "disciplines": [
       "Biology",
@@ -27561,10 +27230,9 @@
     "fieldwork_locations": [],
     "deceased": false,
     "themes": [
-      "Agroecology & Rural Development",
+      "Social Sciences & Political Ecology",
       "Land Tenure & Governance",
-      "Land Use & Deforestation",
-      "Social Sciences & Political Ecology"
+      "Land Use & Deforestation"
     ],
     "disciplines": [
       "Geography",
@@ -27737,8 +27405,7 @@
     "geographical_focus": [
       "Argentina",
       "Paraguay",
-      "Bolivia",
-      "Gran Chaco"
+      "Bolivia"
     ],
     "scales": [
       "regional",
