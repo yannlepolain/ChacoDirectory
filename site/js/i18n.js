@@ -594,6 +594,7 @@ const I18n = (() => {
     'agricultural expansion': 'expansión agrícola',
     'indigenous rights': 'derechos indígenas',
     'indigenous territories': 'territorios indígenas',
+    'socioecological systems': 'sistemas socioecológicos',
     'ethnography': 'etnografía',
     'ethnohistory': 'etnohistoria',
     'ethnogenesis': 'etnogénesis',

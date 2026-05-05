@@ -482,3 +482,16 @@ For each new batch, record:
   - added after a strict fit check confirmed a sustained Paraguay agrarian-change line with explicit recent Paraguayan Chaco publications
   - the same pass also corrected `Abt Giubergia, María Magdalena` and `Gordillo, Gastón` for missing publications and replaced Abt's incorrect webpage with a cleaner official UNSE source
   - read-only publication verification was delegated; final inclusion judgment, summary writing, and dataset edits were completed in the main process
+
+### Batch 28
+
+- date: `2026-05-05`
+- researchers added:
+  - `Vargas Lehner, Federico`
+- queue source:
+  - direct user request plus targeted Paraguay / Chaco evidence pass
+- notes:
+  - added after a focused intake pass for Chaco-relevant work that relied largely on Spanish-language journal, conference, and technical outputs tied to indigenous communities in the Paraguayan Chaco
+  - profile anchored on ecology humana, socioecological systems, territorial governance, and water/resource management with Enxet Sur, Nivaclé, Ñandeva, Yakye Axa, and Pilcomayo-linked cases
+  - official institutional email and ORCID were added; no personal webpage was stored because a clean person-level official page was not quickly available
+  - read-only source discovery was delegated; all inclusion judgment, summary writing, dataset edits, and bookkeeping updates were completed in the main process

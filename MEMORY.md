@@ -2,9 +2,9 @@
 
 ## Current State
 
-- Dataset status as of 2026-04-14:
+- Dataset status as of 2026-05-05:
   - `279` researchers
-  - `1442` publications
+  - `1562` publications
   - validator clean: `0 errors, 0 warnings`
 - Main data file:
   - [site/data/researchers.json](/Users/yannlepolain/Library/CloudStorage/OneDrive-McGillUniversity/Univ/Coding/ChacoMap/site/data/researchers.json)
